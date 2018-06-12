@@ -23,6 +23,10 @@
 padding: 0;
 }
 
+.rubber-img-container .col6-img {
+    display: none;
+}
+
 .bg-top-image .mobile-img {
     width: 100%;
     height: auto;
@@ -109,6 +113,12 @@ padding: 0;
     line-height: 28px;
 }
 
+.rubbers {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+
 @media (min-width: 767.98px) {
     .custom-section {
         margin-top: 100px;
@@ -143,6 +153,14 @@ padding: 0;
     }
     .high-button-container {
         padding-left: 3%;
+    }
+
+
+
+    .rubber-img-container .col6-img {
+        display: block;
+        width:100%;
+        padding: 0px 5px;
     }
 }
 @media (min-width: 992px) {
