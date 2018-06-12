@@ -1,0 +1,57 @@
+.custom-button {
+    border-radius: 0;
+    color: black;
+    background-color: white;
+    border-color: white;
+    font-size: 10px;
+}
+
+.light-button {
+    color: black;
+    background-color: white;
+    border-color: white;
+}
+
+.black-button {
+    color: white;
+    background-color: black;
+    border-color: black;
+}
+
+.light-button:hover {
+    text-decoration: underline;
+}
+
+
+.main-text-size {
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.clear-margins {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.white-text {
+    color: white;
+}
+
+.black-text {
+    color:black;
+}
+
+.black-bg {
+    background-color: black;
+}
+
+.white-bg {
+    background-color: white;
+}
+
+@media (min-width: 992px) {
+    .mobile-only {
+        display: none;
+    }
+}
+
