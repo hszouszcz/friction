@@ -99,6 +99,16 @@ padding: 0;
     padding-top: 20px;
 }
 
+.about .images {
+    display: none;
+}
+
+.about p {
+    display: block;
+    font-size: 18px;
+    line-height: 28px;
+}
+
 @media (min-width: 767.98px) {
     .custom-section {
         margin-top: 100px;
@@ -121,6 +131,18 @@ padding: 0;
     }
     .about {
         font-size: 12px;
+    }
+
+
+    .very-special-button {
+        height: 100%;
+        color: white;
+        font-weight: lighter;
+        margin: 5px 0;
+        border-radius: 0;
+    }
+    .high-button-container {
+        padding-left: 3%;
     }
 }
 @media (min-width: 992px) {
@@ -169,6 +191,16 @@ padding: 0;
         margin: 5px 0;
         border-radius: 0;
     }
+
+    .about .images {
+        display: block;
+    }
+
 }
 
+@media (min-width: 1025px) {
 
+    .high-button-container {
+        padding-left: 7%;
+    }
+}

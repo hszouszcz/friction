@@ -4,6 +4,12 @@
     background-color: white;
     border-color: white;
     font-size: 10px;
+    position: absolute;
+
+}
+
+.right {
+    right: 30px
 }
 
 .light-button {
@@ -48,10 +54,17 @@
 .white-bg {
     background-color: white;
 }
+.screen-only {
+    display: none;
+}
 
 @media (min-width: 992px) {
     .mobile-only {
         display: none;
+    }
+
+    .screen-only {
+        display: block;
     }
 }
 
