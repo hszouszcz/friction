@@ -69,6 +69,10 @@ padding: 0;
     margin-left: 0;
 }
 
+    .about {
+        padding-bottom: 20px;
+    }
+
  .about .title {
     font-size: 24px;
     margin-bottom: 20px;
@@ -116,12 +120,8 @@ padding: 0;
 .rubbers {
     margin-top: 20px;
     padding-top: 20px;
-}
 
-.orders {
-    margin-tio
 }
-
 
 @media (min-width: 767.98px) {
     .custom-section {
