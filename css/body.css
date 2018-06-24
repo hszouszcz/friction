@@ -146,6 +146,7 @@ footer {
     .custom-section {
         margin-top: 100px;
     }
+
     .bg-image {
         background:  url("../assets/img/bg-top.jpg");
     }
@@ -196,6 +197,21 @@ footer {
     }
 }
 @media (min-width: 992px) {
+
+    .custom-section .bullets{
+        text-align: left;
+        padding: 0 15px;
+    }
+
+    .bullet {
+        margin:10px 0 20px;
+
+    }
+
+    .bullets .col-md-4 {
+        padding-right: 20px;
+    }
+
     .bg-top-image .mobile-img {
         display: none;
     }
