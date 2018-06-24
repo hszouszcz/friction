@@ -4,12 +4,12 @@
     background-color: white;
     border-color: white;
     font-size: 10px;
-    position: absolute;
-
+    /*position: absolute;*/
 }
 
 .right {
-    right: 30px
+    margin-right: 15px;
+    float: right;
 }
 
 .light-button {
@@ -68,3 +68,7 @@
     }
 }
 
+
+.has-button {
+    margin-bottom: 20px;
+}
