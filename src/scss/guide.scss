@@ -1,0 +1,43 @@
+@import 'variables.scss';
+
+.guide {
+  padding-top: 30px;
+  padding-bottom: 35px;
+  .repair {
+    .title {
+      font-size: $text16;
+      color: $light-gray;
+      margin-bottom: 20px;
+    }
+    .caption-title {
+      font-size: $text24;
+      margin-bottom: 20px;
+    }
+    p {
+      color: $onyx;
+      span {
+        font-weight: bold;
+        color: $onyx;
+      }
+    }
+  }
+
+  .gallery {
+    display: none;
+
+    @media(min-width: 992px) {
+      display: block;
+    }
+  }
+
+  .small-img {
+    width:100%;
+    height: 100%;
+    padding: 5px 0 5px 5px;
+  }
+
+  .big-img {
+    width:100%;
+    height: 100%;
+  }
+}

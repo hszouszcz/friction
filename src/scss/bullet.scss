@@ -1,0 +1,10 @@
+.bullet {
+  color: white;
+  .bullet-dot {
+    font-size: 42px;
+    margin-top: 20px;
+  }
+  .bullet-dot:first-child {
+    margin-top: 0;
+  }
+}

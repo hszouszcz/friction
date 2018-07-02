@@ -1,0 +1,51 @@
+button {
+  border: none;
+  font-size: 16px;
+  padding: 15px 30px; }
+  button span {
+    padding-right: 10px; }
+  button i {
+    line-height: 10px; }
+
+.mobile {
+  display: none; }
+  @media (max-width: 768px) {
+    .mobile {
+      display: block; } }
+
+.dark {
+  background-color: #05080c;
+  color: white; }
+
+.light {
+  background-color: white;
+  color: #05080c; }
+
+.right {
+  position: absolute;
+  margin: 10px 0;
+  right: 0;
+  padding-right: 20px; }
+
+.left {
+  align-self: left; }
+
+.title {
+  font-size: 16px;
+  color: #dadfe5;
+  margin-bottom: 20px; }
+
+.text {
+  font-size: 18px;
+  color: white;
+  font-weight: lighter; }
+
+.caption-title {
+  font-size: 24px;
+  margin-bottom: 20px; }
+
+.truncated {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; }

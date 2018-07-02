@@ -1,0 +1,27 @@
+.guide {
+  padding-top: 30px;
+  padding-bottom: 35px; }
+  .guide .repair .title {
+    font-size: 16px;
+    color: #dadfe5;
+    margin-bottom: 20px; }
+  .guide .repair .caption-title {
+    font-size: 24px;
+    margin-bottom: 20px; }
+  .guide .repair p {
+    color: #05080c; }
+    .guide .repair p span {
+      font-weight: bold;
+      color: #05080c; }
+  .guide .gallery {
+    display: none; }
+    @media (min-width: 992px) {
+      .guide .gallery {
+        display: block; } }
+  .guide .small-img {
+    width: 100%;
+    height: 100%;
+    padding: 5px 0 5px 5px; }
+  .guide .big-img {
+    width: 100%;
+    height: 100%; }

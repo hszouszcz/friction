@@ -1,0 +1,7 @@
+.bullet {
+  color: white; }
+  .bullet .bullet-dot {
+    font-size: 42px;
+    margin-top: 20px; }
+  .bullet .bullet-dot:first-child {
+    margin-top: 0; }

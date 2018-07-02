@@ -1,0 +1,14 @@
+.rubber {
+  background-color: #05080c; }
+  .rubber .rubber-image {
+    padding-left: 0; }
+    .rubber .rubber-image img {
+      width: 100%;
+      padding: 0 5px; }
+    @media (max-width: 992px) {
+      .rubber .rubber-image {
+        display: none; } }
+  .rubber .rubber-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
