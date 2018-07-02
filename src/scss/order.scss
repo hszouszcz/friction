@@ -1,0 +1,23 @@
+@import 'variables.scss';
+
+.order {
+    padding-top: 30px;
+    padding-bottom: 80px;
+    .order-step {
+        padding-bottom: 30px;
+        .icon {
+    
+            text-align: center;
+            margin: auto;
+            font-size: 32px;
+            color: $onyx;
+        }
+        .title {
+            font-size: $text24;
+            color: $onyx;
+        }
+        .desc {
+         font-size: $text16;   
+        }
+    }
+}

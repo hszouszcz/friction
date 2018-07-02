@@ -6,6 +6,8 @@ import Header from './components/header/header';
 import About from './components/about/about';
 import Guide from './components/guide/guide';
 import Rubber from './components/Rubber/Rubber';
+import Order from "./components/order/order";
+import Footer from './components/footer/footer';
 
 class App extends Component {
   render() {
@@ -15,6 +17,8 @@ class App extends Component {
         <About />
         <Guide />
         <Rubber />
+        <Order />
+        <Footer />
       </div>
     );
   }

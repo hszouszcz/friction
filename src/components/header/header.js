@@ -4,7 +4,8 @@ import logo from '../../assets/img/logo.jpg';
 import "../../scss/header.css";
 
 const Header = () => (
-  <nav className="header navbar navbar-light sticky-top offset-md-1">
+  <div className="header">
+    <nav className="navbar navbar-light sticky-top col-lg-10 offset-lg-1">
     <a className="navbar-brand"><img className="logo" src={logo} alt={"logo"}/></a>
     <ul className="nav justify-content-end menu-items-nav">
       <li className="nav-item mobile-menu">
@@ -35,6 +36,7 @@ const Header = () => (
       </li>
     </ul>
   </nav>
+  </div>
 );
 
 export default Header;
