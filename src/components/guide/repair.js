@@ -1,4 +1,6 @@
 import React from 'react';
+import '../../scss/custom-checkbox.css';
+import CustomSelect from '../shared/select/select';
 
 const Repair = () => {
   return (
@@ -6,17 +8,25 @@ const Repair = () => {
       <div className="title">Poradnik</div>
       <div className="caption-title">Kied konieczna jest naprawa?</div>
       <div className="text">
-       <p> Najlepsze efekty uzyskuje się jeśli nie doszło do całkowitego zużycia podeszwy na czubku, oraz jeśli nie
-        zostały uszkodzone ranty. W praktyce oznacza to, że jeśli grubość podeszwy na czubku wynosi ok. 20-30% grubości pierwotnej,
-        to jest to najlepszy moment na dokonanie naprawy.  Inaczej mówiąc, jeśli zaczynamy odczuwać dyskomfort,
-        to jest to sygnał aby bliżej przyjrzeć się butom i nie zwlekać z naprawą.</p>
+        <p> Najlepsze efekty uzyskuje się jeśli nie doszło do całkowitego zużycia podeszwy na czubku, oraz jeśli nie
+          zostały uszkodzone ranty. W praktyce oznacza to, że jeśli grubość podeszwy na czubku wynosi ok. 20-30%
+          grubości pierwotnej,
+          to jest to najlepszy moment na dokonanie naprawy. Inaczej mówiąc, jeśli zaczynamy odczuwać dyskomfort,
+          to jest to sygnał aby bliżej przyjrzeć się butom i nie zwlekać z naprawą.</p>
         <p><span>Nie przecieraj rantów! </span>
         W porę wykonana wymiana samej podeszwy gwarantuje najlepsze zachowanie pierwotnych parametrów buta.</p>
       </div>
       <button className="dark">
         <span>zobacz wiecej</span>
-        <i className="fa fa-long-arrow-right" />
+        <i className="fa fa-long-arrow-right"/>
       </button>
+      <div className="custom-checkbox">
+        <label className="container">One
+          <input type="radio" onChange={() => null}/>
+          <span className="checkmark"><i className="fa fa-check" aria-hidden="true"></i></span>
+        </label>
+      </div>
+     <CustomSelect />
     </div>
   );
 };
