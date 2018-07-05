@@ -75,7 +75,20 @@
   &:hover {
     border-color: $orange;
   }
-  .select-control {
-    border: none;
+  .Select-control {
+    border: none !important;
+    box-shadow: none !important;
+    &:active {
+      border: none !important;
+      box-shadow: none !important;
+  }
+    &:focus {
+      border: none !important;
+      box-shadow: none !important;
+  }
+    &:hover {
+      border: none !important;
+      box-shadow: none !important;
+  }
   }
 }
