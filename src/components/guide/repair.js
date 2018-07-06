@@ -1,6 +1,8 @@
 import React from 'react';
-import '../../scss/custom-checkbox.css';
+import '../../scss/custom-radio-button.css';
 import CustomSelect from '../shared/select/select';
+import RadioInput from '../shared/inputs/radio-input';
+import RadioInputSection from '../shared/inputs/radio-input-section';
 
 const Repair = () => {
   return (
@@ -20,12 +22,12 @@ const Repair = () => {
         <span>zobacz wiecej</span>
         <i className="fa fa-long-arrow-right"/>
       </button>
-      <div className="custom-checkbox">
-        <label className="container">One
-          <input type="radio" onChange={() => null}/>
-          <span className="checkmark"><i className="fa fa-check" aria-hidden="true"></i></span>
-        </label>
-      </div>
+      <RadioInputSection>
+        <RadioInput label="Standardowa" callback={null} />
+        <RadioInput label="Standardowa" callback={null} />
+        <RadioInput label="Standardowa" callback={null} />
+      </RadioInputSection>
+
      <CustomSelect />
     </div>
   );

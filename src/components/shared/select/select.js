@@ -22,6 +22,7 @@ class CustomSelect extends Component {
         clearable={false}
         placeholder={"Wybierz rodzaj gumy"}
         className="friction-custom-select"
+        optionClassName="friction-custom-select-option"
         name="form-field-name"
         inputProps={{readOnly: true}}
         value={selectedOption}

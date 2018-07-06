@@ -1,24 +1,43 @@
 @import 'variables.scss';
 
-/* Customize the label (the container) */
-.container {
+/* Customize the label (the radio-container) */
+.radio-container {
   display: block;
   position: relative;
-  padding: 30px;
   margin: 15px;
+  padding: 0 30px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: $text18;
+  line-height: 72px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  max-width: 270px;
-  max-height: 130px;
+  width: 270px;
+  height: 72px;
   border: 1px solid $gray;
+
+  @media (max-width: 767.97px) {
+    width: 100px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    text-align: center;
+    margin: 10px;
+    padding: 0;
+  }
+  @media (min-width: 767.97px) and (max-width: 1023px) {
+    width: 250px;
+    height: 67px;
+    line-height: 67px;
+    font-size: 16px;
+    padding: 0 30px;
+    margin: 15px;
+  }
 }
 
 /* Hide the browser's default checkbox */
-.container input {
+.radio-container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -30,16 +49,19 @@
   width: 25px;
   color: $light-gray;
   position: absolute;
-  right: 30px;
+  right: 15px;
+  @media (max-width: 767.97px) {
+    display: none;
+  }
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover  {
+.radio-container:hover  {
   border-color: $orange;
 }
 
 /* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.radio-container input:checked ~ .checkmark {
   color: $green;
 }
 
@@ -51,12 +73,12 @@
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.radio-container input:checked ~ .checkmark:after {
   display: block;
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.radio-container .checkmark:after {
   left: 9px;
   top: 5px;
   width: 5px;
@@ -71,7 +93,13 @@
 .friction-custom-select {
   border: 1px solid $gray;
   border-radius: 0;
-  padding: 30px;
+  padding: 20px 30px 0 30px;
+  height: 72px;
+
+  @media (max-width: 767.97px) {
+    height: 44px;
+    padding:  5px 10px;
+  }
   &:hover {
     border-color: $orange;
   }
@@ -90,5 +118,12 @@
       border: none !important;
       box-shadow: none !important;
   }
+  }
+}
+
+.friction-custom-select-option {
+  color: $gray;
+  &:active {
+
   }
 }
