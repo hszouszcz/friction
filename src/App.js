@@ -14,6 +14,7 @@ import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import OrderForm from './components/OrderForm/OrderForm';
 import HomePage from './pages/HomePage';
+import GuideView from './components/guide/GuideView';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
        <Header />
          <Route exact={true} path="/" component={HomePage}/>
          <Route path="/order" component={OrderForm} />
+         <Route path="/guide" component={GuideView} />
         <Footer />
 
       </div>

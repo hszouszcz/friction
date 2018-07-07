@@ -18,7 +18,7 @@ const Header = () => (
           </button>
           <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
             <a className="dropdown-item" href="#">Cennik</a>
-            <a className="dropdown-item" href="./html/poradnik.html">Poradnik</a>
+            <Link to="/guide">Poradnik</Link>
             <a className="dropdown-item" href="#">Regulamin</a>
             <a className="dropdown-item" href="#">Fotogaleria</a>
             <a className="dropdown-item" href="#">Kontakt</a>

@@ -10,6 +10,7 @@ class OrderForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      orders: [],
       orderStep: 0,
       repairType: 0,
       rubberType: null,
