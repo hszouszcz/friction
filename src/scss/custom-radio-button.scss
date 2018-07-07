@@ -18,7 +18,7 @@
   border: 1px solid $border-color;
 
   @media (max-width: 767.97px) {
-    width: 100px;
+    width: 140px;
     height: 44px;
     line-height: 44px;
     font-size: 14px;
@@ -31,6 +31,13 @@
     line-height: 67px;
     font-size: 16px;
     padding: 0 30px;
+  }
+}
+
+.checked {
+  @media (max-width: 767.97px) {
+  background-color: $orange !important;
+  color: white!important;
   }
 }
 

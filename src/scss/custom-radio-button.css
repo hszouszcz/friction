@@ -16,7 +16,7 @@
   border: 1px solid #eeeeee; }
   @media (max-width: 767.97px) {
     .radio-container {
-      width: 100px;
+      width: 140px;
       height: 44px;
       line-height: 44px;
       font-size: 14px;
@@ -29,6 +29,11 @@
       line-height: 67px;
       font-size: 16px;
       padding: 0 30px; } }
+
+@media (max-width: 767.97px) {
+  .checked {
+    background-color: #ff7f18 !important;
+    color: white !important; } }
 
 @media (max-width: 767.97px) {
   .radio-container:first-child {

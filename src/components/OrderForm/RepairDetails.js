@@ -3,10 +3,14 @@ import RadioInputSection from '../shared/inputs/radio-input-section';
 import RadioInput from '../shared/inputs/radio-input';
 import CustomSelect from '../shared/select/select';
 import '../../scss/order-form.css';
+import RepairType from './RepairType';
 
 const RepairDetails = (props) => {
   return (
+    <div>
+      <RepairType/>
       <div className="row">
+
         <div className="col-md-10 offset-md-1">
           <span className="order-form-title">Szczegóły naprawy</span>
           <div className="order-section">
@@ -35,7 +39,7 @@ const RepairDetails = (props) => {
           </div>
           <div className="order-section">
             <span className="section-title">Opis (model buta, rozmiar), inne naprawy z cennika, itp.*</span>
-            <textarea />
+            <textarea/>
           </div>
           <div className="note">
             <p>* Prosimy podać inne wymagane naprawy w polu "Opis" !</p>
@@ -43,7 +47,7 @@ const RepairDetails = (props) => {
           </div>
         </div>
       </div>
-
+    </div>
   );
 };
 

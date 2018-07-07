@@ -3,39 +3,21 @@ import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
 
-class CustomSelect extends Component {
-  state = {
-    selectedOption: '',
-  };
-  handleChange = (selectedOption) => {
-    this.setState({ selectedOption });
-    // selectedOption can be null when the `x` (close) button is clicked
-    if (selectedOption) {
-      console.log(`Selected: ${selectedOption.label}`);
-    }
-  };
-  render() {
-    const { selectedOption } = this.state;
+const CustomSelect = (props) => (
+  <div className="col-md-12 col-lg-11" style={{paddingLeft: 0}}>
+    <Select
+      clearable={false}
+      placeholder={props.placeholder}
+      className="friction-custom-select"
+      optionClassName="friction-custom-select-option"
+      name="form-field-name"
+      inputProps={{readOnly: true}}
+      value={props.model}
+      onChange={(option) => props.callback(option)}
+      options={props.options}
+    />
+  </div>
+);
 
-    return (
-     <div>
-       <Select
-        clearable={false}
-        placeholder={"Wybierz rodzaj gumy"}
-        className="friction-custom-select"
-        optionClassName="friction-custom-select-option"
-        name="form-field-name"
-        inputProps={{readOnly: true}}
-        value={selectedOption}
-        onChange={this.handleChange}
-        options={[
-          { value: 'one', label: 'One' },
-          { value: 'two', label: 'Two' },
-        ]}
-      />
-     </div>
-    );
-  }
-}
 
 export default CustomSelect;
