@@ -22,13 +22,6 @@ const Repair = () => {
         <span>zobacz wiecej</span>
         <i className="fa fa-long-arrow-right"/>
       </button>
-      <RadioInputSection>
-        <RadioInput label="Standardowa" callback={null} />
-        <RadioInput label="Standardowa" callback={null} />
-        <RadioInput label="Standardowa" callback={null} />
-      </RadioInputSection>
-
-     <CustomSelect />
     </div>
   );
 };

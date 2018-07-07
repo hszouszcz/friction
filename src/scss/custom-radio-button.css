@@ -2,7 +2,7 @@
 .radio-container {
   display: block;
   position: relative;
-  margin: 15px;
+  margin: 15px 15px 15px 0;
   padding: 0 30px;
   cursor: pointer;
   font-size: 18px;
@@ -13,7 +13,7 @@
   user-select: none;
   width: 270px;
   height: 72px;
-  border: 1px solid #6e6e6e; }
+  border: 1px solid #eeeeee; }
   @media (max-width: 767.97px) {
     .radio-container {
       width: 100px;
@@ -21,7 +21,6 @@
       line-height: 44px;
       font-size: 14px;
       text-align: center;
-      margin: 10px;
       padding: 0; } }
   @media (min-width: 767.97px) and (max-width: 1023px) {
     .radio-container {
@@ -29,8 +28,11 @@
       height: 67px;
       line-height: 67px;
       font-size: 16px;
-      padding: 0 30px;
-      margin: 15px; } }
+      padding: 0 30px; } }
+
+@media (max-width: 767.97px) {
+  .radio-container:first-child {
+    margin-left: 0; } }
 
 /* Hide the browser's default checkbox */
 .radio-container input {
@@ -80,7 +82,7 @@
   transform: rotate(45deg); }
 
 .friction-custom-select {
-  border: 1px solid #6e6e6e;
+  border: 1px solid #eeeeee;
   border-radius: 0;
   padding: 20px 30px 0 30px;
   height: 72px; }
@@ -102,6 +104,8 @@
     .friction-custom-select .Select-control:hover {
       border: none !important;
       box-shadow: none !important; }
+    .friction-custom-select .Select-control .Select-input input {
+      border: none; }
 
 .friction-custom-select-option {
   color: #6e6e6e; }

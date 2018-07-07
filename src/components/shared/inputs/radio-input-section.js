@@ -3,7 +3,7 @@ import '../../../scss/radio-input-section.css'
 
 const RadioInputSection = (props) => {
   return (
-    <div className="radio-input-section col-md-12" >
+    <div className="radio-input-section" >
       {props.children}
     </div>
   );

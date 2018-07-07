@@ -11,6 +11,10 @@
     width: 100px;
   }
 
+  .dropdown-menu {
+    background-color: $onyx;
+  }
+
   .dropdown-item {
     background-color: $onyx;
     color: $text-color;
@@ -19,7 +23,6 @@
 
   .nav-item {
     a {
-      color: $onyx;
       line-height: 1;
     }
   }

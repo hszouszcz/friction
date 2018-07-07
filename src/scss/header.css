@@ -6,12 +6,13 @@
   background: white; }
   .header .logo {
     width: 100px; }
+  .header .dropdown-menu {
+    background-color: #05080c; }
   .header .dropdown-item {
     background-color: #05080c;
     color: #fff;
     padding: 13px 30px; }
   .header .nav-item a {
-    color: #05080c;
     line-height: 1; }
   @media (max-width: 767.98px) {
     .header .nav-item:not(:first-child) {

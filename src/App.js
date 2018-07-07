@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect
+} from 'react-router-dom'
+import './assets/fonts/roboto/fonts.css'
 import "./css/bootstrap.min.css";
 import './App.scss';
 import './assets/fonts/font-awesome/css/font-awesome.min.css';
 import Header from './components/header/header';
-import About from './components/about/about';
-import Guide from './components/guide/guide';
-import Rubber from './components/Rubber/Rubber';
-import Order from "./components/order/order";
 import Footer from './components/footer/footer';
+import OrderForm from './components/OrderForm/OrderForm';
+import HomePage from './pages/HomePage';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+     <Router>
+       <div className="App">
        <Header />
-        <About />
-        <Guide />
-        <Rubber />
-        <Order />
+         <Route exact={true} path="/" component={HomePage}/>
+         <Route path="/order" component={OrderForm} />
         <Footer />
+
       </div>
+
+     </Router>
     );
   }
 }

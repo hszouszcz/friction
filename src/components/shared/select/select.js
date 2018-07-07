@@ -18,7 +18,8 @@ class CustomSelect extends Component {
     const { selectedOption } = this.state;
 
     return (
-      <Select
+     <div>
+       <Select
         clearable={false}
         placeholder={"Wybierz rodzaj gumy"}
         className="friction-custom-select"
@@ -32,6 +33,7 @@ class CustomSelect extends Component {
           { value: 'two', label: 'Two' },
         ]}
       />
+     </div>
     );
   }
 }

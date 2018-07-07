@@ -2,6 +2,8 @@ import React from 'react';
 import logo from '../../assets/img/logo.jpg';
 
 import "../../scss/header.css";
+import OrderForm from '../OrderForm/OrderForm';
+import {Link} from 'react-router-dom';
 
 const Header = () => (
   <div className="header">
@@ -22,6 +24,7 @@ const Header = () => (
             <a className="dropdown-item" href="#">Kontakt</a>
             <a className="dropdown-item" href="#">Dane do przelewu</a>
             <a className="dropdown-item" href="#">English</a>
+            <Link to="/order">Zamów</Link>
           </div>
         </div>
       </li>

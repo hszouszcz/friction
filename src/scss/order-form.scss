@@ -1,0 +1,136 @@
+@import 'variables.scss';
+
+.order-form {
+  color: $gray;
+  .order-form-title {
+    display: inline-block;
+    padding-bottom: 30px;
+    font-size: $text24;
+    @media (max-width: 767.97px) {
+      font-size: $text16;
+    }
+  }
+  .order-section {
+    padding-bottom: 30px;
+    //margin-left: 15px;
+    .section-title {
+      font-size: $text18;
+      @media (max-width: 767.97px) {
+        font-size: $text12;
+      }
+    }
+
+    label {
+      color: $gray;
+      font-size: $text12;
+      margin-bottom: 15px;
+      display: block;
+
+    }
+    input {
+      padding: 10px;
+      font-size: $text14;
+      border: 1px solid $border-color;
+      color: $gray;
+      margin-bottom: 30px;
+      width: 100%;
+      &:focus {
+        outline: none;
+        border: 2px solid $border-color;
+      }
+      @media (min-width: 767.97px) {
+        &:first-child {
+          margin-left: 15px;
+        }
+        &:last-child {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  .order-section .col-md-6 {
+    @media (min-width: 767.97px) {
+      padding-right: 15px;
+    }
+  }
+  textarea {
+    border: 1px solid $border-color;
+    padding: 30px;
+    width: 100%;
+    resize: none;
+    color: $gray;
+    font-size: $text16;
+    @media (max-width: 767.97px) {
+      padding: 10px;
+      font-size: $text12;
+    }
+    &:focus {
+      border: 2px solid $border-color;
+      outline: none;
+    }
+  }
+  p {
+    font-size: $text14;
+    @media (max-width: 767.97px) {
+      font-size: $text12;
+    }
+  }
+  .orderFormFooter {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    .navigation {
+      width: 100%;
+      padding: 0 15px;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      @media (max-width: 767.97px) {
+        flex-direction: column;
+      }
+      button {
+        @media (max-width: 767.97px) {
+          width: 100%;
+          display: block;
+          text-align: center;
+          margin: 10px 0;
+        }
+        &.back {
+          border: 1px solid $border-color;
+          background-color: white;
+          &:before {
+            @media (min-width: 767.97px) {
+              font-family: 'FontAwesome';
+              content: "\F177";
+              padding-right: 10px;
+            }
+          }
+        }
+        &.forward {
+          background-color: $onyx;
+          color: white;
+          &:after {
+            @media (min-width: 767.97px) {
+              font-family: 'FontAwesome';
+              content: "\F178";
+              padding-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .agreement {
+    .order-section {
+      display: flex;
+      justify-content: flex-start;
+      input {
+        width: auto;
+        margin-right: 10px;
+
+      }
+    }
+  }
+}
