@@ -1,9 +1,9 @@
 import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
-
+import '../../scss/docs.css';
 const GuideView = (props) => {
   return (
-    <div className="guide-view col-md-6 offset-md-1">
+    <div className="guide-view docs col-md-6 offset-md-1">
       <div className="breadcrumbs">Poradnik - Naprawa butów wspinaczkowych</div>
       <div className="title">Dlaczego warto naprawić buty wspinaczkowe?</div>
       <div className="links">

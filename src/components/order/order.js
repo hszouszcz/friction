@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
 import OrderStep from './order-step';
 import "./../../scss/order.css";
-import ModalForm from '../shared/modal/modal';
+import { Route } from 'react-router-dom'
 
 class Order extends Component  {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false,
-    };
-    this.toggle = this.toggle.bind(this);
-  }
 
-  toggle() {
-    this.props.modal = !this.props.modal
-  }
-
-
-
+   button = () => (
+    <Route render={({ history}) => (
+      <button
+        className="dark right"
+        type='button'
+        onClick={() => { history.push('/order-rules') }}
+      >
+        <span>zobacz wiecej</span>
+        <i className="fa fa-long-arrow-right"/>
+      </button>
+    )} />
+  )
 
   render() {
     return (
@@ -64,10 +63,7 @@ class Order extends Component  {
                    Internet, I'm now bored with sex."
           />
         </div>
-        <button className="dark right" onClick={() => this.setState({modal: !this.state.modal})}>
-          <span>zobacz wiecej</span>
-          <i className="fa fa-long-arrow-right"/>
-        </button>
+        {this.button()}
       </div>
     )
   }

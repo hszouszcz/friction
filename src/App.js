@@ -15,6 +15,10 @@ import Footer from './components/footer/footer';
 import OrderForm from './components/OrderForm/OrderForm';
 import HomePage from './pages/HomePage';
 import GuideView from './components/guide/GuideView';
+import OrderRules from './components/order/OrderRules';
+import Terms from './components/terms/terms';
+import Treks from './components/boots/trek';
+import RubberView from './components/Rubber/RubberView';
 
 class App extends Component {
   render() {
@@ -25,6 +29,10 @@ class App extends Component {
          <Route exact={true} path="/" component={HomePage}/>
          <Route path="/order" component={OrderForm} />
          <Route path="/guide" component={GuideView} />
+         <Route path="/order-rules" component={OrderRules} />
+         <Route path="/terms" component={Terms} />
+         <Route path="/treks" component={Treks} />
+         <Route path="/rubbers" component={RubberView} />
         <Footer />
 
       </div>

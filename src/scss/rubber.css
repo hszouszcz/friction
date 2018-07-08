@@ -16,3 +16,29 @@
     .rubber {
       padding-top: 30px;
       padding-bottom: 35px; } }
+
+.rubber-type {
+  color: #6e6e6e;
+  border-bottom: 1px solid #dadfe5;
+  border-top: 1px solid #dadfe5;
+  padding: 15px 0; }
+  .rubber-type .rubber-name {
+    font-size: 14px; }
+  .rubber-type .rubber-params {
+    display: flex;
+    justify-content: space-between; }
+  .rubber-type .bar-title {
+    font-size: 12px;
+    color: #6e6e6e; }
+  .rubber-type .bar {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px; }
+    .rubber-type .bar div {
+      content: '';
+      height: 15px; }
+      .rubber-type .bar div:last-child {
+        background-color: #dadfe5; }
+
+.rubber-type:last-of-type {
+  margin-bottom: 30px; }

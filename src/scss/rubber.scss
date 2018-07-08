@@ -22,5 +22,42 @@
     padding-top: 30px;
     padding-bottom: 35px;
   }
-  
+}
+
+.rubber-type {
+  color: $gray;
+  border-bottom: 1px solid $light-gray;
+  border-top: 1px solid $light-gray;
+  padding: 15px 0;
+
+  .rubber-name {
+    font-size: $text14;
+  }
+
+  .rubber-params {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .bar-title {
+    font-size: $text12;
+    color: $gray;
+  }
+  .bar {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    div {
+      content: '';
+      height: 15px;
+      &:last-child {
+        background-color: $light-gray;
+      }
+    }
+  }
+}
+
+.rubber-type:last-of-type {
+  margin-bottom: 30px;
 }
