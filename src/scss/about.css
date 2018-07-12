@@ -44,6 +44,12 @@
       font-size: 18px;
       color: white;
       font-weight: lighter; }
+    @media (max-width: 425px) {
+      .about .content {
+        padding-top: 50px; } }
+    @media (min-width: 425.1px) and (max-width: 767.96px) {
+      .about .content {
+        padding-top: 15%; } }
     @media (max-width: 992px) {
       .about .content .second-col {
         display: none; } }

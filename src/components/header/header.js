@@ -9,7 +9,7 @@ const Header = () => (
   <div className="header">
     <nav className="navbar navbar-light sticky-top col-lg-10 offset-lg-1">
     <a className="navbar-brand"><img className="logo" src={logo} alt={"logo"}/></a>
-    <ul className="nav justify-content-end menu-items-nav">
+    <ul className="nav justify-content-end menu-items-nav" style={{alignItems: 'center'}}>
       <li className="nav-item mobile-menu">
         <div className="dropdown">
           <button className="btn-outline-light" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -18,18 +18,18 @@ const Header = () => (
           </button>
           <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
             <a className="dropdown-item" href="#">Cennik</a>
-            <Link to="/guide">Poradnik</Link>
+            <Link className="dropdown-item" to="/guide">Poradnik</Link>
             <a className="dropdown-item" href="#">Regulamin</a>
             <a className="dropdown-item" href="#">Fotogaleria</a>
             <a className="dropdown-item" href="#">Kontakt</a>
             <a className="dropdown-item" href="#">Dane do przelewu</a>
             <a className="dropdown-item" href="#">English</a>
-            <Link to="/order">Zamów</Link>
+            <Link className="dropdown-item" to="/order">Zamów</Link>
           </div>
         </div>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">EN</a>
+        <a className="nav-link black-text" href="#">EN</a>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="#">Zamów</a>
