@@ -3,11 +3,14 @@ import '../../scss/about.css';
 import Bullets from './bullets';
 import AboutContent from './aboutContent';
 import Button from '../shared/Button';
-
+import banner from '../../assets/img/main.png'
+import mobileBanner from '../../assets/img/banner-mobile.png'
 const About = () => (
   <div className="about">
+    <img src={banner} className="screen-img"/>
+    <img src={mobileBanner} alt="" className="mobile-img"/>
     <div className="col-md-10 offset-md-1">
-      <div className="row">
+      <div className="row bullets">
         <Bullets/>
       </div>
       <AboutContent
