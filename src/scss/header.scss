@@ -1,5 +1,8 @@
 @import 'variables.scss';
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400') ;
+*:not(i) {
+  font-family: 'Roboto', sans-serif !important;
+}
 .header {
   position: -webkit-sticky;
   position: sticky;

@@ -2,13 +2,7 @@
 
 .about {
   background: $onyx;
-  padding-top: 30px;
-  padding-bottom: 35px;
   position: relative;
-
-  @media(min-width: 976.97px) {
-    margin-top: 100px;
-  }
 
   .screen-img {
     display: none;
@@ -35,20 +29,15 @@
 
   .bullets {
     display: none;
-    padding-top: 5%;
 
     @media(min-width: 767.97px) {
       display: flex;
-      padding-top: 15%;
+      padding-bottom: 50px;
+      font-size: 2em;
     }
-    @media(min-width: 1069px) {
-      padding-top: 20%;
-    }
-
   }
 
   .content {
-    padding: 30px 0;
     .title {
       font-size: $text16;
       color: $light-gray;
@@ -58,14 +47,6 @@
       font-size: $text18;
       color: white;
       font-weight: lighter;
-    }
-
-    @media (max-width: 425px) {
-      padding-top: 50px;
-    }
-
-    @media (min-width: 425.1px) and (max-width: 767.96px) {
-      padding-top: 15%;
     }
 
     @media (max-width: 992px) {

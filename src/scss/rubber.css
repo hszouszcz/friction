@@ -1,5 +1,6 @@
 .rubber {
-  background-color: #05080c; }
+  background-color: #05080c;
+  color: #F9F9F9; }
   .rubber .rubber-image {
     padding-left: 0; }
     .rubber .rubber-image img {
@@ -41,7 +42,7 @@
         display: none; } }
 
 .rubber-type {
-  color: #6e6e6e;
+  color: #6f7983;
   border-bottom: 1px solid #dadfe5;
   border-top: 1px solid #dadfe5;
   padding: 15px 0; }
@@ -52,7 +53,7 @@
     justify-content: space-between; }
   .rubber-type .bar-title {
     font-size: 12px;
-    color: #6e6e6e; }
+    color: #6f7983; }
   .rubber-type .bar {
     display: flex;
     flex-direction: row;

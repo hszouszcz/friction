@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
 import OrderStep from './order-step';
 import "./../../scss/order.css";
+import '../../scss/common-styles.css';
 import { Route } from 'react-router-dom'
+import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
+import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 
 class Order extends Component  {
 
    button = () => (
-    <Route render={({ history}) => (
-      <button
-        className="dark right"
-        type='button'
-        onClick={() => { history.push('/order-rules') }}
-      >
-        <span>zobacz wiecej</span>
-        <i className="fa fa-long-arrow-right"/>
-      </button>
+    <Route render={({history}) => (
+      <ButtonsRow>
+        <ForwardButton
+          text="Zobacz więcej"
+          theme="black"
+          onClick={() => { history.push('/order-rules') }}
+          forward
+        />
+      </ButtonsRow>
     )} />
-  )
+  );
 
   render() {
     return (
-      <div className="order col-md-10 offset-md-1">
+      <div className="order col-md-8 offset-md-2">
         <div className="row">
           <OrderStep
             icon="fa fa-shopping-basket"

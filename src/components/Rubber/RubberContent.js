@@ -1,13 +1,15 @@
 import React from 'react';
+import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
+import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 
 const RubberContent = () => {
   return (
-    <div className="rubber-content col-lg-4 offset-lg-1">
-      <div className="title">Gumy</div>
+    <div className="rubber-content col-lg-5">
+      <div className="section-title">Gumy</div>
       <div className="caption-title">
         Czym różnią się dostępne rodzaje gum na podeszwę?
       </div>
-      <div className="text" style={{
+      <div className="common-text" style={{
         overflow: 'hidden',
         display: '-webkit-box',
         lineClamp: 3,
@@ -16,14 +18,15 @@ const RubberContent = () => {
         Gumy stosowane na podeszwy obuwia wspinaczkowego ewoluowały od prawie 30 lat.
         Tak długi okres pracy różnych ośrodków badawczo-wdrożeniowych przyczynił się do obecnej bardzo szerokiej oferty...
       </div>
-      <button className="dark" style={{
-        display: 'flex',
-        paddingLeft: 0,
-        alignItems: 'center'
-      }}>
-        <span>zobacz wiecej</span>
-        <i className="fa fa-long-arrow-right" />
-      </button>
+      <ButtonsRow>
+        <div></div>
+        <ForwardButton
+          text="Zobacz więcej"
+          theme="black"
+          onPress={() => null}
+          forward
+        />
+      </ButtonsRow>
     </div>
   );
 };

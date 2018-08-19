@@ -9,7 +9,7 @@ const OrderRules = (props) => {
       <div className="anchor-title">
         Krok pierwszy: Złożenie zamównienia
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         - dodaj do koszyka i opisz każdą wysyłaną do naprawy parę butów
         - wprowadź swoje dane oraz adres do wysyłki
         - wybierz sposób płatności i rodzaj przesyłki zwrotnej
@@ -18,7 +18,7 @@ const OrderRules = (props) => {
       <div className="anchor-title">
         Krok drugi: Wysłanie butów
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         - poczekaj na e-mailowe potwierdzenie z numerem zamówienia
         - wyczyść i przygotuj buty do wysyłki
         - dołącz do paczki numer zamówienia
@@ -26,7 +26,7 @@ const OrderRules = (props) => {
       <div className="anchor-title">
         Krok trzeci: Płatność i realizacja
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         - poczekaj aż paczka dotrze do nas
         - po zweryfikowaniu zakresu naprawy przyjmujemy zlecenie do realizacji
         - wysyłamy e-maila z potwierdzeniem ostatecznej wyceny
@@ -36,7 +36,7 @@ const OrderRules = (props) => {
       <div className="anchor-title">
         Krok czwarty: Paczka zwrotna
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         - po wykonaniu naprawy przygotowujemy paczkę zwrotną
         - zamawiamy kuriera lub przesyłkę pocztowa
         - po nadaniu paczki wysyłamy e-mailem potwierdzenie wysyłki
@@ -46,7 +46,7 @@ const OrderRules = (props) => {
       <div className="anchor-title">
         Ile zajmuje naprawa butów?
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Większość napraw butów wspinaczkowych wykonujemy w czasie 5-7 dni roboczych od momentu otrzymania przesyłki.
         Część napraw gotowa jest wcześniej, dotyczy to butów, które zostały przysłane we właściwym stanie i nie wymagały
         żadnych dodatkowych zabiegów. Natomiast niektóre naprawy zajmują nieco więcej czasu, zazwyczaj spowodowane jest to

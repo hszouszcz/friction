@@ -8,7 +8,7 @@ const OrderStep = (props) => (
         </div>
         <div className="col-9">
             <div className="title">{props.title}</div>
-            <div className="desc">{props.text}</div>
+            <div className="common-text">{props.text}</div>
         </div>
     </div>
  </div>

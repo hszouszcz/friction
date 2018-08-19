@@ -5,7 +5,7 @@ const Bullet = (props) => {
   return (
     <div className="bullet col-md-4">
       <div className="bullet-dot">-</div>
-      <div className='text'>{props.text}</div>
+      <div className='bullet-text'>{props.text}</div>
     </div>
   );
 };

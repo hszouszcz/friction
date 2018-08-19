@@ -16,7 +16,7 @@ const Treks = (props) => {
       <div className="anchor-title">
         Lekkie buty podejściowe
       </div>
-      <div className="anchor-text">
+      <div className="common-text">
         Do tej grupy zaliczają się niskie buty podejściowe i trekkingowe oraz wyższe buty trekkingowe o lekkiej
         konstrukcji. Buty o takiej budowie wyposażone są w stosunkowo cienką podeszwę, często z ochroną rantu na
         czubkach butów. W bardziej zaawansowanych i technicznych modelach przednia część podeszwy jest płaska (climbing
@@ -34,7 +34,7 @@ const Treks = (props) => {
       <div className="anchor-title">
         Buty podejściowe i trekkingowe - podeszwa gumowa
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Buty górskie i trekkingowe są butami o masywniejszej i wyższej budowie. Zazwyczaj cholewka buta sięga nieco
         powyżej kostki i umożliwia stabilne objęcie i trzymanie stopy. Wyposażone są w warstwę amortyzującą z pianki PU
         lub EVA oraz w niezależną podeszwę gumową o zwiększonej grubości.
@@ -45,7 +45,7 @@ const Treks = (props) => {
       <div className="anchor-title">
         Buty górskie i trekkingowe z podeszwą amortyzowaną
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Część butów górskich i trekkingowych wyposażona jest w dedykowane podeszwy amortyzowane. Podeszwy tego rodzaju
         łączą w jednym elemencie zarówno warstwę pochłaniającą wstrząsy jak również warstwę gumową zapewniającą dobrą
         przyczepność do podłoża.

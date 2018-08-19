@@ -2,7 +2,7 @@ import React from 'react';
 import './../../scss/footer.css';
 const Footer = () => (
     <footer>
-        <div className="row col-md-10 offset-md-1">
+        <div className="row col-md-8 offset-md-2">
          <div className="col-md-4 col-lg-3 section logo">logo</div>
             <div className="col-md-4 col-lg-3  section">
             <div className="title">Adres</div>

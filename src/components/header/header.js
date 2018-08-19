@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 
 const Header = () => (
   <div className="header">
-    <nav className="navbar navbar-light sticky-top col-lg-10 offset-lg-1">
+    <nav className="navbar navbar-light sticky-top col-md-8 offset-md-2">
     <a className="navbar-brand"><img className="logo" src={logo} alt={"logo"}/></a>
     <ul className="nav justify-content-end menu-items-nav" style={{alignItems: 'center'}}>
       <li className="nav-item mobile-menu">

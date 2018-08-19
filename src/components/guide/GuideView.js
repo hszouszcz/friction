@@ -23,7 +23,7 @@ const GuideView = (props) => {
       <div className="anchor-title">
         Wygoda
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Rozbicie i dopasowanie się do stopy nowych butów zajmuje zazwyczaj całkiem sporo czasu. Dopiero po tym procesie
         buty uzyskują najlepszą precyzję oraz czucie. Jednak z czasem guma na podeszwie ulega wytarciu i buty, mimo że
         idealnie dopasowane, nie pracują już tak dobrze. Wymiana zużytej podeszwy w takich butach pozwala nie tylko
@@ -32,14 +32,14 @@ const GuideView = (props) => {
       <div className="anchor-title">
         Koszt
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Naprawa butów wspinaczkowych jest opcją znacznie tańszą niż zakup nowej pary. Dotyczy to zwłaszcza butów z
         górnej półki.
       </div>
       <div className="anchor-title">
         Na czym polega naprawa butów?
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Naprawa butów wspinaczkowych najczęściej dotyczy uszkodzeń i zużycia gumy na podeszwie oraz na przedniej części
         buta. Najprostszym przypadkiem jest wymiana samych podeszw, tzn. usunięcie starej gumy i zastąpienie jej nową
         warstwą naklejaną na gorąco z użyciem najnowszych materiałów i technologii. Proces ten przywraca oryginalne
@@ -49,7 +49,7 @@ const GuideView = (props) => {
       <div className="anchor-title">
         Jaką grubość gumy wybrać na podeszwę?
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         1. Cieńsza guma (4 mm) sprawia, że but będzie miał lepsze czucie i będzie bardziej precyzyjny. Równocześnie
         cieńsza podeszwa ulega szybszemu zużyciu i daje bardziej 'miękkiego' buta.
         2. Zalety grubszej gumy (5 mm) to większa sztywność buta po podklejeniu oraz większa trwałość przy nieco
@@ -60,14 +60,14 @@ const GuideView = (props) => {
       <div className="anchor-title">
         Co to są ranty?
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Rant to cienki pasek gumy, który otacza przód i boki buta i zawija się pod podeszwę. Ranty w sporym stopniu
         decydują o kształcie czubka buta oraz są bazą, do której jest przyklejona podeszwa.
       </div>
       <div className="anchor-title">
         Kiedy ranty ulegają uszkodzeniu?
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Podczas wspinania zawsze występuje mniejszy lub większy kontakt rantów ze skałą. Powoduje to, że z czasem ranty
         ulegają stopniowemu wytarciu. Szybkość zużycia rantów w dużym stopniu zależy od stylu wspinania i rodzaju
         formacji (np. haczenie palców stopy i wspinanie w rysach bardzo mocno obciążają ranty).
@@ -80,7 +80,7 @@ const GuideView = (props) => {
       <div className="anchor-title">
         Jak mogę ustalić czy wymiana rantów jest konieczna?
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         1. Jeśli guma na rantach w okolicy czubka buta jest przetarta, ma widoczne nacięcia, przekłucia lub wyraźnie
         wyczuwalny pod palcem spadek grubości, wówczas wymiana rantów jest konieczna.
         2. Nawet jeśli ranty nie mają wyraźnych przetarć miejscowych, ich stan ogólny może być na tyle zły (co widać
@@ -91,7 +91,7 @@ const GuideView = (props) => {
       <div className="anchor-title">
         Jak wykonujemy ranty?
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Każdy but posiada swój charakterystyczny profil i geometrię, które powodują, że będąc idealnym dla jednej stopy
         zupełnie nie leży na innej. O kształcie buta decydują ranty oraz cholewka (materiał wewnętrzny, szycie).
         Wymianę rantów przeprowadzamy bardzo starannie. Nie stosujemy uniwersalnego wzoru, każdy model traktujemy
@@ -101,14 +101,14 @@ const GuideView = (props) => {
       <div className="anchor-title">
         Czy mogę naprawić tylko ranty butów bez wymiany podeszwy?
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Wymiana samych rantów nie jest możliwa. Wynika to z konstrukcji buta wspinaczkowego, bowiem podeszwa jest
         przyklejona do rantów i jej zeszlifowanie jest konieczne do wymiany rantów.
       </div>
       <div className="anchor-title" id="not-least">
         Ile razy można podklejać buty?
       </div>
-      <div className="anchor-text" id="last">
+      <div className="common-text anchor-text-padding" id="last">
         Zazwyczaj, w przypadku butów w dobrym stanie, nieuszkodzonych i niezużytych nadmiernie, pierwsze dwa podklejenia
         dają bardzo dobre rezultaty.
         Przy kolejnych podklejeniach, lub przy większych uszkodzeniach, trzeba liczyć się ze stopniową utratą

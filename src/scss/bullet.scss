@@ -1,8 +1,17 @@
+@import './variables.scss';
 .bullet {
-  color: white;
+  color: $snow;
+  font-size: 16px;
   .bullet-dot {
-    font-size: 42px;
+    font-size: 4em;
+    line-height: 0.5;
     margin-top: 20px;
+    font-weight: lighter;
+  }
+  .bullet-text {
+    font-size: .9em;
+    font-weight: lighter;
+    line-height: $line-height;
   }
   .bullet-dot:first-child {
     margin-top: 0;

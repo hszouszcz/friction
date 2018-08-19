@@ -69,7 +69,22 @@
     }
 }
 
-
 .has-button {
     margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 0.7em;
+    color: #dadfe5;
+    margin-bottom: 20px;
+}
+
+.common-text {
+    line-height: 1.8;
+    font-size: 0.8em;
+}
+
+.caption-title {
+    line-height: 1.8;
+    font-size: 2em;
 }

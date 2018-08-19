@@ -1,0 +1,12 @@
+.move-forward {
+  background-color: transparent;
+  padding: 0;
+  line-height: 24px; }
+  .move-forward i {
+    padding: 0 15px; }
+
+.footer-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 15px; }

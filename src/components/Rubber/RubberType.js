@@ -9,7 +9,7 @@ const RubberType = (props) => {
           {props.name}
         </div>
         <div className="col-9">
-          <div className="anchor-text">
+          <div className="common-text anchor-text-padding">
             {props.description}
           </div>
           <div className="rubber-params row">

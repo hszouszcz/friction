@@ -21,7 +21,7 @@ const Terms = (props) => {
         <Link smooth to="/terms">Gwarancja</Link>
       </div>
 
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Właścicielem portalu friction.pl jest firma Friction s.c. z siedzibą pod adresem ul. Szuwarowa 6/113, 30-384
         Kraków, posługująca się numerem NIP 676-242-62-03. Niniejszy regulamin określa zasady i warunki świadczenia
         usług naprawy obuwia wspinaczkowego i trekkingowego przez firmę Friction.
@@ -30,7 +30,7 @@ const Terms = (props) => {
       <div className="anchor-title">
         Składanie zamówień
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Zamówienia składa się drogą elektroniczną poprzez wypełnienie internetowego formularza Zamówienia. Poszczególne
         pary butów powinny być dodane jako osobne pozycje w koszyku. Po wprowadzeniu danych kontaktowych, na podany w
         zamówieniu adres e-mail wysyłane jest potwierdzenie zamówienia. Numer zamówienia otrzymany w potwierdzeniu
@@ -42,13 +42,13 @@ const Terms = (props) => {
       <div className="anchor-title">
         Ceny
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Podane ceny usług są cenami brutto, tj. zawierają podatek VAT.
       </div>
       <div className="anchor-title">
         Przygotowanie butów wspinaczkowych do naprawy
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         - Wysyłane do naprawy buty powinny być czyste.
         - Po wyczyszczeniu buty należy dokładnie wysuszyć, unikając intensywnych źródeł ciepła.
         - Bezwzględnie nie należy prać butów ze skóry naturalnej TUŻ PRZED wysłaniem do naprawy.
@@ -63,7 +63,7 @@ const Terms = (props) => {
       <div className="anchor-title">
         Realizacja zamówień
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         W momencie odebrania przesyłki sprawdzamy, czy zamówione usługi zgadzają się ze stanem faktycznym. Jeśli
         konieczna jest korekta (np. dodatkowa wymiana rantów) dokonujemy aktualizacji wyceny zamówienia.
         Odebranie paczki potwierdzamy emailem, przesyłając ewentualną zmianę wyceny. Dla zamówień z płatnością przelewem
@@ -74,7 +74,7 @@ const Terms = (props) => {
       <div className="anchor-title">
         Czas realizacji naprawy
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         W przypadku większości zamówień czas realizacji waha się w granicach 5-10 dni roboczych dla butów wspinaczkowych
         i 7-14 dni roboczych dla butów trekkingowych. Maksymalny czas realizacji zamówienia to 14 dni roboczych. W
         szczególnych przypadkach (np. duże zamówienia grupowe, zdarzenia losowe) termin realizacji może ulec
@@ -85,21 +85,21 @@ const Terms = (props) => {
       <div className="anchor-title">
         Tryb ekspresowy
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Naprawy w trybie ekspresowym wykonywnae są w czasie do 4 dni roboczych. Tryb ekspresowy wiąże się z dopłatą 30%
         i wymaga uprzedniego potwierdzenia telefonicznego.
       </div>
       <div className="anchor-title">
         Faktury VAT
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Na życzenie klienta wystawiamy fakturę VAT. W celu otrzymania faktury należy zaznaczyć odpowiednią opcję w
         trakcie składania zamówienia oraz podać dane do faktury.
       </div>
       <div className="anchor-title">
         Dostawa
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Kosztami przesyłki zwrotnej obciążany jest zamawiający. Dla przesyłek krajowych dostępne są następujące sposoby
         dostawy: przesyłka kurierska, przesyłka pocztowa, odbiór osobisty w Krakowie w oddziale przy ul. Romanowicza
         4/543.
@@ -119,7 +119,7 @@ const Terms = (props) => {
       <div className="anchor-title">
         Formy płatności
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Akceptowane formy płatności to: przelew na konto bankowe (przesyłki niepobraniowe), płatność w momencie odbioru
         paczki (przesyłka pobraniowa) oraz gotówka (odbiór osobisty). Dla przelewów bankowych (dane do przelewu w
         zakładce Kontakt) prosimy o podanie numeru zamówienia w tytule przelewu. Pozwola to na przyspieszenie obsługi
@@ -128,7 +128,7 @@ const Terms = (props) => {
       <div className="anchor-title">
         Nieodebranie zamówienia w terminie
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Zamawiający naprawę akceptuje, że w przypadku nieodebrania naprawionego obuwia w wyznaczonym terminie firma
         Friction s.c. będąca wykonawcą naprawy nie jest zobowiązana do przechowywania danego zamówienia.
         Zamawiający poprzez nieodebranie wyrobu w terminie do trzech miesięcy od dokonania naprawy wyraża zgodę na
@@ -138,14 +138,14 @@ const Terms = (props) => {
       <div className="anchor-title">
         Gwarancja
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Do każdej przesyłki dołączany jest paragon lub faktura VAT, będące podstawą gwarancji. Gwarancja obejmuje
         wykonane usługi w ramach naprawy obuwia wspinaczkowego i trekkingowego w zakresie wymiany podeszwy oraz rantów.
         Nie objęte gwarancją pozostają natomiast wszelkie uszkodzenia lub zużycia (rantów, podeszwy) powstałe w wyniku
         normalnego użytkowania obuwia lub też będące wynikiem uszkodzeń mechanicznych lub innych powstałych z winy
         klienta.
       </div>
-      <div className="anchor-text">Kraków, 2014-01-18, ostatnia aktualizacja 2017-04-04</div>
+      <div className="common-text anchor-text-padding">Kraków, 2014-01-18, ostatnia aktualizacja 2017-04-04</div>
     </div>
   );
 };

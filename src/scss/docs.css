@@ -1,6 +1,6 @@
 .docs .breadcrumbs {
   font-size: 12px;
-  color: #6e6e6e; }
+  color: #6f7983; }
 
 .docs .title {
   color: #05080c;
@@ -21,11 +21,8 @@
 
 .docs .anchor-title {
   font-size: 18px;
-  color: #6e6e6e;
+  color: #6f7983;
   padding-bottom: 10px; }
 
-.docs .anchor-text {
-  font-size: 12px;
-  color: #6e6e6e;
-  padding-bottom: 30px;
-  line-height: 22px; }
+.docs .anchor-text-padding {
+  padding-bottom: 30px; }

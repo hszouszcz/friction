@@ -1,8 +1,9 @@
 .order-form {
-  color: #6e6e6e; }
+  color: #6f7983; }
   .order-form .order-form-title {
     display: inline-block;
     padding-bottom: 30px;
+    padding-top: 30px;
     font-size: 24px; }
     @media (max-width: 767.97px) {
       .order-form .order-form-title {
@@ -15,7 +16,7 @@
         .order-form .order-section .section-title {
           font-size: 12px; } }
     .order-form .order-section label {
-      color: #6e6e6e;
+      color: #6f7983;
       font-size: 12px;
       margin-bottom: 15px;
       display: block; }
@@ -23,9 +24,8 @@
       padding: 10px;
       font-size: 14px;
       border: 1px solid #eeeeee;
-      color: #6e6e6e;
-      margin-bottom: 30px;
-      width: 100%; }
+      color: #6f7983;
+      margin-bottom: 30px; }
       .order-form .order-section input:focus {
         outline: none;
         border: 2px solid #eeeeee; }
@@ -43,7 +43,7 @@
     width: 100%;
     max-width: 555px;
     resize: none;
-    color: #6e6e6e;
+    color: #6f7983;
     font-size: 16px; }
     @media (max-width: 767.97px) {
       .order-form textarea {

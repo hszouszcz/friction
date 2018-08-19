@@ -144,3 +144,41 @@
 
   }
 }
+
+.order-type-radio-button {
+  display: block;
+  position: relative;
+  margin: 15px 15px 15px 0;
+  padding: 0 30px;
+  cursor: pointer;
+  font-size: $text18;
+  line-height: 72px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 72px;
+  border: 1px solid $border-color;
+}
+
+/* On mouse-over, add a grey background color */
+.order-type-radio-button:hover  {
+  border-color: $orange;
+}
+
+/* When the checkbox is checked, add a blue background */
+.order-type-radio-button input:checked ~ .checkmark {
+  color: $green;
+}
+
+/* Show the checkmark when checked */
+.order-type-radio-button input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Hide the browser's default checkbox */
+.order-type-radio-button input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}

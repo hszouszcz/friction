@@ -114,4 +114,37 @@
       border: none; }
 
 .friction-custom-select-option {
-  color: #6e6e6e; }
+  color: #6f7983; }
+
+.order-type-radio-button {
+  display: block;
+  position: relative;
+  margin: 15px 15px 15px 0;
+  padding: 0 30px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 72px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 72px;
+  border: 1px solid #eeeeee; }
+
+/* On mouse-over, add a grey background color */
+.order-type-radio-button:hover {
+  border-color: #ff7f18; }
+
+/* When the checkbox is checked, add a blue background */
+.order-type-radio-button input:checked ~ .checkmark {
+  color: #15d78c; }
+
+/* Show the checkmark when checked */
+.order-type-radio-button input:checked ~ .checkmark:after {
+  display: block; }
+
+/* Hide the browser's default checkbox */
+.order-type-radio-button input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer; }

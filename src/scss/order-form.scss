@@ -5,6 +5,7 @@
   .order-form-title {
     display: inline-block;
     padding-bottom: 30px;
+    padding-top: 30px;
     font-size: $text24;
     @media (max-width: 767.97px) {
       font-size: $text16;
@@ -33,7 +34,7 @@
       border: 1px solid $border-color;
       color: $gray;
       margin-bottom: 30px;
-      width: 100%;
+
       &:focus {
         outline: none;
         border: 2px solid $border-color;

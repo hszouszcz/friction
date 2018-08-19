@@ -1,0 +1,22 @@
+ @import '../../../../scss/variables.scss';
+
+
+.forward-button {
+  padding: 15px 25px;
+  font-size: 0.7em;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.black {
+  background-color: $onyx;
+  color: white;
+}
+
+.white {
+ background-color: white;
+  color: $onyx;
+}

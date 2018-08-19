@@ -50,8 +50,13 @@ button {
   font-weight: lighter;
 }
 .caption-title {
-  font-size: $text24;
+  font-size: 1.4em;
   margin-bottom: 20px;
+  font-weight: lighter;
+
+  @media (max-width: 425px) {
+    font-size: 1em;
+  }
 }
 
 .truncated {
@@ -59,4 +64,15 @@ button {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+.common-text {
+  line-height: $line-height;
+  font-size: 0.8em;
+}
+
+.section-title {
+  font-size: 0.7em;
+  color: #dadfe5;
+  margin-bottom: 20px;
 }

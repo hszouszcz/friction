@@ -14,7 +14,7 @@ const RubberView = (props) => {
         <Link smooth to="/rubber-view">Grubość rantów standardowa czy zwiększona?</Link>
       </div>
 
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Gumy stosowane na podeszwy obuwia wspinaczkowego ewoluowały od prawie 30 lat. Tak długi okres pracy różnych
         ośrodków badawczo-wdrożeniowych przyczynił się do obecnej bardzo szerokiej oferty. W Polsce od wielu lat
         największą renomą i popularnością cieszyły się gumy produkowane przez firmę Stealth, którymi były fabrycznie
@@ -55,7 +55,7 @@ const RubberView = (props) => {
       <div className="anchor-title">
         Wybór rodzaju gumy
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Gumy tarciowe - grupa gum o wysokim współczynniku tarcia, charakteryzujących się bardzo dobrą zdolnością do
         kontaktu ze skałą. Najczęściej są to gumy miękkie, dobrze wypełniające fakturę skały (mikronierówności) i
         zapewniające maksymalną powierzchnię kontaktu podeszwy ze stopniem.
@@ -80,7 +80,7 @@ const RubberView = (props) => {
       <div className="anchor-title">
         Grubość rantów standardowa czy zwiększona?
       </div>
-      <div className="anchor-text">
+      <div className="common-text anchor-text-padding">
         Grubość rantów, podobnie jak grubość podeszwy, ma istotny wpływ na czucie, precyzję oraz twardość butów
         wspinaczkowych.
       </div>

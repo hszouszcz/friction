@@ -1,7 +1,14 @@
 .bullet {
-  color: white; }
+  color: #F9F9F9;
+  font-size: 16px; }
   .bullet .bullet-dot {
-    font-size: 42px;
-    margin-top: 20px; }
+    font-size: 4em;
+    line-height: 0.5;
+    margin-top: 20px;
+    font-weight: lighter; }
+  .bullet .bullet-text {
+    font-size: .9em;
+    font-weight: lighter;
+    line-height: 1.8; }
   .bullet .bullet-dot:first-child {
     margin-top: 0; }

@@ -41,11 +41,24 @@ button {
   font-weight: lighter; }
 
 .caption-title {
-  font-size: 24px;
-  margin-bottom: 20px; }
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  font-weight: lighter; }
+  @media (max-width: 425px) {
+    .caption-title {
+      font-size: 1em; } }
 
 .truncated {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical; }
+
+.common-text {
+  line-height: 1.8;
+  font-size: 0.8em; }
+
+.section-title {
+  font-size: 0.7em;
+  color: #dadfe5;
+  margin-bottom: 20px; }

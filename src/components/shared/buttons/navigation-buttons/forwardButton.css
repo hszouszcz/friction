@@ -1,0 +1,14 @@
+.forward-button {
+  padding: 15px 25px;
+  font-size: 0.7em; }
+  .forward-button:hover {
+    text-decoration: underline;
+    cursor: pointer; }
+
+.black {
+  background-color: #05080c;
+  color: white; }
+
+.white {
+  background-color: white;
+  color: #05080c; }

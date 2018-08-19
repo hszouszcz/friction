@@ -1,21 +1,26 @@
 import React from 'react';
 import '../../scss/about.css';
+import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
+import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 
 const AboutContent = (props) => {
   return (
     <div className="content">
-      <div className="title">
-          {props.title}
+      <div className="section-title">
+        {props.title}
       </div>
       <div className="text row">
-        <div className="col-md-12 col-lg-6 first-col">
+        <div className="col-md-12 col-lg-6 first-col common-text">
           {props.firstColumn}
-          <button className="dark mobile right">
-            <span>zobacz wiecej</span>
-            <i className="fa fa-long-arrow-right" />
-          </button>
+          <ButtonsRow>
+            <ForwardButton
+              text="Zobacz więcej"
+              theme="black"
+              forward
+            />
+          </ButtonsRow>
         </div>
-        <div className="col-lg-6 second-col">
+        <div className="col-lg-6 second-col common-text">
           {props.secondColumn}
         </div>
       </div>

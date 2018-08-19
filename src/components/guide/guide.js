@@ -5,7 +5,7 @@ import Gallery from './gallery';
 
 const Guide = () => {
   return (
-    <div className="guide col-md-10 offset-md-1">
+    <div className="guide col-md-8 offset-md-2">
       <div className="row">
         <Repair/>
         <Gallery/>
