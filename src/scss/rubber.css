@@ -15,8 +15,7 @@
     justify-content: center; }
   @media (max-width: 992px) {
     .rubber {
-      padding-top: 30px;
-      padding-bottom: 35px; } }
+      padding-top: 30px; } }
   .rubber .clipped {
     clip-path: inset(140px 0px 130px 0px);
     width: 100%;

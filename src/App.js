@@ -20,6 +20,7 @@ import Terms from './components/terms/terms';
 import Treks from './components/boots/trek';
 import RubberView from './components/Rubber/RubberView';
 import OrderType from './components/OrderForm/OrderType';
+import UserDetails from './components/OrderForm/UserDetails';
 
 class App extends Component {
   render() {
@@ -29,6 +30,8 @@ class App extends Component {
        <Header />
          <Route exact={true} path="/" component={HomePage}/>
          <Route path="/order" component={OrderType} />
+         <Route path="/order-details" component={OrderForm} />
+         <Route path="/user-details" component={UserDetails} />
          <Route path="/guide" component={GuideView} />
          <Route path="/order-rules" component={OrderRules} />
          <Route path="/terms" component={Terms} />
