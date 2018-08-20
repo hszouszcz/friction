@@ -3,6 +3,9 @@ import '../../scss/order-form.css';
 import RadioInputSection from '../shared/inputs/radio-input-section';
 import RadioInput from '../shared/inputs/radio-input';
 import CustomSelect from '../shared/select/select';
+import {Route} from 'react-router-dom';
+import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
+import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 
 class OrderForm extends Component {
   constructor(props) {
@@ -31,7 +34,6 @@ class OrderForm extends Component {
   render() {
     return (
       <div className="container order-form">
-
         <div className="row">
           <div className="col-md-10 offset-md-1">
             <span className="order-form-title">Szczegóły naprawy</span>
@@ -88,24 +90,17 @@ class OrderForm extends Component {
           </div>
         </div>
         <div className="orderFormFooter col-md-10 offset-md-1">
-          <div className="navigation">
-            <button
-              className="forward"
-              onClick={() => {
-                console.log(this.state);
-                return this.setState({orderStep: this.state.orderStep + 1});
-              }}
-            >
-              <span>Dalej</span>
-            </button>
-            <button
-              className="back"
-              onClick={() => this.setState({orderStep: this.state.orderStep -1})}
-            >
-              <span>Wstecz</span>
-            </button>
+          <Route render={({history}) => (
+            <ButtonsRow>
+              <ForwardButton
+                text="Dalej"
+                theme="black"
+                onClick={() => { history.push({pathname: '/user-details', state: this.state.orderType}) }}
+                forward
+              />
+            </ButtonsRow>
+          )} />
           </div>
-        </div>
       </div>
     );
   }
