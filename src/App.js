@@ -25,7 +25,9 @@ import UserDetails from './components/OrderForm/UserDetails';
 class App extends Component {
   render() {
     return (
-     <Router>
+     <Router
+       onUpdate={() => window.scrollTo(0, 0)}
+     >
        <div className="App">
        <Header />
          <Route exact={true} path="/" component={HomePage}/>

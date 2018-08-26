@@ -5,20 +5,16 @@
   .order-form-title {
     display: inline-block;
     padding-bottom: 30px;
-    padding-top: 30px;
-    font-size: $text24;
-    @media (max-width: 767.97px) {
-      font-size: $text16;
-    }
+    font-size: 1.2em;
+    color: $dim-gray;
   }
   .order-section {
     padding-bottom: 30px;
     //margin-left: 15px;
     .section-title {
-      font-size: $text18;
-      @media (max-width: 767.97px) {
-        font-size: $text12;
-      }
+      color: $gray;
+      font-size: 0.8em;
+      padding-bottom: 15px;
     }
 
     label {
@@ -26,7 +22,6 @@
       font-size: 0.8em;
       margin-bottom: 15px;
       display: block;
-
     }
     input {
       padding: 10px;
@@ -34,6 +29,7 @@
       border: 1px solid $border-color;
       color: $gray;
       margin-bottom: 30px;
+      width: 100%;
 
       &:focus {
         outline: none;
@@ -50,11 +46,12 @@
     }
   }
 
-  .order-section .col-md-6 {
+  .order-section .col-md-6, .col-md-3 {
     @media (min-width: 767.97px) {
       padding-right: 15px;
     }
   }
+
   textarea {
     border: 1px solid $border-color;
     padding: 30px;
@@ -135,4 +132,10 @@
       }
     }
   }
+}
+
+
+.invoice {
+  background-color: $snow;
+  padding-top: 30px;
 }

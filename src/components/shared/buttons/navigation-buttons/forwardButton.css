@@ -1,12 +1,20 @@
 .forward-button {
   padding: 15px 25px;
-  font-size: 0.7em; }
+  font-size: 0.7em;
+  user-select: none;
+  min-width: 120px; }
   .forward-button:hover {
     text-decoration: underline;
     cursor: pointer; }
+  .forward-button:focus {
+    outline: none; }
 
 .black {
   background-color: #05080c;
+  color: white; }
+
+.disabled-bg {
+  background-color: gray;
   color: white; }
 
 .white {

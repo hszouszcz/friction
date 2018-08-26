@@ -4,15 +4,24 @@
 .forward-button {
   padding: 15px 25px;
   font-size: 0.7em;
-
+  user-select: none;
+  min-width: 120px;
   &:hover {
     text-decoration: underline;
     cursor: pointer;
   }
+  &:focus {
+  outline: none;
+}
 }
 
 .black {
   background-color: $onyx;
+  color: white;
+}
+
+.disabled-bg {
+  background-color: gray;
   color: white;
 }
 

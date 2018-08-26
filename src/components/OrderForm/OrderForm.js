@@ -12,41 +12,45 @@ class OrderForm extends Component {
     super(props);
     this.state = {
       orders: [],
-      orderStep: 0,
-      repairType: 0,
       rubberType: null,
       edgeReplacement: 0,
       edgeThickness: 0,
       additionalOptions: 0,
       description: '',
-      name: '',
-      surname: '',
-      email: '',
-      phone: '',
-      street: '',
-      streetNumber: '',
-      city: '',
-      sendBack: null,
-      agreement: false,
     };
   }
+
+  componentDidUpdate() {
+    window.scrollTo(0, 0);
+  }
+
+  getOrderDetails = () => {
+    return {
+      orderType: this.props.orderType,
+      rubberType: this.state.rubberType,
+      edgeReplacement: this.state.edgeReplacement,
+      edgeThickness: this.state.edgeThickness,
+      additionalOptions: this.state.additionalOptions,
+      description: this.state.description,
+    }
+  };
 
   render() {
     return (
       <div className="container order-form">
         <div className="row">
-          <div className="col-md-10 offset-md-1">
+          <div className="col-md-10 offset-md-2">
             <span className="order-form-title">Szczegóły naprawy</span>
             <div className="order-section">
               <span className="section-title">Wymiana podeszwy - rodzaj gumy(*typowe gumy)</span>
               <CustomSelect
                 model={this.state.rubberType}
-                callback={(option) => this.setState({rubberType: option})}
+                callback={(option) => this.setState({rubberType: option.value})}
                 placeholder={"Wybierz rodzaj gumy"}
                 options={[
                   {value: 1, label: '1'},
-                  {value: 1, label: '1'},
-                  {value: 1, label: '1'},
+                  {value: 2, label: '2'},
+                  {value: 3, label: '3'},
                 ]}
               />
             </div>
@@ -89,18 +93,23 @@ class OrderForm extends Component {
             </div>
           </div>
         </div>
-        <div className="orderFormFooter col-md-10 offset-md-1">
+        <div className="orderFormFooter col-md-8 offset-md-2">
           <Route render={({history}) => (
             <ButtonsRow>
               <ForwardButton
                 text="Dalej"
                 theme="black"
-                onClick={() => { history.push({pathname: '/user-details', state: this.state.orderType}) }}
+                onClick={() => { history.push({pathname: '/user-details', state: this.getOrderDetails()}) }}
                 forward
+              />
+              <ForwardButton
+                text="Wtecz"
+                theme="white"
+                onClick={() => history.push('/order-type')}
               />
             </ButtonsRow>
           )} />
-          </div>
+        </div>
       </div>
     );
   }

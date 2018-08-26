@@ -6,6 +6,7 @@ import OrderTypeRadioButton from '../shared/inputs/order-type-radio-input';
 import '../../scss/buttons.css';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
+import DisabledNavButton from '../shared/buttons/navigation-buttons/DisabledNavButton';
 
 class OrderType extends Component {
   constructor(props) {
@@ -31,11 +32,12 @@ class OrderType extends Component {
           </div>
           <Route render={({history}) => (
             <ButtonsRow>
-              <ForwardButton
+              <DisabledNavButton
                 text="Dalej"
                 theme="black"
-                onClick={() => { history.push({pathname: '/order-details', state: this.state.orderType}) }}
+                onClick={() => {this.state.agreementSelected ? history.push({pathname: '/order-details', state: this.state.orderType}) : null}}
                 forward
+                disabled={!this.state.agreementSelected}
               />
             </ButtonsRow>
           )} />

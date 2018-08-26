@@ -3,18 +3,14 @@
   .order-form .order-form-title {
     display: inline-block;
     padding-bottom: 30px;
-    padding-top: 30px;
-    font-size: 24px; }
-    @media (max-width: 767.97px) {
-      .order-form .order-form-title {
-        font-size: 16px; } }
+    font-size: 1.2em;
+    color: #6e6e6e; }
   .order-form .order-section {
     padding-bottom: 30px; }
     .order-form .order-section .section-title {
-      font-size: 18px; }
-      @media (max-width: 767.97px) {
-        .order-form .order-section .section-title {
-          font-size: 12px; } }
+      color: #6f7983;
+      font-size: 0.8em;
+      padding-bottom: 15px; }
     .order-form .order-section label {
       color: #6f7983;
       font-size: 0.8em;
@@ -25,7 +21,8 @@
       font-size: 14px;
       border: 1px solid #eeeeee;
       color: #6f7983;
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      width: 100%; }
       .order-form .order-section input:focus {
         outline: none;
         border: 2px solid #eeeeee; }
@@ -35,7 +32,7 @@
         .order-form .order-section input:last-child {
           margin-right: 15px; } }
   @media (min-width: 767.97px) {
-    .order-form .order-section .col-md-6 {
+    .order-form .order-section .col-md-6, .order-form .col-md-3 {
       padding-right: 15px; } }
   .order-form textarea {
     border: 1px solid #eeeeee;
@@ -97,3 +94,7 @@
     .order-form .agreement .order-section input {
       width: auto;
       margin-right: 10px; }
+
+.invoice {
+  background-color: #F9F9F9;
+  padding-top: 30px; }
