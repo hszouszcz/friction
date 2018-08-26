@@ -35,7 +35,7 @@ class OrderType extends Component {
               <DisabledNavButton
                 text="Dalej"
                 theme="black"
-                onClick={() => {this.state.agreementSelected ? history.push({pathname: '/order-details', state: this.state.orderType}) : null}}
+                onClick={() => {this.state.agreementSelected ? history.push({pathname: '/order-details', state: {orderType: this.state.orderType}}) : null}}
                 forward
                 disabled={!this.state.agreementSelected}
               />

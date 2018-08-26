@@ -29,6 +29,52 @@ class UserDetails extends Component {
     }
   }
 
+  getOrderDetails = () => {
+    return {
+      orderType: this.props.history.location.state.orderType,
+      orderDetails: {
+        rubberType: this.props.history.location.state.rubberType,
+        edgeReplacement: this.props.history.location.state.edgeReplacement,
+        edgeThickness: this.props.history.location.state.edgeThickness,
+        additionalOptions: this.props.history.location.state.additionalOptions,
+        description: this.props.history.location.state.description,
+      },
+      userDetails: {
+        name: this.state.name,
+        surname: this.state.surname,
+        email: this.state.email,
+        phone: this.state.phone,
+        street: this.state.street,
+        streetNumber: this.state.streetNumber,
+        postalCode: this.state.postalCode,
+        city: this.state.city,
+        sendBack: this.state.sendBack,
+        invoice: this.state.invoice,
+        invoiceDetails: this.state.invoice ? {
+          name: this.state.companyName,
+          nip: this.state.nip,
+          street: this.state.companyStreet,
+          streetNumber: this.state.companyStreetNumber,
+          city: this.state.companyCity,
+          postalCode: this.state.companyPostalCode
+        } : null
+      }
+    }
+  };
+
+  saveToLocalStorage = () => {
+    let cart = localStorage.getItem('cart');
+    if(cart === undefined || JSON.parse(cart).length === 0) {
+      const arr = [];
+      arr.push(this.getOrderDetails());
+      localStorage.setItem('cart', JSON.stringify(arr));
+    } else {
+      cart = JSON.parse(cart);
+      cart.push(this.getOrderDetails());
+    }
+
+};
+
   render() {
     return <div className="container order-form">
       <div className="row">
@@ -208,7 +254,7 @@ class UserDetails extends Component {
                 <ForwardButton
                   text="Dalej"
                   theme="black"
-                  onClick={() => history.push('/cart')}
+                  onClick={() => history.push({pathname: '/cart', state: {}})}
                   forward
                 />
               )} />

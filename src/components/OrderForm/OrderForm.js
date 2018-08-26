@@ -26,7 +26,7 @@ class OrderForm extends Component {
 
   getOrderDetails = () => {
     return {
-      orderType: this.props.orderType,
+      orderType: this.props.history.location.state.orderType,
       rubberType: this.state.rubberType,
       edgeReplacement: this.state.edgeReplacement,
       edgeThickness: this.state.edgeThickness,
