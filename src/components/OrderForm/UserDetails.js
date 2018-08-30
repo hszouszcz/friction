@@ -64,7 +64,7 @@ class UserDetails extends Component {
 
   saveToLocalStorage = () => {
     let cart = localStorage.getItem('cart');
-    if(cart === undefined || JSON.parse(cart).length === 0) {
+    if(cart === null || JSON.parse(cart).length === 0) {
       const arr = [];
       arr.push(this.getOrderDetails());
       localStorage.setItem('cart', JSON.stringify(arr));
@@ -254,7 +254,7 @@ class UserDetails extends Component {
                 <ForwardButton
                   text="Dalej"
                   theme="black"
-                  onClick={() => history.push({pathname: '/cart', state: {}})}
+                  onClick={() =>  this.saveToLocalStorage()}
                   forward
                 />
               )} />
@@ -262,7 +262,7 @@ class UserDetails extends Component {
                 <ForwardButton
                   text="Wtecz"
                   theme="white"
-                  onClick={() => { history.push({pathname: '/order-details'})}}
+                  onClick={() =>  this.saveToLocalStorage()}
                 />
               )} />
             </ButtonsRow>
