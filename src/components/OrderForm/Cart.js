@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../../scss/order-form.css';
+import '../../scss/cart-item.css';
 import CartItem from './CartItem';
+import {Route} from 'react-router-dom';
+import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
+import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 
 const Cart = (props) => {
   return (
     <div className="cart container order-form">
       <div className="row">
-        <div className="col-md-8 offset-md-2">
-          <span className="order-form-title">Koszyk</span>
+        <div className="col-md-6 offset-md-3">
+          <div className="cart-header order-form-title">Koszyk</div>
           {mock.map((item, index) =>
          <CartItem
            key={index.toString()}
@@ -16,6 +20,25 @@ const Cart = (props) => {
           details={item}
          />
           )}
+          <div className="cart-footer">
+            <Route render={({history}) => (
+              <ButtonsRow>
+                <ForwardButton
+                  text="Dalej"
+                  theme="black"
+                  onClick={() => { history.push({pathname: '/user-details', state: this.getOrderDetails()}) }}
+                  forward
+                />
+                <button
+                  className="add-more-button"
+                  onClick={() => history.push('/order-type')}
+                >
+                  <span>Dodaj kolejną naprawę</span>
+                  <i className="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </ButtonsRow>
+            )} />
+          </div>
         </div>
       </div>
     </div>

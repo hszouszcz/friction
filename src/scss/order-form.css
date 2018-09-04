@@ -98,3 +98,22 @@
 .invoice {
   background-color: #F9F9F9;
   padding-top: 30px; }
+
+.cart-header {
+  border-bottom: 1px solid #dadfe5;
+  width: 100%;
+  padding-bottom: 10px !important; }
+
+.cart-footer {
+  padding-top: 30px; }
+  .cart-footer .add-more-button {
+    line-height: 10px;
+    align-content: center;
+    font-size: 0.8rem;
+    color: #ff7f18;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    padding: 0; }
+    .cart-footer .add-more-button:hover {
+      text-decoration: underline; }

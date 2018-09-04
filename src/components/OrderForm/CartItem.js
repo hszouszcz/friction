@@ -14,7 +14,7 @@ const CartItem = (props) => {
           <div>{detail.name}</div>
           <div>{detail.price}</div>
       </div>)}
-      <div className="buttons offset-md-6 col-md-6">
+      <div className="buttons">
         <button
 
         >
@@ -23,7 +23,7 @@ const CartItem = (props) => {
         <button
 
         >
-          <span>Edytuj<i className="fa fa-times" aria-hidden="true"></i></span>
+          <span>Edytuj<i className="fa fa-pencil-square-o" aria-hidden="true" /></span>
         </button>
       </div>
 
