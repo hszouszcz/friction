@@ -23,11 +23,11 @@ class OrderType extends Component {
         <div className="col-md-6 offset-md-3">
           <span className="caption-title">Wybierz rodzaj usługi</span>
           <div className="order-section">
-            <OrderTypeRadioButton label="Naprawa butów wspinaczkowych" value={0} model={this.state.orderType}
+            <OrderTypeRadioButton label="Naprawa butów wspinaczkowych" value={'Naprawa butów wspinaczkowych'} model={this.state.orderType}
                                   callback={() => this.setState({orderType: 0})}/>
-            <OrderTypeRadioButton label="Naprawa butów trekkingowych" value={1} model={this.state.orderType}
+            <OrderTypeRadioButton label="Naprawa butów trekkingowych" value={'Naprawa butów trekkingowych'} model={this.state.orderType}
                                   callback={() => this.setState({orderType: 1})}/>
-            <OrderTypeRadioButton label="Trzecia opcja" value={2} model={this.state.orderType}
+            <OrderTypeRadioButton label="Trzecia opcja" value={'Trzecia opcja'} model={this.state.orderType}
                                   callback={() => this.setState({orderType: 2})}/>
           </div>
           <Route render={({history}) => (

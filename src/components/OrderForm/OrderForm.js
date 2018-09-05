@@ -6,16 +6,17 @@ import CustomSelect from '../shared/select/select';
 import {Route} from 'react-router-dom';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
+import {rubberPricing} from '../../constants/pricing';
 
 class OrderForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       orders: [],
-      rubberType: null,
+      rubber: rubberPricing[0],
       edgeReplacement: 0,
       edgeThickness: 0,
-      additionalOptions: 0,
+      additionalOptions: null,
       description: '',
     };
   }
@@ -27,12 +28,20 @@ class OrderForm extends Component {
   getOrderDetails = () => {
     return {
       orderType: this.props.history.location.state.orderType,
-      rubberType: this.state.rubberType,
-      edgeReplacement: this.state.edgeReplacement,
-      edgeThickness: this.state.edgeThickness,
+      orderProps: [
+        {name: this.state.rubber.label, price: this.state.rubber.rubber},
+        this.state.edgeReplacement === 0 ?
+          {name: `Wymiana rantów (${this.state.rubber.edgeThickness[this.state.edgeReplacement].label})`,
+            price: this.state.edgeReplacement + this.state.rubber.edgeThickness[this.state.edgeReplacement].price} : null,
+      ],
       additionalOptions: this.state.additionalOptions,
       description: this.state.description,
     }
+  };
+
+  getRubberNames = () => {
+    console.log(rubberPricing.map(item => item));
+    return rubberPricing.map(item => item);
   };
 
   render() {
@@ -44,22 +53,31 @@ class OrderForm extends Component {
             <div className="order-section">
               <span className="section-title">Wymiana podeszwy - rodzaj gumy(*typowe gumy)</span>
               <CustomSelect
-                model={this.state.rubberType}
-                callback={(option) => this.setState({rubberType: option.value})}
+                model={this.state.rubber}
+                callback={(option) => { console.log(option); this.setState({rubber: option})}}
                 placeholder={"Wybierz rodzaj gumy"}
-                options={[
-                  {value: 1, label: '1'},
-                  {value: 2, label: '2'},
-                  {value: 3, label: '3'},
-                ]}
+                options={this.getRubberNames()}
               />
             </div>
             <div className="order-section">
               <span className="section-title">Wymiana rantów</span>
               <RadioInputSection>
-                <RadioInput label="Tak - 100PLN" value={0} model={this.state.edgeReplacement} callback={() => this.setState({edgeReplacement: 0})}/>
-                <RadioInput label="Nie" value={1}  model={this.state.edgeReplacement} callback={() => this.setState({edgeReplacement: 1})}/>
-                <RadioInput label="Wedle uznania" value={2} model={this.state.edgeReplacement} callback={() => this.setState({edgeReplacement: 2})}/>
+                <RadioInput
+                  label={`Tak - ${rubberPricing.filter(item => item.value === this.state.rubber.value)[0].edgeReplacement}`}
+                  value={0}
+                  model={this.state.edgeReplacement}
+                  callback={() => this.setState({edgeReplacement: 0})}
+                />
+                <RadioInput
+                  label="Nie"
+                  value={1}
+                  model={this.state.edgeReplacement}
+                  callback={() => this.setState({edgeReplacement: 1})}/>
+                <RadioInput
+                  label="Wedle uznania"
+                  value={2}
+                  model={this.state.edgeReplacement}
+                  callback={() => this.setState({edgeReplacement: 2})}/>
               </RadioInputSection>
             </div>
             <div className="order-section">
@@ -77,7 +95,7 @@ class OrderForm extends Component {
                 callback={(option) => this.setState({additionalOptions: option})}
                 placeholder={"Brak"}
                 options={[
-                  {value: 1, label: '1'},
+                  {value: 1, label: '1', price: 100},
                   {value: 1, label: '1'},
                   {value: 1, label: '1'},
                 ]}
@@ -97,7 +115,7 @@ class OrderForm extends Component {
           <Route render={({history}) => (
             <ButtonsRow>
               <ForwardButton
-                text="Dalej"
+                text="Dodaj do koszyka"
                 theme="black"
                 onClick={() => { history.push({pathname: '/user-details', state: this.getOrderDetails()}) }}
                 forward
