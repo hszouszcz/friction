@@ -72,7 +72,6 @@ class UserDetails extends Component {
       cart = JSON.parse(cart);
       cart.push(this.getOrderDetails());
     }
-
 };
 
   render() {

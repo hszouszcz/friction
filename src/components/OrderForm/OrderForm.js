@@ -25,18 +25,33 @@ class OrderForm extends Component {
     window.scrollTo(0, 0);
   }
 
-  getOrderDetails = () => {
-    return {
+  getOrderDetails = () =>
+    ({
       orderType: this.props.history.location.state.orderType,
       orderProps: [
         {name: this.state.rubber.label, price: this.state.rubber.rubber},
         this.state.edgeReplacement === 0 ?
-          {name: `Wymiana rantów (${this.state.rubber.edgeThickness[this.state.edgeReplacement].label})`,
-            price: this.state.edgeReplacement + this.state.rubber.edgeThickness[this.state.edgeReplacement].price} : null,
+          {
+            name: `Wymiana rantów (${this.state.rubber.edgeThickness[this.state.edgeReplacement].label})`,
+            price: this.state.rubber.edgeReplacement.value + this.state.rubber.edgeThickness[this.state.edgeReplacement].value
+          } : null,
       ],
       additionalOptions: this.state.additionalOptions,
       description: this.state.description,
+    });
+
+
+  saveToLocalStorage = () => {
+    let cart = localStorage.getItem('cart');
+    if (cart === null || JSON.parse(cart).length === 0) {
+      const arr = [];
+      arr.push(this.getOrderDetails());
+      cart = arr;
+    } else {
+      cart = JSON.parse(cart);
+      cart.push(this.getOrderDetails());
     }
+    localStorage.setItem('cart', JSON.stringify(cart));
   };
 
   getRubberNames = () => {
@@ -54,7 +69,10 @@ class OrderForm extends Component {
               <span className="section-title">Wymiana podeszwy - rodzaj gumy(*typowe gumy)</span>
               <CustomSelect
                 model={this.state.rubber}
-                callback={(option) => { console.log(option); this.setState({rubber: option})}}
+                callback={(option) => {
+                  console.log(option);
+                  this.setState({rubber: option});
+                }}
                 placeholder={"Wybierz rodzaj gumy"}
                 options={this.getRubberNames()}
               />
@@ -63,7 +81,7 @@ class OrderForm extends Component {
               <span className="section-title">Wymiana rantów</span>
               <RadioInputSection>
                 <RadioInput
-                  label={`Tak - ${rubberPricing.filter(item => item.value === this.state.rubber.value)[0].edgeReplacement}`}
+                  label={`Tak - ${rubberPricing.filter(item => item.value === this.state.rubber.value)[0].edgeReplacement.value}`}
                   value={0}
                   model={this.state.edgeReplacement}
                   callback={() => this.setState({edgeReplacement: 0})}
@@ -83,9 +101,12 @@ class OrderForm extends Component {
             <div className="order-section">
               <span className="section-title">Grubość rantów</span>
               <RadioInputSection>
-                <RadioInput label="Standardowa" value={0} model={this.state.edgeThickness} callback={() => this.setState({edgeThickness: 0})}/>
-                <RadioInput label="Pogrubiona" value={1} model={this.state.edgeThickness} callback={() => this.setState({edgeThickness: 1})}/>
-                <RadioInput label="Extra gruba" value={2} model={this.state.edgeThickness} callback={() => this.setState({edgeThickness: 2})}/>
+                <RadioInput label="Standardowa" value={0} model={this.state.edgeThickness}
+                            callback={() => this.setState({edgeThickness: 0})}/>
+                <RadioInput label="Pogrubiona" value={1} model={this.state.edgeThickness}
+                            callback={() => this.setState({edgeThickness: 1})}/>
+                <RadioInput label="Extra gruba" value={2} model={this.state.edgeThickness}
+                            callback={() => this.setState({edgeThickness: 2})}/>
               </RadioInputSection>
             </div>
             <div className="order-section">
@@ -117,7 +138,11 @@ class OrderForm extends Component {
               <ForwardButton
                 text="Dodaj do koszyka"
                 theme="black"
-                onClick={() => { history.push({pathname: '/user-details', state: this.getOrderDetails()}) }}
+                onClick={() => {
+                  this.saveToLocalStorage();
+                  history.push({pathname: '/cart'}
+                  );
+                }}
                 forward
               />
               <ForwardButton
@@ -126,7 +151,7 @@ class OrderForm extends Component {
                 onClick={() => history.push('/order-type')}
               />
             </ButtonsRow>
-          )} />
+          )}/>
         </div>
       </div>
     );

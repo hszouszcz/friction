@@ -3,7 +3,7 @@ export const rubberPricing = [
     value: 0,
     label: "Vibram XS",
     rubber: 100,
-    edgeReplacement: 50,
+    edgeReplacement: {value: 50},
     edgeThickness: [
      { value: 0, label: "Standardowa"},
      { value: 20, label: "Pogrubiona"},

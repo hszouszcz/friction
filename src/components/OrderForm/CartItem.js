@@ -1,18 +1,18 @@
 import React from 'react';
 import '../../scss/cart-item.css';
-import PropTypes from 'prop-types';
+import orderTypes from '../../constants/orderTypes';
 
 const CartItem = (props) => {
   return (
     <div className="cart-item">
-      <div className="order-type">{`${props.index} ${props.details.orderType}`}</div>
-      {props.details.props.map((detail, index) =>
+      <div className="order-type">{`${props.index} ${orderTypes[props.details.orderType]}`}</div>
+      {props.details.orderProps.map((detail, index) =>
         <div
           className="order-prop"
           key={index.toString()}
         >
           <div>{detail.name}</div>
-          <div>{detail.price}</div>
+          <div>{`${detail.price} PLN`}</div>
       </div>)}
       <div className="buttons">
         <button
