@@ -14,7 +14,7 @@ export const rubberPricing = [
     value: 1,
     label: "Stealth C4",
     rubber: 150,
-    edgeReplacement: 50,
+    edgeReplacement: {value: 50},
     edgeThickness: [
       { value: 0, label: "Standardowa"},
       { value: 20, label: "Pogrubiona"},

@@ -11,29 +11,52 @@ import {rubberPricing} from '../../constants/pricing';
 class OrderForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      orders: [],
-      rubber: rubberPricing[0],
-      edgeReplacement: 0,
-      edgeThickness: 0,
-      additionalOptions: null,
-      description: '',
-    };
+    if(this.props.history.location.state
+      && this.props.history.location.state.orderToEdit
+    ) {
+      const itemToEdit = this.getOrderToEdit();
+      this.state = {
+        orderType: itemToEdit.orderType,
+        rubber: rubberPricing.filter(rubber => rubber.label === itemToEdit.orderProps[0].name)[0],
+        edgeReplacement: itemToEdit.orderProps[1] !== null ? itemToEdit.orderProps[1].value : 2,
+        edgeThickness: itemToEdit.orderProps[1] !== null ? itemToEdit.orderProps[1].thicknessValue : null,
+        additionalOptions: itemToEdit.additionalOptions,
+        description: itemToEdit.description
+      }
+    } else {
+      this.state = {
+        rubber: rubberPricing[0],
+        edgeReplacement: 0,
+        edgeThickness: 0,
+        additionalOptions: null,
+        description: '',
+      };
+    }
   }
 
   componentDidUpdate() {
     window.scrollTo(0, 0);
   }
 
+  getOrderToEdit = () => {
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    return cart[this.props.history.location.state.orderToEdit-1];
+  };
+
   getOrderDetails = () =>
     ({
-      orderType: this.props.history.location.state.orderType,
+      orderType: this.props.history.location.state
+      && this.props.history.location.state.orderToEdit
+        ? this.state.orderType
+        : this.props.history.location.state.orderType,
       orderProps: [
         {name: this.state.rubber.label, price: this.state.rubber.rubber},
         this.state.edgeReplacement === 0 ?
           {
-            name: `Wymiana rantów (${this.state.rubber.edgeThickness[this.state.edgeReplacement].label})`,
-            price: this.state.rubber.edgeReplacement.value + this.state.rubber.edgeThickness[this.state.edgeReplacement].value
+            name: `Wymiana rantów (${this.state.rubber.edgeThickness[this.state.edgeThickness].label})`,
+            value: this.state.edgeReplacement,
+            thicknessValue: this.state.edgeThickness,
+            price: this.state.rubber.edgeReplacement.value + this.state.rubber.edgeThickness[this.state.edgeThickness].value
           } : null,
       ],
       additionalOptions: this.state.additionalOptions,
@@ -49,7 +72,11 @@ class OrderForm extends Component {
       cart = arr;
     } else {
       cart = JSON.parse(cart);
-      cart.push(this.getOrderDetails());
+        if(this.props.history.location.state.orderToEdit) {
+          cart[this.props.history.location.state.orderToEdit-1] = this.getOrderDetails();
+        } else {
+          cart.push(this.getOrderDetails());
+        }
     }
     localStorage.setItem('cart', JSON.stringify(cart));
   };
