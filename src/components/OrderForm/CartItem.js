@@ -6,7 +6,7 @@ import {Route} from 'react-router-dom';
 const CartItem = (props) => {
   return (
     <div className="cart-item">
-      <div className="order-type">{`${props.index} ${orderTypes[props.details.orderType]}`}</div>
+      <div className="order-type">{`${props.index}. ${orderTypes[props.details.orderType]}`}</div>
       {props.details.orderProps.map((detail, index) =>
         detail !== null &&
         <div
@@ -16,10 +16,17 @@ const CartItem = (props) => {
           <div>{detail.name}</div>
           <div>{`${detail.price} PLN`}</div>
       </div>)}
+      {props.details.additionalOptions && <div className="order-prop">
+       <div>{props.details.additionalOptions.label}</div>
+        <div>{props.details.additionalOptions.price} PLN</div>
+      </div>}
+      {props.details.description && <div className="desc-box">
+        <span>Opis:</span> <div>{props.details.description}</div>
+      </div>}
+
       <div className="buttons">
-
         <button
-
+          onClick={() => props.deleteFunc(props.index-1)}
         >
          <span>Usuń<i className="fa fa-times" aria-hidden="true"></i></span>
         </button>

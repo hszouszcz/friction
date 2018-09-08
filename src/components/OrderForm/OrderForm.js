@@ -7,6 +7,7 @@ import {Route} from 'react-router-dom';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 import {rubberPricing} from '../../constants/pricing';
+import {additionalOptions} from '../../constants/additionalOptions';
 
 class OrderForm extends Component {
   constructor(props) {
@@ -142,11 +143,9 @@ class OrderForm extends Component {
                 model={this.state.additionalOptions}
                 callback={(option) => this.setState({additionalOptions: option})}
                 placeholder={"Brak"}
-                options={[
-                  {value: 1, label: '1', price: 100},
-                  {value: 1, label: '1'},
-                  {value: 1, label: '1'},
-                ]}
+                options={this.props.history.location.state
+                  && this.props.history.location.state.orderToEdit ? additionalOptions[this.state.orderType]
+                  : additionalOptions[this.props.history.location.state.orderType]}
               />
             </div>
             <div className="order-section">

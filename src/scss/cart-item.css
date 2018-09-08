@@ -15,7 +15,8 @@
   .cart-item .order-prop {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 10px; }
+    padding-bottom: 10px;
+    padding-left: 0px; }
   .cart-item .buttons {
     display: flex;
     justify-content: flex-end;
@@ -36,3 +37,11 @@
         outline: none; }
       .cart-item .buttons button i {
         padding-left: 5px; }
+
+.desc-box {
+  display: flex;
+  flex-direction: row; }
+  .desc-box span {
+    padding-right: 5px; }
+  .desc-box textarea {
+    border: none; }

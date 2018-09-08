@@ -13,9 +13,25 @@ class Cart extends Component {
       cart: JSON.parse(localStorage.getItem('cart'))
     };
   }
+  deleteFromCart = (index) => {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    cart.splice(index-1, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    this.setState({cart: JSON.parse(localStorage.getItem('cart'))})
+  };
 
-  componentDidMount() {
-  }
+  sumUp = () => {
+    let value = 0;
+    this.state.cart.forEach((item) => {
+        item.orderProps.forEach(prop => {
+          if(prop !== null)
+          value = value + prop.price;
+        });
+        if(item.additionalOptions !== null)
+      value += item.additionalOptions.price
+    });
+    return value;
+  };
 
   render() {
     return (
@@ -29,20 +45,22 @@ class Cart extends Component {
                 key={index.toString()}
                 index={index+1}
                 details={item}
+                deleteFunc={this.deleteFromCart}
               />
             )}
+            <div className="sum-up">Suma: <span className="value">{`${this.sumUp()} PLN`}</span></div>
             <div className="cart-footer">
               <Route render={({history}) => (
                 <ButtonsRow>
                   <ForwardButton
-                    text="Dalej"
+                    text="Zamawiam"
                     theme="black"
                     onClick={() => { history.push({pathname: '/user-details', state: this.getOrderDetails()}) }}
                     forward
                   />
                   <button
                     className="add-more-button"
-                    onClick={() => history.push('/order-type')}
+                    onClick={() => history.push('/order')}
                   >
                     <span>Dodaj kolejną naprawę</span>
                     <i className="fa fa-plus" aria-hidden="true"></i>

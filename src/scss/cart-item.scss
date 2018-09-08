@@ -22,6 +22,7 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
+    padding-left: 0px;
   }
   .buttons {
     display: flex;
@@ -48,5 +49,16 @@
       }
     }
   }
+}
 
+.desc-box {
+  display: flex;
+  flex-direction: row;
+  span {
+    padding-right: 5px;
+  }
+  textarea {
+    border: none;
+
+  }
 }
