@@ -6,7 +6,7 @@ import {Route} from 'react-router-dom';
 const CartItem = (props) => {
   return (
     <div className="cart-item">
-      <div className="order-type">{`${props.index}. ${orderTypes[props.details.orderType]}`}</div>
+      <div className="order-type">{`${props.index}. - ${orderTypes[props.details.orderType]}`}</div>
       {props.details.orderProps.map((detail, index) =>
         detail !== null &&
         <div

@@ -118,6 +118,10 @@
     .cart-footer .add-more-button:hover {
       text-decoration: underline; }
 
+.props-type {
+  padding-top: 20px;
+  font-size: 0.9rem; }
+
 .sum-up {
   padding: 10px 0;
   display: flex;

@@ -22,6 +22,7 @@ import RubberView from './components/Rubber/RubberView';
 import OrderType from './components/OrderForm/OrderType';
 import UserDetails from './components/OrderForm/UserDetails';
 import Cart from './components/OrderForm/Cart';
+import Summary from './components/OrderForm/summary';
 
 class App extends Component {
   render() {
@@ -41,6 +42,7 @@ class App extends Component {
          <Route path="/treks" component={Treks} />
          <Route path="/rubbers" component={RubberView} />
          <Route path="/cart" component={Cart} />
+         <Route path="/summary" component={Summary} />
         <Footer />
 
       </div>

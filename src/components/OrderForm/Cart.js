@@ -55,7 +55,7 @@ class Cart extends Component {
                   <ForwardButton
                     text="Zamawiam"
                     theme="black"
-                    onClick={() => { history.push({pathname: '/user-details', state: this.getOrderDetails()}) }}
+                    onClick={() => { history.push({pathname: '/user-details'}) }}
                     forward
                   />
                   <button

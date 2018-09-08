@@ -4,6 +4,7 @@ import {Route} from 'react-router-dom';
 import '../../scss/order-form.css';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
+
 class UserDetails extends Component {
   constructor(props) {
     super(props);
@@ -26,53 +27,35 @@ class UserDetails extends Component {
       nip: '',
       companyPostalCode: '',
 
-    }
+    };
   }
 
-  getOrderDetails = () => {
+  getUserDetails = () => {
     return {
-      orderType: this.props.history.location.state.orderType,
-      orderDetails: {
-        rubberType: this.props.history.location.state.rubberType,
-        edgeReplacement: this.props.history.location.state.edgeReplacement,
-        edgeThickness: this.props.history.location.state.edgeThickness,
-        additionalOptions: this.props.history.location.state.additionalOptions,
-        description: this.props.history.location.state.description,
-      },
-      userDetails: {
-        name: this.state.name,
-        surname: this.state.surname,
-        email: this.state.email,
-        phone: this.state.phone,
-        street: this.state.street,
-        streetNumber: this.state.streetNumber,
-        postalCode: this.state.postalCode,
-        city: this.state.city,
-        sendBack: this.state.sendBack,
-        invoice: this.state.invoice,
-        invoiceDetails: this.state.invoice ? {
-          name: this.state.companyName,
-          nip: this.state.nip,
-          street: this.state.companyStreet,
-          streetNumber: this.state.companyStreetNumber,
-          city: this.state.companyCity,
-          postalCode: this.state.companyPostalCode
-        } : null
-      }
-    }
+      name: this.state.name,
+      surname: this.state.surname,
+      email: this.state.email,
+      phone: this.state.phone,
+      street: this.state.street,
+      streetNumber: this.state.streetNumber,
+      postalCode: this.state.postalCode,
+      city: this.state.city,
+      sendBack: this.state.sendBack,
+      invoice: this.state.invoice,
+      invoiceDetails: this.state.invoice ? {
+        name: this.state.companyName,
+        nip: this.state.nip,
+        street: this.state.companyStreet,
+        streetNumber: this.state.companyStreetNumber,
+        city: this.state.companyCity,
+        postalCode: this.state.companyPostalCode
+      } : null
+    };
   };
 
   saveToLocalStorage = () => {
-    let cart = localStorage.getItem('cart');
-    if(cart === null || JSON.parse(cart).length === 0) {
-      const arr = [];
-      arr.push(this.getOrderDetails());
-      localStorage.setItem('cart', JSON.stringify(arr));
-    } else {
-      cart = JSON.parse(cart);
-      cart.push(this.getOrderDetails());
-    }
-};
+    localStorage.setItem('address', JSON.stringify(this.getUserDetails()));
+  };
 
   render() {
     return <div className="container order-form">
@@ -158,7 +141,7 @@ class UserDetails extends Component {
                   type="checkbox"
                   id="invoice"
                   style={{marginBottom: '0px'}}
-                       value={this.state.invoice} onChange={() =>
+                  value={this.state.invoice} onChange={() =>
                   this.setState({invoice: !this.state.invoice})
                 }/>
                 <label htmlFor="invoice">Prosze o przeslanie faktury VAT</label>
@@ -253,22 +236,27 @@ class UserDetails extends Component {
                 <ForwardButton
                   text="Dalej"
                   theme="black"
-                  onClick={() =>  this.saveToLocalStorage()}
+                  onClick={() => {
+                    this.saveToLocalStorage();
+                    history.push({pathname: '/summary'});
+                  }}
                   forward
                 />
-              )} />
+              )}/>
               <Route render={({history}) => (
                 <ForwardButton
                   text="Wtecz"
                   theme="white"
-                  onClick={() =>  this.saveToLocalStorage()}
+                  onClick={() => {
+                    history.push({pathname: '/cart'});
+                  }}
                 />
-              )} />
+              )}/>
             </ButtonsRow>
           </div>
         </div>
       </div>
-    </div>
+    </div>;
   }
 };
 

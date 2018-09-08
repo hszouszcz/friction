@@ -120,7 +120,6 @@
     }
   }
 
-
   .agreement {
     .order-section {
       display: flex;
@@ -133,7 +132,6 @@
     }
   }
 }
-
 
 .invoice {
   background-color: $snow;
@@ -161,6 +159,11 @@
     background-color: transparent;
     padding: 0;
   }
+}
+
+.props-type {
+  padding-top: 20px;
+  font-size: 0.9rem;
 }
 
 .sum-up {
