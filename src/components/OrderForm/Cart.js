@@ -30,7 +30,13 @@ class Cart extends Component {
         if(item.additionalOptions !== null)
       value += item.additionalOptions.price
     });
+    this.saveCartValueToStorage(value);
     return value;
+  };
+
+  saveCartValueToStorage = (value) => {
+
+    localStorage.setItem('value', JSON.stringify(value));
   };
 
   render() {

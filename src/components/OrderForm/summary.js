@@ -2,15 +2,24 @@ import React, {Component} from 'react';
 import CartItem from './CartItem';
 import '../../scss/cart-item.css';
 import Route from 'react-router-dom/es/Route';
+import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
+import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 
 class Summary extends Component {
   constructor(props) {
     super(props);
     this.state = {
       cart: JSON.parse(localStorage.getItem('cart')),
-      address: JSON.parse(localStorage.getItem('address'))
+      address: JSON.parse(localStorage.getItem('address')),
+        value: JSON.parse(localStorage.getItem('value')),
     };
   }
+
+  removeCartAndAddress = () => {
+    localStorage.removeItem('cart');
+    localStorage.removeItem('address');
+    localStorage.removeItem('value');
+  };
 
   render() {
     return (
@@ -33,14 +42,18 @@ class Summary extends Component {
                 {`${this.state.address.name} ${this.state.address.surname}`}
               </div>
               <div className="order-prop">
-                {`${this.state.address.name} ${this.state.address.surname}`}
-              </div>
-              <div className="order-prop">
                 {`${this.state.address.street} ${this.state.address.streetNumber}`}
               </div>
               <div className="order-prop">
                 {`${this.state.address.postalCode} ${this.state.address.city}`}
               </div>
+               <div className="order-prop">
+                {`${this.state.address.email}`}
+              </div>
+              <div className="order-prop">
+                {`${this.state.address.phone}`}
+              </div>
+
             </div>
             {this.state.address.invoice &&
 
@@ -69,8 +82,38 @@ class Summary extends Component {
               </div>
             </div>
             }
+            <div className="cart-item summary-price" style={{borderBottom: 'none'}}>
+              <div className="order-prop">
+                {`Cena napraw:  ${this.state.value} PLN`}
+              </div>
+              <div className="order-prop">
+                {`Cena za przesyłkę:  ???`}
+              </div>
+              <div className="order-prop">
+                {`Łącznie do zapłaty:`}
+                <span>{this.state.value} PLN</span>
+              </div>
+              <div className="order-prop">
+                {`W tym VAT(23%) ${this.state.value*0.23} PLN`}
+              </div>
+            </div>
 
           </div>
+        </div>
+        <div className="orderFormFooter col-md-12">
+          <ButtonsRow>
+            <Route render={({history}) => (
+              <ForwardButton
+                text="ZAMAWIAM"
+                theme="black"
+                onClick={() => {
+                  this.saveToLocalStorage();
+                  history.push({pathname: '/summary'});
+                }}
+                forward
+              />
+            )}/>
+          </ButtonsRow>
         </div>
       </div>
     );

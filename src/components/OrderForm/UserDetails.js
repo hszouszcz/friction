@@ -22,7 +22,7 @@ class UserDetails extends Component {
         city: '',
         sendBack: null,
         agreement: false,
-        invoice: this.state.invoice,
+        invoice: false,
         invoiceDetails: {
           name: '',
           nip: '',

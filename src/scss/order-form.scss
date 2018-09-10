@@ -178,3 +178,13 @@
     padding: 0 10px;
   }
 }
+
+.summary-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  span {
+    color: $onyx;
+    font-size: 1rem;
+  }
+}
