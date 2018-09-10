@@ -8,26 +8,31 @@ import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 class UserDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: '',
-      surname: '',
-      email: '',
-      phone: '',
-      street: '',
-      streetNumber: '',
-      postalCode: '',
-      city: '',
-      sendBack: null,
-      agreement: false,
-      invoice: false,
-      companyName: '',
-      companyStreet: '',
-      companyStreetNumber: '',
-      companyCity: '',
-      nip: '',
-      companyPostalCode: '',
-
-    };
+    if(localStorage.getItem('address')) {
+      this.state = JSON.parse(localStorage.getItem('address'));
+    } else {
+      this.state = {
+        name: '',
+        surname: '',
+        email: '',
+        phone: '',
+        street: '',
+        streetNumber: '',
+        postalCode: '',
+        city: '',
+        sendBack: null,
+        agreement: false,
+        invoice: this.state.invoice,
+        invoiceDetails: {
+          name: '',
+          nip: '',
+          street: '',
+          streetNumber: '',
+          city: '',
+          postalCode: '',
+        }
+      };
+    }
   }
 
   getUserDetails = () => {
@@ -43,12 +48,12 @@ class UserDetails extends Component {
       sendBack: this.state.sendBack,
       invoice: this.state.invoice,
       invoiceDetails: this.state.invoice ? {
-        name: this.state.companyName,
-        nip: this.state.nip,
-        street: this.state.companyStreet,
-        streetNumber: this.state.companyStreetNumber,
-        city: this.state.companyCity,
-        postalCode: this.state.companyPostalCode
+        name: this.state.invoiceDetails.name,
+        nip: this.state.invoiceDetails.nip,
+        street: this.state.invoiceDetails.street,
+        streetNumber: this.state.invoiceDetails.streetNumber,
+        city: this.state.invoiceDetails.city,
+        postalCode: this.state.invoiceDetails.postalCode
       } : null
     };
   };
@@ -154,8 +159,8 @@ class UserDetails extends Component {
                 <input
                   type="text"
                   id="companyName"
-                  value={this.state.companyName}
-                  onChange={(e) => this.setState({companyName: e.target.value})}
+                  value={this.state.invoiceDetails.name}
+                  onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, name: e.target.value}})}
                 />
               </div>
               <div className="col-md-6">
@@ -163,8 +168,8 @@ class UserDetails extends Component {
                 <input
                   type="text"
                   id="nip"
-                  value={this.state.nip}
-                  onChange={(e) => this.setState({nip: e.target.value})}
+                  value={this.state.invoiceDetails.nip}
+                  onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, nip: e.target.value}})}
                 />
               </div>
               <div className="col-12 col-md-6">
@@ -172,8 +177,8 @@ class UserDetails extends Component {
                 <input
                   type="text"
                   id="companyStreet"
-                  value={this.state.companyStreet}
-                  onChange={(e) => this.setState({companyStreet: e.target.value})}
+                  value={this.state.invoiceDetails.street}
+                  onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, street: e.target.value}})}
                 />
               </div>
               <div className="col-12 col-md-6">
@@ -181,8 +186,8 @@ class UserDetails extends Component {
                 <input
                   type="text"
                   id="companyStreet"
-                  value={this.state.companyStreetNumber}
-                  onChange={(e) => this.setState({companyStreetNumber: e.target.value})}
+                  value={this.state.invoiceDetails.streetNumber}
+                  onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, streetNumber: e.target.value}})}
                 />
               </div>
               <div className="col-12 col-md-3">
@@ -190,8 +195,8 @@ class UserDetails extends Component {
                 <input
                   type="text"
                   id="companyPostalCode"
-                  value={this.state.companyPostalCode}
-                  onChange={(e) => this.setState({companyPostalCode: e.target.value})}
+                  value={this.state.invoiceDetails.postalCode}
+                  onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, postalCode: e.target.value}})}
                 />
               </div>
               <div className="col-12 col-md-9">
@@ -199,8 +204,8 @@ class UserDetails extends Component {
                 <input
                   type="text"
                   id="companyCity"
-                  value={this.state.companyCity}
-                  onChange={(e) => this.setState({companyCity: e.target.value})}
+                  value={this.state.invoiceDetails.city}
+                  onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, city: e.target.value}})}
                 />
               </div>
             </div>
