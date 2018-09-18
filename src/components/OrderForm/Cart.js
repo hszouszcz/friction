@@ -30,13 +30,7 @@ class Cart extends Component {
         if(item.additionalOptions !== null)
       value += item.additionalOptions.price
     });
-    this.saveCartValueToStorage(value);
     return value;
-  };
-
-  saveCartValueToStorage = (value) => {
-
-    localStorage.setItem('value', JSON.stringify(value));
   };
 
   render() {
@@ -61,7 +55,7 @@ class Cart extends Component {
                   <ForwardButton
                     text="Zamawiam"
                     theme="black"
-                    onClick={() => { history.push({pathname: '/user-details'}) }}
+                    onClick={() => { history.push({pathname: '/user-details', state: {value: this.sumUp()}}) }}
                     forward
                   />
                   <button
@@ -83,48 +77,5 @@ class Cart extends Component {
 
 Cart.propTypes = {};
 Cart.defaultProps = {};
-
-const mock = [{
-  orderType: 'Buty Wspinaczkowe',
-  props: [
-    {
-      name: 'Vibram Xs',
-      price: '150'
-    },
-    {
-      name: 'Wymiana Rantów',
-      price: '70'
-    },
-    {
-      name: 'Wymiana Rantów',
-      price: '70'
-    },
-    {
-      name: 'Rany Extra Grube',
-      price: '30'
-    },
-  ]
-},
-  {
-    orderType: 'Buty Wspinaczkowe',
-    props: [
-      {
-        name: 'Vibram Xs',
-        price: '150'
-      },
-      {
-        name: 'Wymiana Rantów',
-        price: '70'
-      },
-      {
-        name: 'Wymiana Rantów',
-        price: '70'
-      },
-      {
-        name: 'Rany Extra Grube',
-        price: '30'
-      },
-    ]
-  }];
 
 export default Cart;

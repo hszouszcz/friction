@@ -54,7 +54,14 @@ class UserDetails extends Component {
         streetNumber: this.state.invoiceDetails.streetNumber,
         city: this.state.invoiceDetails.city,
         postalCode: this.state.invoiceDetails.postalCode
-      } : null
+      } : {
+        name: '',
+        nip: '',
+        street: '',
+        streetNumber: '',
+        city: '',
+        postalCode: ''
+      }
     };
   };
 

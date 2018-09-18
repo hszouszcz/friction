@@ -11,9 +11,21 @@ class Summary extends Component {
     this.state = {
       cart: JSON.parse(localStorage.getItem('cart')),
       address: JSON.parse(localStorage.getItem('address')),
-        value: JSON.parse(localStorage.getItem('value')),
     };
   }
+
+  sumUp = () => {
+    let value = 0;
+    this.state.cart.forEach((item) => {
+      item.orderProps.forEach(prop => {
+        if(prop !== null)
+          value = value + prop.price;
+      });
+      if(item.additionalOptions !== null)
+        value += item.additionalOptions.price
+    });
+    return value;
+  };
 
   removeCartAndAddress = () => {
     localStorage.removeItem('cart');
@@ -36,39 +48,46 @@ class Summary extends Component {
                 deleteFunc={this.deleteFromCart}
               />
             )}
-            <div className="cart-item" style={{borderBottom: 'none'}}>
-              <div className="props-type" style={{color: '#6f7983', paddingTop: 0, paddingBottom: 20}}>Dane odbiorcy:</div>
-              <div className="order-prop">
-                {`${this.state.address.name} ${this.state.address.surname}`}
-              </div>
-              <div className="order-prop">
-                {`${this.state.address.street} ${this.state.address.streetNumber}`}
-              </div>
-              <div className="order-prop">
-                {`${this.state.address.postalCode} ${this.state.address.city}`}
-              </div>
-               <div className="order-prop">
-                {`${this.state.address.email}`}
-              </div>
-              <div className="order-prop">
-                {`${this.state.address.phone}`}
-              </div>
-
-            </div>
-            {this.state.address.invoice &&
-
             <div className="cart-item">
-              <div className="props-type" style={{color: '#6f7983', paddingTop: 0, paddingBottom: 20}}>Dane do faktury:</div>
-              <div>{`NIP: ${this.state.address.invoiceDetails.nip}`}</div>
-              <div className="order-prop">
-                {`${this.state.address.invoiceDetails.name}`}
+              <div style={{borderBottom: 'none'}}>
+                <div className="props-type" style={{color: '#6f7983', paddingTop: 0, paddingBottom: 20}}>Dane
+                  odbiorcy:
+                </div>
+                <div className="order-prop">
+                  {`${this.state.address.name} ${this.state.address.surname}`}
+                </div>
+                <div className="order-prop">
+                  {`${this.state.address.street} ${this.state.address.streetNumber}`}
+                </div>
+                <div className="order-prop">
+                  {`${this.state.address.postalCode} ${this.state.address.city}`}
+                </div>
+                <div className="order-prop">
+                  {`${this.state.address.email}`}
+                </div>
+                <div className="order-prop">
+                  {`${this.state.address.phone}`}
+                </div>
+
               </div>
-              <div className="order-prop">
-                {`${this.state.address.invoiceDetails.street} ${this.state.address.invoiceDetails.streetNumber}`}
+              {this.state.address.invoice &&
+
+              <div>
+                <div className="props-type" style={{color: '#6f7983', paddingTop: 0, paddingBottom: 20}}>Dane do
+                  faktury:
+                </div>
+                <div>{`NIP: ${this.state.address.invoiceDetails.nip}`}</div>
+                <div className="order-prop">
+                  {`${this.state.address.invoiceDetails.name}`}
+                </div>
+                <div className="order-prop">
+                  {`${this.state.address.invoiceDetails.street} ${this.state.address.invoiceDetails.streetNumber}`}
+                </div>
+                <div className="order-prop">
+                  {`${this.state.address.invoiceDetails.postalCode} ${this.state.address.invoiceDetails.city}`}
+                </div>
               </div>
-              <div className="order-prop">
-                {`${this.state.address.invoiceDetails.postalCode} ${this.state.address.invoiceDetails.city}`}
-              </div>
+              }
               <div className="buttons">
                 <Route render={({history}) => (
                   <button
@@ -81,39 +100,39 @@ class Summary extends Component {
                 )}/>
               </div>
             </div>
-            }
             <div className="cart-item summary-price" style={{borderBottom: 'none'}}>
               <div className="order-prop">
-                {`Cena napraw:  ${this.state.value} PLN`}
+                {`Cena napraw:`}
+                <span>{`${this.sumUp()} PLN`}</span>
               </div>
               <div className="order-prop">
                 {`Cena za przesyłkę:  ???`}
               </div>
               <div className="order-prop">
-                {`Łącznie do zapłaty:`}
-                <span>{this.state.value} PLN</span>
+                Łącznie do zapłaty:
+                <span>{this.sumUp()} PLN</span>
               </div>
               <div className="order-prop">
-                {`W tym VAT(23%) ${this.state.value*0.23} PLN`}
+                W tym VAT(23%)
+                <span>{`${this.sumUp()*0.23} PLN`}</span>
               </div>
             </div>
-
+            <div className="orderFormFooter">
+              <ButtonsRow>
+                <Route render={({history}) => (
+                  <ForwardButton
+                    text="ZAMAWIAM"
+                    theme="black"
+                    onClick={() => {
+                      this.saveToLocalStorage();
+                      history.push({pathname: '/summary'});
+                    }}
+                    forward
+                  />
+                )}/>
+              </ButtonsRow>
+            </div>
           </div>
-        </div>
-        <div className="orderFormFooter col-md-12">
-          <ButtonsRow>
-            <Route render={({history}) => (
-              <ForwardButton
-                text="ZAMAWIAM"
-                theme="black"
-                onClick={() => {
-                  this.saveToLocalStorage();
-                  history.push({pathname: '/summary'});
-                }}
-                forward
-              />
-            )}/>
-          </ButtonsRow>
         </div>
       </div>
     );
