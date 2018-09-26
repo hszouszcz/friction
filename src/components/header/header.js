@@ -4,8 +4,9 @@ import logo from '../../assets/img/logo.jpg';
 import "../../scss/header.css";
 import OrderForm from '../OrderForm/OrderForm';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
-const Header = () => (
+const Header = (props) => (
   <div className="header">
     <nav className="navbar navbar-light sticky-top col-md-8 offset-md-2">
     <a className="navbar-brand"><img className="logo" src={logo} alt={"logo"}/></a>
@@ -35,11 +36,17 @@ const Header = () => (
         <a className="nav-link" href="#">Zamów</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link disabled" href="#">Basket</a>
+        <a className="nav-link disabled" href="#">Basket {props.itemsInCart}</a>
       </li>
     </ul>
   </nav>
   </div>
 );
 
-export default Header;
+const mapStateToProps = (state) => {
+  return ({
+    itemsInCart: state.itemsInCart
+  });
+};
+
+export default connect(mapStateToProps)(Header);

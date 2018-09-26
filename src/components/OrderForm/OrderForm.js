@@ -8,11 +8,14 @@ import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 import {rubberPricing} from '../../constants/pricing';
 import {additionalOptions} from '../../constants/additionalOptions';
+import {updateCart} from '../../redux/actions';
+import Order from '../order/order';
+import {connect} from 'react-redux';
 
 class OrderForm extends Component {
   constructor(props) {
     super(props);
-    if(this.props.history.location.state
+    if (this.props.history.location.state
       && this.props.history.location.state.orderToEdit
     ) {
       const itemToEdit = this.getOrderToEdit();
@@ -23,7 +26,7 @@ class OrderForm extends Component {
         edgeThickness: itemToEdit.orderProps[1] !== null ? itemToEdit.orderProps[1].thicknessValue : null,
         additionalOptions: itemToEdit.additionalOptions,
         description: itemToEdit.description
-      }
+      };
     } else {
       this.state = {
         rubber: rubberPricing[0],
@@ -35,13 +38,19 @@ class OrderForm extends Component {
     }
   }
 
+  getCartItemsNumber = () => {
+    if (localStorage.getItem('cart'))
+      return JSON.parse(localStorage.getItem('cart')).length;
+    return 0;
+  };
+
   componentDidUpdate() {
     window.scrollTo(0, 0);
   }
 
   getOrderToEdit = () => {
     const cart = JSON.parse(localStorage.getItem('cart'));
-    return cart[this.props.history.location.state.orderToEdit-1];
+    return cart[this.props.history.location.state.orderToEdit - 1];
   };
 
   getOrderDetails = () =>
@@ -73,11 +82,11 @@ class OrderForm extends Component {
       cart = arr;
     } else {
       cart = JSON.parse(cart);
-        if(this.props.history.location.state.orderToEdit) {
-          cart[this.props.history.location.state.orderToEdit-1] = this.getOrderDetails();
-        } else {
-          cart.push(this.getOrderDetails());
-        }
+      if (this.props.history.location.state.orderToEdit) {
+        cart[this.props.history.location.state.orderToEdit - 1] = this.getOrderDetails();
+      } else {
+        cart.push(this.getOrderDetails());
+      }
     }
     localStorage.setItem('cart', JSON.stringify(cart));
   };
@@ -144,7 +153,7 @@ class OrderForm extends Component {
                 callback={(option) => this.setState({additionalOptions: option})}
                 placeholder={"Brak"}
                 options={this.props.history.location.state
-                  && this.props.history.location.state.orderToEdit ? additionalOptions[this.state.orderType]
+                && this.props.history.location.state.orderToEdit ? additionalOptions[this.state.orderType]
                   : additionalOptions[this.props.history.location.state.orderType]}
               />
             </div>
@@ -166,6 +175,7 @@ class OrderForm extends Component {
                 theme="black"
                 onClick={() => {
                   this.saveToLocalStorage();
+                  this.props.updateCart(this.getCartItemsNumber() + 1);
                   history.push({pathname: '/cart'}
                   );
                 }}
@@ -184,4 +194,11 @@ class OrderForm extends Component {
   }
 }
 
-export default OrderForm;
+const matchDispatchToProps = (dispatch) => ({
+  updateCart: (itemsInCart) => {
+    dispatch(updateCart(itemsInCart));
+  }
+});
+
+
+export default connect(null, matchDispatchToProps)(OrderForm);
