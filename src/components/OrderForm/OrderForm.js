@@ -175,7 +175,7 @@ class OrderForm extends Component {
                 theme="black"
                 onClick={() => {
                   this.saveToLocalStorage();
-                  this.props.updateCart(this.getCartItemsNumber() + 1);
+                  this.props.updateCart(this.getCartItemsNumber());
                   history.push({pathname: '/cart'}
                   );
                 }}
