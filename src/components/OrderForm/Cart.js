@@ -5,6 +5,8 @@ import CartItem from './CartItem';
 import {Route} from 'react-router-dom';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
+import {connect} from 'react-redux';
+import {updateCart} from '../../redux/actions';
 
 class Cart extends Component {
   constructor(props) {
@@ -17,7 +19,8 @@ class Cart extends Component {
     let cart = JSON.parse(localStorage.getItem('cart'));
     cart.splice(index-1, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
-    this.setState({cart: JSON.parse(localStorage.getItem('cart'))})
+    this.setState({cart: JSON.parse(localStorage.getItem('cart'))});
+    this.props.updateCart(JSON.parse(localStorage.getItem('cart')).length)
   };
 
   sumUp = () => {
@@ -52,12 +55,12 @@ class Cart extends Component {
             <div className="cart-footer">
               <Route render={({history}) => (
                 <ButtonsRow>
-                  <ForwardButton
+                 {this.state.cart.length > 0 && <ForwardButton
                     text="Zamawiam"
                     theme="black"
                     onClick={() => { history.push({pathname: '/user-details', state: {value: this.sumUp()}}) }}
                     forward
-                  />
+                  />}
                   <button
                     className="add-more-button"
                     onClick={() => history.push('/order')}
@@ -78,4 +81,11 @@ class Cart extends Component {
 Cart.propTypes = {};
 Cart.defaultProps = {};
 
-export default Cart;
+const matchDispatchToProps = (dispatch) => ({
+  updateCart: (itemsInCart) => {
+    dispatch(updateCart(itemsInCart));
+  }
+});
+
+
+export default connect(null, matchDispatchToProps)(Cart);

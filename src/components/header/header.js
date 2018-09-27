@@ -19,6 +19,7 @@ const Header = (props) => (
           </button>
           <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
             <a className="dropdown-item" href="#">Cennik</a>
+            <Link className="dropdown-item" to="/cart">Koszyk ({props.itemsInCart})</Link>
             <Link className="dropdown-item" to="/guide">Poradnik</Link>
             <a className="dropdown-item" href="#">Regulamin</a>
             <a className="dropdown-item" href="#">Fotogaleria</a>
@@ -36,7 +37,7 @@ const Header = (props) => (
         <a className="nav-link" href="#">Zamów</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link disabled" href="#">Basket {props.itemsInCart}</a>
+        <a className="nav-link basket" href="/cart">{`${props.itemsInCart} `}<i className="fa fa-shopping-basket" aria-hidden="true"></i></a>
       </li>
     </ul>
   </nav>
