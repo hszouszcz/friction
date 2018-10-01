@@ -16,9 +16,9 @@ const GuideView = (props) => {
         <Link smooth to="/guide">Kiedy ranty ulegają uszkodzeniu</Link>
         <Link smooth to="/guide">Jak mogę ustalić czy wymiana rantyów jest konieczna?</Link>
         <Link smooth to="/guide">Jak wykonujemy ranty?</Link>
-        <Link smooth to="/guide">Czy mogę naprawić tylko ranty bez wymieniany podeszw?</Link>
-        <Link smooth to="/guide">Ile razy można podjklejać buty?</Link>
-        <Link smooth to="/guide">Jak najlepiej dbać o buty?</Link>
+        <Link smooth to="/guide#edge-replacement">Czy mogę naprawić tylko ranty bez wymieniany podeszw?</Link>
+        <Link smooth to="/guide#not-least">Ile razy można podjklejać buty?</Link>
+        <Link smooth to="/guide#last">Jak najlepiej dbać o buty?</Link>
       </div>
       <div className="anchor-title">
         Wygoda
@@ -101,7 +101,7 @@ const GuideView = (props) => {
       <div className="anchor-title">
         Czy mogę naprawić tylko ranty butów bez wymiany podeszwy?
       </div>
-      <div className="common-text anchor-text-padding">
+      <div className="common-text anchor-text-padding" id="edge-replacement">
         Wymiana samych rantów nie jest możliwa. Wynika to z konstrukcji buta wspinaczkowego, bowiem podeszwa jest
         przyklejona do rantów i jej zeszlifowanie jest konieczne do wymiany rantów.
       </div>
