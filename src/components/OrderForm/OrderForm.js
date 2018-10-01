@@ -158,7 +158,7 @@ class OrderForm extends Component {
               />
             </div>
             <div className="order-section">
-              <span className="section-title">Opis (model buta, rozmiar), inne naprawy z cennika, itp.*</span>
+              <div className="section-title">Opis (model buta, rozmiar), inne naprawy z cennika, itp.*</div>
               <textarea value={this.state.description} onChange={(e) => this.setState({description: e.target.value})}/>
             </div>
             <div className="note">
