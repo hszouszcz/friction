@@ -1,6 +1,7 @@
 import React from 'react';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
+import {Route} from 'react-router-dom';
 
 const RubberContent = () => {
   return (
@@ -16,16 +17,19 @@ const RubberContent = () => {
         boxOrient: 'vertical'
       }}>
         Gumy stosowane na podeszwy obuwia wspinaczkowego ewoluowały od prawie 30 lat.
-        Tak długi okres pracy różnych ośrodków badawczo-wdrożeniowych przyczynił się do obecnej bardzo szerokiej oferty...
+        Tak długi okres pracy różnych ośrodków badawczo-wdrożeniowych przyczynił się do obecnej bardzo szerokiej
+        oferty...
       </div>
       <ButtonsRow>
         <div></div>
-        <ForwardButton
-          text="Zobacz więcej"
-          theme="black"
-          onPress={() => null}
-          forward
-        />
+        <Route render={({history}) => (
+          <ForwardButton
+            text="Zobacz więcej"
+            theme="black"
+            onClick={() => history.push('/rubbers')}
+            forward
+          />
+        )}/>
       </ButtonsRow>
     </div>
   );

@@ -10,7 +10,8 @@
         left: 0;
         padding-left: 10px;
         width: 90%;
-        display: block; } }
+        display: block;
+        padding-bottom: 30px; } }
   .about .mobile-img {
     width: 100%;
     position: absolute;
@@ -26,14 +27,19 @@
         display: flex;
         padding-bottom: 50px;
         font-size: 2em; } }
-  .about .content .title {
-    font-size: 16px;
-    color: #dadfe5;
-    margin-bottom: 20px; }
-  .about .content .text {
-    font-size: 18px;
-    color: white;
-    font-weight: lighter; }
-  @media (max-width: 992px) {
-    .about .content .second-col {
-      display: none; } }
+  .about .content {
+    padding-bottom: 30px; }
+    .about .content .title {
+      font-size: 16px;
+      color: #dadfe5;
+      margin-bottom: 20px; }
+    .about .content .text {
+      font-size: 18px;
+      color: white;
+      font-weight: lighter; }
+    @media (max-width: 992px) {
+      .about .content {
+        padding-top: 30px;
+        padding-bottom: 30px; }
+        .about .content .second-col {
+          display: none; } }

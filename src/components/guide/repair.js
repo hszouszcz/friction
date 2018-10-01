@@ -2,6 +2,7 @@ import React from 'react';
 import '../../scss/custom-radio-button.css';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
+import {Route} from 'react-router-dom';
 
 const Repair = () => {
   return (
@@ -17,17 +18,19 @@ const Repair = () => {
         <p><span>Nie przecieraj rantów! </span>
         W porę wykonana wymiana samej podeszwy gwarantuje najlepsze zachowanie pierwotnych parametrów buta.</p>
       </div>
-     <ButtonsRow>
-       <div></div>
-       <ForwardButton
-       text="Zobacz więcej"
-       theme="black"
-       onPress={() => null}
-       forward
-       />
-     </ButtonsRow>
+      <ButtonsRow style="d-none">
+        <div></div>
+        <Route  render={({history}) => (
+          <ForwardButton
+            text="Zobacz więcej"
+            theme="black"
+            onClick={() => { history.push('/guide') }}
+            forward
+          />
+        )} />
+      </ButtonsRow>
     </div>
-  );
+);
 };
 
 export default Repair;

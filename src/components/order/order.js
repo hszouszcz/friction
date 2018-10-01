@@ -14,7 +14,7 @@ class Order extends Component  {
         <ForwardButton
           text="Zobacz więcej"
           theme="black"
-          onClick={() => { history.push('/order-rules') }}
+          onClick={() => { history.push('/order') }}
           forward
         />
       </ButtonsRow>

@@ -23,6 +23,7 @@ import Summary from './components/OrderForm/summary';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {cartReducer} from './redux/reducers';
+import ScrollToTop from './components/ScrollToTop';
 
 let store = createStore(cartReducer);
 
@@ -38,7 +39,9 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App">
+
+         <ScrollToTop>
+           <div className="App">
             <Header/>
             <Route exact={true} path="/" component={HomePage}/>
             <Route path="/order" component={OrderType}/>
@@ -52,7 +55,7 @@ class App extends Component {
             <Route path="/cart" component={Cart}/>
             <Route path="/summary" component={Summary}/>
             <Footer/>
-          </div>
+          </div></ScrollToTop>
         </Router>
       </Provider>
     );

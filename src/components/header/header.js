@@ -9,7 +9,7 @@ import {connect} from 'react-redux';
 const Header = (props) => (
   <div className="header">
     <nav className="navbar navbar-light sticky-top col-md-8 offset-md-2">
-    <a className="navbar-brand"><img className="logo" src={logo} alt={"logo"}/></a>
+    <a className="navbar-brand" href="/"><img className="logo" src={logo} alt={"logo"}/></a>
     <ul className="nav justify-content-end menu-items-nav" style={{alignItems: 'center'}}>
       <li className="nav-item mobile-menu">
         <div className="dropdown">
@@ -21,12 +21,12 @@ const Header = (props) => (
             <a className="dropdown-item" href="#">Cennik</a>
             <Link className="dropdown-item" to="/cart">Koszyk ({props.itemsInCart})</Link>
             <Link className="dropdown-item" to="/guide">Poradnik</Link>
-            <a className="dropdown-item" href="#">Regulamin</a>
+            <a className="dropdown-item" href="#terms">Regulamin</a>
             <a className="dropdown-item" href="#">Fotogaleria</a>
-            <a className="dropdown-item" href="#">Kontakt</a>
             <a className="dropdown-item" href="#">Dane do przelewu</a>
-            <a className="dropdown-item" href="#">English</a>
             <Link className="dropdown-item" to="/order">Zamów</Link>
+            <a className="dropdown-item" href="#">Kontakt</a>
+            <a className="dropdown-item" href="#">English</a>
           </div>
         </div>
       </li>
