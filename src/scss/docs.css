@@ -22,7 +22,8 @@
 .docs .anchor-title {
   font-size: 18px;
   color: #6f7983;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  padding-top: 30px; }
 
 .docs .anchor-text-padding {
   padding-bottom: 30px; }
