@@ -1,6 +1,6 @@
 import React from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 import '../../scss/docs.css';
-import {Link} from 'react-router-dom';
 
 const Terms = (props) => {
   return (
@@ -8,17 +8,17 @@ const Terms = (props) => {
       <div className="breadcrumbs">Najważniejsze informacje dotyczące zamówień</div>
       <div className="title">Regulamin zamówień</div>
       <div className="links">
-        <Link smooth to="/terms#last">Składanie zamówień</Link>
-        <Link smooth to="/terms">Ceny</Link>
-        <Link smooth to="/terms">Przygotowanie butów do naprawy</Link>
-        <Link smooth to="/terms"> Realizacja zamówień</Link>
-        <Link smooth to="/terms">Czas reazlizacji naprawy</Link>
-        <Link smooth to="/terms">Tryb ekspresowy</Link>
-        <Link smooth to="/terms">Faktury VAT</Link>
-        <Link smooth to="/terms">Dostawa</Link>
-        <Link smooth to="/terms">Formy płatnośći</Link>
-        <Link smooth to="/terms">Nieodebranie zamówienia w terminie</Link>
-        <Link smooth to="/terms">Gwarancja</Link>
+        <Link smooth to="/terms#ordering">Składanie zamówień</Link>
+        <Link smooth to="/terms#pricing">Ceny</Link>
+        <Link smooth to="/terms#prep">Przygotowanie butów do naprawy</Link>
+        <Link smooth to="/terms#orders"> Realizacja zamówień</Link>
+        <Link smooth to="/terms#eta">Czas reazlizacji naprawy</Link>
+        <Link smooth to="/terms#express">Tryb ekspresowy</Link>
+        <Link smooth to="/terms#invoice">Faktury VAT</Link>
+        <Link smooth to="/terms#shipping">Dostawa</Link>
+        <Link smooth to="/terms#payment">Formy płatnośći</Link>
+        <Link smooth to="/terms#expired">Nieodebranie zamówienia w terminie</Link>
+        <Link smooth to="/terms#guaranty">Gwarancja</Link>
       </div>
 
       <div className="common-text anchor-text-padding">
@@ -27,7 +27,7 @@ const Terms = (props) => {
         usług naprawy obuwia wspinaczkowego i trekkingowego przez firmę Friction.
       </div>
 
-      <div className="anchor-title">
+      <div className="anchor-title" id="ordering">
         Składanie zamówień
       </div>
       <div className="common-text anchor-text-padding">
@@ -39,13 +39,13 @@ const Terms = (props) => {
         W razie jakichkolwiek problemów z przesyłką najszybszym sposobem ich wyjaśnienia jest kontakt telefoniczny,
         dlatego prosimy o podanie numeru telefonu w formularzu zamówienia.
       </div>
-      <div className="anchor-title">
+      <div className="anchor-title" id="pricing">
         Ceny
       </div>
       <div className="common-text anchor-text-padding">
         Podane ceny usług są cenami brutto, tj. zawierają podatek VAT.
       </div>
-      <div className="anchor-title">
+      <div className="anchor-title" id="prep">
         Przygotowanie butów wspinaczkowych do naprawy
       </div>
       <div className="common-text anchor-text-padding">
@@ -60,7 +60,7 @@ const Terms = (props) => {
         ponownie dopasować się do stopy. Natomiast, jeśli tuż po praniu dokonamy wymiany rantów i podeszwy buty mogą z
         tego powodu stać się ciaśniejsze i utracić nieco fason.
       </div>
-      <div className="anchor-title">
+      <div className="anchor-title" id="orders">
         Realizacja zamówień
       </div>
       <div className="common-text anchor-text-padding">
@@ -71,7 +71,7 @@ const Terms = (props) => {
         przechodzi do realizacji. Po ukończeniu naprawy przygotowujemy i wysyłamy paczkę zwrotną. Wysyłamy również
         emaila informującego o nadaniu przesyłki.
       </div>
-      <div className="anchor-title">
+      <div className="anchor-title" id="eta">
         Czas realizacji naprawy
       </div>
       <div className="common-text anchor-text-padding">
@@ -82,21 +82,21 @@ const Terms = (props) => {
         W uzasadnionych przypadkach rezerwujemy sobie prawo do odmowy realizacji zamówienia. Dotyczy to skrajnych
         przypadków uszkodzeń konstrukcji buta, które uniemożliwiają ich naprawę.
       </div>
-      <div className="anchor-title">
+      <div className="anchor-title" id="express">
         Tryb ekspresowy
       </div>
       <div className="common-text anchor-text-padding">
         Naprawy w trybie ekspresowym wykonywnae są w czasie do 4 dni roboczych. Tryb ekspresowy wiąże się z dopłatą 30%
         i wymaga uprzedniego potwierdzenia telefonicznego.
       </div>
-      <div className="anchor-title">
+      <div className="anchor-title" id="invoice">
         Faktury VAT
       </div>
       <div className="common-text anchor-text-padding">
         Na życzenie klienta wystawiamy fakturę VAT. W celu otrzymania faktury należy zaznaczyć odpowiednią opcję w
         trakcie składania zamówienia oraz podać dane do faktury.
       </div>
-      <div className="anchor-title">
+      <div className="anchor-title" id="shipping">
         Dostawa
       </div>
       <div className="common-text anchor-text-padding">
@@ -116,7 +116,7 @@ const Terms = (props) => {
 
         Obowiązkiem odbiorcy jest sprawdzenie stanu odbieranej paczki.
       </div>
-      <div className="anchor-title">
+      <div className="anchor-title" id="payment">
         Formy płatności
       </div>
       <div className="common-text anchor-text-padding">
@@ -125,7 +125,7 @@ const Terms = (props) => {
         zakładce Kontakt) prosimy o podanie numeru zamówienia w tytule przelewu. Pozwola to na przyspieszenie obsługi
         płatności i wysyłki.
       </div>
-      <div className="anchor-title">
+      <div className="anchor-title" id="expired">
         Nieodebranie zamówienia w terminie
       </div>
       <div className="common-text anchor-text-padding">
@@ -135,7 +135,7 @@ const Terms = (props) => {
         utylizacje zamówienia przez Friction s.c.
         Nieodebranie naprawionego obuwia nie zwalnia Zamawiającego od obowiązku uiszczenia opłaty w kwocie ceny naprawy.
       </div>
-      <div className="anchor-title">
+      <div className="anchor-title" id="guaranty">
         Gwarancja
       </div>
       <div className="common-text anchor-text-padding">

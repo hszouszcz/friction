@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../scss/docs.css';
-import {Link} from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import RubberType from './RubberType';
 import RubberThickness from './RubberThickness';
 
@@ -10,9 +10,9 @@ const RubberView = (props) => {
       <div className="breadcrumbs">Poradnik - Gumy wspinaczkowe</div>
       <div className="title">Czym różnią się dostępne rodzaje gum na podeszwę?</div>
       <div className="links">
-        <Link smooth to="/rubber-view#rubber-type">Wybór rodzaju gumy</Link>
-        <Link smooth to="/rubber-view#rubber-thickness">Wybór grubości gumy</Link>
-        <Link smooth to="/rubber-view#edges-thickness">Grubość rantów standardowa czy zwiększona?</Link>
+        <Link smooth to="/rubbers#rubber-type">Wybór rodzaju gumy</Link>
+        <Link smooth to="/rubbers#rubber-thickness">Wybór grubości gumy</Link>
+        <Link smooth to="/rubbers#edges-thickness">Grubość rantów standardowa czy zwiększona?</Link>
       </div>
       <div className="common-text anchor-text-padding">
         Gumy stosowane na podeszwy obuwia wspinaczkowego ewoluowały od prawie 30 lat. Tak długi okres pracy różnych
@@ -77,7 +77,7 @@ const RubberView = (props) => {
         friction={20}
         edge={60}
       />
-      <div className="anchor-title" id="edges-thickness">
+      <div className="anchor-title" id="rubber-thickness">
         Wybór grubości gumy
       </div>
       <div className="common-text anchor-text-padding">
