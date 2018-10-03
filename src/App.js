@@ -39,9 +39,8 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-
          <ScrollToTop>
-           <div className="App">
+           <div className="App" style={{maxWidth: 1140, margin: 'auto'}}>
             <Header/>
             <Route exact={true} path="/" component={HomePage}/>
             <Route path="/order" component={OrderType}/>
