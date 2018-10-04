@@ -22,7 +22,7 @@ const Header = (props) => (
             <Link className="dropdown-item" to="/cart">Koszyk ({props.itemsInCart})</Link>
             <Link className="dropdown-item" to="/guide">Poradnik</Link>
             <a className="dropdown-item" href="/terms">Regulamin</a>
-            <a className="dropdown-item" href="#">Fotogaleria</a>
+            <a className="dropdown-item" href="/gallery">Fotogaleria</a>
             <a className="dropdown-item" href="#">Dane do przelewu</a>
             <Link className="dropdown-item" to="/order">Zamów</Link>
             <a className="dropdown-item" href="#">Kontakt</a>

@@ -24,6 +24,7 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {cartReducer} from './redux/reducers';
 import ScrollToTop from './components/ScrollToTop';
+import GalleryView from './components/gallery/gallery';
 
 let store = createStore(cartReducer);
 
@@ -47,6 +48,7 @@ class App extends Component {
             <Route path="/order-details" component={OrderForm}/>
             <Route path="/user-details" component={UserDetails}/>
             <Route path="/guide" component={GuideView}/>
+            <Route path="/gallery" component={GalleryView}/>
             <Route path="/order-rules" component={OrderRules}/>
             <Route path="/terms" component={Terms}/>
             <Route path="/treks" component={Treks}/>
