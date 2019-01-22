@@ -75,7 +75,7 @@ const GuideView = (props) => {
         Co to są ranty?
       </div>
       <div className="common-text anchor-text-padding">
-        Rant to cienki pasek gumy, który otacza przód i boki buta i zawija się pod podeszwę. Ranty w sporym stopniu
+        Rant to cienki pasek gumy, który otacza przód i boki buta i zawija się pod podeszwę.  Ranty w sporym stopniu
         decydują o kształcie czubka buta oraz są bazą, do której jest przyklejona podeszwa.
       </div>
       <div className="anchor-title" id="how-break-edges">
@@ -95,7 +95,7 @@ const GuideView = (props) => {
         Jak mogę ustalić czy wymiana rantów jest konieczna?
       </div>
       <div className="common-text anchor-text-padding">
-        1. Jeśli guma na rantach w okolicy czubka buta jest przetarta, ma widoczne nacięcia, przekłucia lub wyraźnie
+        1. Jeśli guma na rantach w okolicy czubka buta jest przetarta, ma widoczne nacięcia,  przekłucia lub wyraźnie
         wyczuwalny pod palcem spadek grubości, wówczas wymiana rantów jest konieczna.
         2. Nawet jeśli ranty nie mają wyraźnych przetarć miejscowych, ich stan ogólny może być na tyle zły (co widać
         najlepiej po usunięciu starej podeszwy), że wymiana ich będzie niezbędna. W przeciwnym przypadku uszkodzenie

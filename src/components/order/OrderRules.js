@@ -40,7 +40,7 @@ const OrderRules = (props) => {
         - po wykonaniu naprawy przygotowujemy paczkę zwrotną
         - zamawiamy kuriera lub przesyłkę pocztowa
         - po nadaniu paczki wysyłamy e-mailem potwierdzenie wysyłki
-        Pozostałe szczegóły związane ze składaniem zamówień przedstawione są na podstronie Regulamin.
+        Pozostałe szczegóły związane ze składaniem zamówień przedstawione są na podstronie  Regulamin.
 
       </div>
       <div className="anchor-title">

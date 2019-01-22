@@ -79,7 +79,7 @@ const Terms = (props) => {
         i 7-14 dni roboczych dla butów trekkingowych. Maksymalny czas realizacji zamówienia to 14 dni roboczych. W
         szczególnych przypadkach (np. duże zamówienia grupowe, zdarzenia losowe) termin realizacji może ulec
         nieznacznemu wydłużeniu.
-        W uzasadnionych przypadkach rezerwujemy sobie prawo do odmowy realizacji zamówienia. Dotyczy to skrajnych
+        W uzasadnionych przypadkach rezerwujemy sobie prawo do odmowy realizacji zamówienia.  Dotyczy to skrajnych
         przypadków uszkodzeń konstrukcji buta, które uniemożliwiają ich naprawę.
       </div>
       <div className="anchor-title" id="express">

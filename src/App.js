@@ -25,6 +25,7 @@ import {Provider} from 'react-redux';
 import {cartReducer} from './redux/reducers';
 import ScrollToTop from './components/ScrollToTop';
 import GalleryView from './components/gallery/gallery';
+import strings from './assets/locales';
 
 let store = createStore(cartReducer);
 
@@ -34,6 +35,8 @@ class App extends Component {
     this.state = {
       itemsInCart: 0,
     };
+
+    strings.setLanguage('pl');
   }
 
   render() {

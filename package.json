@@ -8,6 +8,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-grid-gallery": "^0.5.3",
+    "react-localization": "^1.0.13",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-router-hash-link": "^1.2.0",

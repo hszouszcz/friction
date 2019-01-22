@@ -8,7 +8,7 @@ const RubberContent = () => {
     <div className="rubber-content col-lg-5">
       <div className="section-title">Gumy</div>
       <div className="caption-title">
-        Czym różnią się dostępne rodzaje gum na podeszwę?
+        Czym różnią się dostępne  rodzaje gum na podeszwę?
       </div>
       <div className="common-text" style={{
         overflow: 'hidden',
