@@ -29,7 +29,6 @@
       border: 1px solid $border-color;
       color: $gray;
       margin-bottom: 30px;
-      width: 100%;
 
       &:focus {
         outline: none;
@@ -43,7 +42,11 @@
           margin-right: 15px;
         }
       }
+      &[type="text"], &[type="email"], &[type="phone"]   {
+        width: 100%;
+      }
     }
+
   }
 
   .order-section .col-md-6, .col-md-3 {

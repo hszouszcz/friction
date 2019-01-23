@@ -34,7 +34,7 @@ const Header = (props) => (
         <a className="nav-link black-text" href="#">EN</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Zamów</a>
+        <Link className="nav-link" to="/order">Zamów</Link>
       </li>
       <li className="nav-item">
         <a className="nav-link basket" href="/cart">{`${props.itemsInCart} `}<i className="fa fa-shopping-basket" aria-hidden="true"></i></a>

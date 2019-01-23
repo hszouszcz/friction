@@ -21,8 +21,7 @@
       font-size: 14px;
       border: 1px solid #eeeeee;
       color: #6f7983;
-      margin-bottom: 30px;
-      width: 100%; }
+      margin-bottom: 30px; }
       .order-form .order-section input:focus {
         outline: none;
         border: 2px solid #eeeeee; }
@@ -31,6 +30,8 @@
           margin-left: 15px; }
         .order-form .order-section input:last-child {
           margin-right: 15px; } }
+      .order-form .order-section input[type="text"], .order-form .order-section input[type="email"], .order-form .order-section input[type="phone"] {
+        width: 100%; }
   @media (min-width: 767.97px) {
     .order-form .order-section .col-md-6, .order-form .col-md-3 {
       padding-right: 15px; } }

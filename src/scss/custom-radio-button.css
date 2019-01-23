@@ -147,4 +147,5 @@
 .order-type-radio-button input {
   position: absolute;
   opacity: 0;
-  cursor: pointer; }
+  cursor: pointer;
+  width: 0; }
