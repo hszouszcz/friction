@@ -3,7 +3,7 @@ import but from '../../assets/img/but.jpg';
 
 const Image = () => {
   return (
-    <div className="rubber-image col-lg-7">
+    <div className="rubber-image col-lg-6">
       <img src={but} alt=""/>
     </div>
   );

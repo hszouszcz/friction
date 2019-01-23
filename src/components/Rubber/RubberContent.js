@@ -5,7 +5,7 @@ import {Route} from 'react-router-dom';
 
 const RubberContent = () => {
   return (
-    <div className="rubber-content col-lg-5">
+    <div className="rubber-content col-lg-4">
       <div className="section-title">Gumy</div>
       <div className="caption-title">
         Czym różnią się dostępne  rodzaje gum na podeszwę?
