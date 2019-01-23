@@ -22,6 +22,7 @@ footer {
     }
     .logo {
         display: block;
+        widtH: 100px;
         @media (max-width: 992px) {
             display: none;
         }
