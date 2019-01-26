@@ -13,6 +13,9 @@
   &:focus {
   outline: none;
 }
+  @media (max-width: 380.97px) {
+    padding: 10px;
+  }
 }
 
 .black {

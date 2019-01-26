@@ -184,7 +184,7 @@ class OrderForm extends Component {
               <ForwardButton
                 text="Wtecz"
                 theme="white"
-                onClick={() => history.push('/order-type')}
+                onClick={() => history.push('/order')}
               />
             </ButtonsRow>
           )}/>

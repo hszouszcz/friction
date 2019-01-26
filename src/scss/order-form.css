@@ -46,7 +46,14 @@
     @media (max-width: 767.97px) {
       .order-form textarea {
         padding: 10px;
-        font-size: 12px; } }
+        font-size: 12px;
+        max-width: 515px; } }
+    @media (max-width: 425.97px) {
+      .order-form textarea {
+        max-width: 380px; } }
+    @media (max-width: 325.97px) {
+      .order-form textarea {
+        max-width: 330px; } }
     .order-form textarea:focus {
       border: 2px solid #eeeeee;
       outline: none; }
@@ -54,7 +61,8 @@
     font-size: 14px; }
     @media (max-width: 767.97px) {
       .order-form p {
-        font-size: 12px; } }
+        font-size: 12px;
+        max-width: 515px; } }
   .order-form .orderFormFooter {
     padding-top: 30px;
     padding-bottom: 30px; }

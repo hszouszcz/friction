@@ -8,6 +8,9 @@
     cursor: pointer; }
   .forward-button:focus {
     outline: none; }
+  @media (max-width: 380.97px) {
+    .forward-button {
+      padding: 10px; } }
 
 .black {
   background-color: #05080c;
