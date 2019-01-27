@@ -1,13 +1,11 @@
-import Form from 'react-validation/build/form';
-import Input from 'react-validation/build/input';
-import Select from 'react-validation/build/select';
 import validator from 'validator';
 import React, {Component} from 'react';
-import CustomSelect from '../shared/select/select';
+import Customselect from '../shared/select/select';
 import {Route} from 'react-router-dom';
 import '../../scss/order-form.css';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
+
 
 const required = (value) => {
   if (!value.toString().trim().length) {
@@ -33,7 +31,7 @@ class UserDetails extends Component {
   constructor(props) {
     super(props);
     if(localStorage.getItem('address')) {
-      this.state = JSON.parse(localStorage.getItem('address'));
+      this.state ={...this.resetValidation(),  ...JSON.parse(localStorage.getItem('address'))}
     } else {
       this.state = {
         name: '',
@@ -54,10 +52,77 @@ class UserDetails extends Component {
           streetNumber: '',
           city: '',
           postalCode: '',
-        }
+        },
+        nameValid: true,
+        surnameValid: true,
+        emailValid: true,
+        phoneValid: true,
+        streetValid: true,
+        streetNumberValid: true,
+        postalCodeValid: true,
+        cityValid: true,
+        agreementValid: true,
+        invoiceNameValid: true,
+        invoiceNipValid: true,
+        invoiceStreetValid: true,
+        invoiceStreetNumberValid: true,
+        invoiceCityValid: true,
+        invoicePostalCodeValid: true,
       };
     }
   }
+
+  validateUser = () => {
+    const validation = {
+      nameValid: !validator.isEmpty(this.state.name),
+      surnameValid: !validator.isEmpty(this.state.surname, { ignore_whitespace: true }),
+      emailValid: validator.isEmail(this.state.email),
+      phoneValid: validator.isMobilePhone(this.state.phone),
+      streetValid: !validator.isEmpty(this.state.street, { ignore_whitespace: true }),
+      streetNumberValid: !validator.isEmpty(this.state.streetNumber, { ignore_whitespace: true }),
+      cityValid: !validator.isEmpty(this.state.city, { ignore_whitespace: true }),
+      postalCodeValid: validator.isPostalCode(this.state.postalCode, 'any')
+    }
+    this.setState({
+    ...validation
+    })
+    console.log(validation);
+    console.log(Object.values(validation).every(value => value));
+    return Object.values(validation).every(value => value)
+  }
+
+  validateInvoiceData = () => {
+    const validation = {
+      invoiceNameValid: !validator.isEmpty(this.state.invoiceDetails.name, { ignore_whitespace: true }),
+      invoiceNipValid: validator.isNumeric(this.state.invoiceDetails.nip),
+      invoiceStreetValid: !validator.isEmpty(this.state.invoiceDetails.street, { ignore_whitespace: true }),
+      streetNumberValid: !validator.isEmpty(this.state.invoiceDetails.streetNumber, { ignore_whitespace: true }),
+      invoiceCityValid: !validator.isEmpty(this.state.invoiceDetails.city, { ignore_whitespace: true }),
+      invoicePostalCodeValid: validator.isPostalCode(this.state.invoiceDetails.postalCode, 'any')
+    }
+    this.setState( ...validation);
+    return Object.values(validation).every(value => value)
+  }
+
+  resetValidation = () => ({
+    nameValid: true,
+    surnameValid: true,
+    emailValid: true,
+    phoneValid: true,
+    streetValid: true,
+    streetNumberValid: true,
+    postalCodeValid: true,
+    cityValid: true,
+    agreementValid: true,
+    invoiceNameValid: true,
+    invoiceNipValid: true,
+    invoiceStreetValid: true,
+    invoiceStreetNumberValid: true,
+    invoiceCityValid: true,
+    invoicePostalCodeValid: true,
+  })
+
+
 
 
   getUserDetails = () => {
@@ -90,13 +155,26 @@ class UserDetails extends Component {
     };
   };
 
+  goNext = () => {
+   return <ForwardButton
+      text="Dalej"
+      theme="black"
+      onClick={() => {
+        this.validateUser();
+        // this.saveToLocalStorage();
+        // history.push({pathname: '/summary'});
+      }}
+      forward
+    />
+ }
+
   saveToLocalStorage = () => {
     localStorage.setItem('address', JSON.stringify(this.getUserDetails()));
   };
 
   render() {
     return (<div className="container order-form">
-      <Form>
+
       <div className="row">
         <div className="col-md-8 offset-md-2">
           <div className="order-form-title" style={{paddingTop: '30px'}}>
@@ -104,29 +182,30 @@ class UserDetails extends Component {
           </div><div className="order-section row no-gutters">
             <div className="col-md-6">
               <label htmlFor="name">Imię</label>
-              <Input
+              <input
                 type="text"
                 id="name"
                 name="name"
                 value={this.state.name}
                 onChange={(e) => this.setState({name: e.target.value})}
-                validations={[required]}
-              />
+
+                style={{ borderColor: this.state.nameValid ? null : 'rgba(255, 0, 0, 0.3)',  boxShadow: this.state.nameValid ? null : '0px 0px 1px 1px rgba(255, 0, 0, 0.3)'}}
+            />
             </div>
             <div className="col-md-6">
               <label htmlFor="surname">Nazwisko</label>
-              <Input
+              <input
                 type="text"
                 id="surname"
                 name="surname"
                 value={this.state.surname}
                 onChange={(e) => this.setState({surname: e.target.value})}
-                validations={[required]}
+
               />
             </div>
             <div className="col-12 col-md-6">
               <label htmlFor="email">Email</label>
-              <Input
+              <input
                 type="email"
                 id="email"
                 value={this.state.email}
@@ -136,13 +215,13 @@ class UserDetails extends Component {
             </div>
             <div className="col-12 col-md-6">
               <label htmlFor="phone">Numer telefonu</label>
-              <Input
+              <input
                 type="phone"
                 id="phone"
                 name="phone"
                 value={this.state.phone}
                 onChange={(e) => this.setState({phone: e.target.value})}
-                validations={[required]}
+
               />
             </div>
           </div>
@@ -154,35 +233,35 @@ class UserDetails extends Component {
           <div className="order-section row no-gutters">
             <div className="col-md-6">
               <label htmlFor="street">Ulica</label>
-              <Input
+              <input
                 type="text"
                 id="street"
                 name="street"
                 value={this.state.street}
                 onChange={(e) => this.setState({street: e.target.value})}
-                validations={[required]}
+
               />
             </div>
             <div className="col-md-6">
               <label htmlFor="street-number">Numer ulicy/lokalu</label>
-              <Input
+              <input
                 type="text"
                 id="street-number"
                 name="street-number"
                 value={this.state.streetNumber}
                 onChange={(e) => this.setState({streetNumber: e.target.value})}
-                validations={[required]}
+
               />
             </div>
             <div className="col-md-6">
               <label htmlFor="city">Miasto</label>
-              <Input
+              <input
                 type="text"
                 id="city"
                 name="city"
                 value={this.state.city}
                 onChange={(e) => this.setState({city: e.target.value})}
-                validations={[required]}
+
               />
             </div>
             <div className="col-md-8 agreement">
@@ -201,7 +280,7 @@ class UserDetails extends Component {
             <div className="order-section row invoice">
               <div className="col-md-6">
                 <label htmlFor="name">Nazwa Firmy</label>
-                <Input
+                <input
                   type="text"
                   id="companyName"
                   name="companyName"
@@ -212,7 +291,7 @@ class UserDetails extends Component {
               </div>
               <div className="col-md-6">
                 <label htmlFor="surname">NIP</label>
-                <Input
+                <input
                   type="text"
                   id="nip"
                   name="nip"
@@ -223,7 +302,7 @@ class UserDetails extends Component {
               </div>
               <div className="col-12 col-md-6">
                 <label htmlFor="email">Ulica</label>
-                <Input
+                <input
                   type="text"
                   id="companyStreet"
                   name="companyStreet"
@@ -234,7 +313,7 @@ class UserDetails extends Component {
               </div>
               <div className="col-12 col-md-6">
                 <label htmlFor="email">Numer Ulicy/lokalu</label>
-                <Input
+                <input
                   type="text"
                   id="companyStreetNumber"
                   name="companyStreetNumber"
@@ -245,7 +324,7 @@ class UserDetails extends Component {
               </div>
               <div className="col-12 col-md-3">
                 <label htmlFor="email">Kod Pocztowy</label>
-                <Input
+                <input
                   type="text"
                   id="companyPostalCode"
                   name="postalCode"
@@ -256,7 +335,7 @@ class UserDetails extends Component {
               </div>
               <div className="col-12 col-md-9">
                 <label htmlFor="email">Miasto</label>
-                <Input
+                <input
                   type="text"
                   id="companyCity"
                   name="companyCity"
@@ -272,12 +351,12 @@ class UserDetails extends Component {
         <div className="col-md-8 offset-md-2 ">
           <div className="order-section">
             <span className="section-title">Jak mamy odesłać Twoje buty?</span>
-            <Select name='shipping' value='' validations={[required]}>
+            <select name='shipping' value='' validations={[required]}>
               <option value=''>Choose shipping</option>
               <option value='1'>Bocian</option>
               <option value='2'>Rakieta</option>
               <option value='3'>New York</option>
-            </Select>
+            </select>
           </div>
           <div className="col-12 agreement">
             <div className="order-section">
@@ -295,8 +374,9 @@ class UserDetails extends Component {
                   text="Dalej"
                   theme="black"
                   onClick={() => {
-                    this.saveToLocalStorage();
-                    history.push({pathname: '/summary'});
+                    this.validateUser();
+                    //this.saveToLocalStorage();
+                    //history.push({pathname: '/summary'});
                   }}
                   forward
                 />
@@ -306,6 +386,7 @@ class UserDetails extends Component {
                   text="Wtecz"
                   theme="white"
                   onClick={() => {
+                    this.validateUser()
                     history.push({pathname: '/cart'});
                   }}
                 />
@@ -313,7 +394,7 @@ class UserDetails extends Component {
             </ButtonsRow>
           </div>
         </div>
-      </div></Form>
+      </div>
     </div>);
   }
 };
