@@ -168,6 +168,10 @@ class UserDetails extends Component {
     />
  }
 
+ errorStyles = () => (
+   { borderColor: this.state.nameValid ? null : 'rgba(255, 0, 0, 0.3)', boxShadow: this.state.nameValid ? null : '0px 0px 1px 1px rgba(255, 0, 0, 0.3)' }
+ )
+
   saveToLocalStorage = () => {
     localStorage.setItem('address', JSON.stringify(this.getUserDetails()));
   };
@@ -188,8 +192,7 @@ class UserDetails extends Component {
                 name="name"
                 value={this.state.name}
                 onChange={(e) => this.setState({name: e.target.value})}
-
-                style={{ borderColor: this.state.nameValid ? null : 'rgba(255, 0, 0, 0.3)',  boxShadow: this.state.nameValid ? null : '0px 0px 1px 1px rgba(255, 0, 0, 0.3)'}}
+                style={this.errorStyles()}
             />
             </div>
             <div className="col-md-6">
