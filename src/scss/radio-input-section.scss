@@ -3,13 +3,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   @media (max-width: 767.97px) {
-    overflow-y: scroll;
-    flex-wrap: nowrap;
+   // overflow-y: scroll;
+   // flex-wrap: nowrap;
+     flex-direction: column;
   }
-  &::-moz-viewport-scroll {
-    display: none;
-  }
-  &::-webkit-scrollbar {
-  display: none;
-}
+//   &::-moz-viewport-scroll {
+//     display: none;
+//   }
+//   &::-webkit-scrollbar {
+//   display: none;
+// }
 }

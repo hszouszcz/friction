@@ -5,7 +5,6 @@ import { Route } from 'react-router-dom'
 import OrderTypeRadioButton from '../shared/inputs/order-type-radio-input';
 import '../../scss/buttons.css';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
-import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 import DisabledNavButton from '../shared/buttons/navigation-buttons/DisabledNavButton';
 
 class OrderType extends Component {

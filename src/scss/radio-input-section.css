@@ -4,9 +4,4 @@
   flex-wrap: wrap; }
   @media (max-width: 767.97px) {
     .radio-input-section {
-      overflow-y: scroll;
-      flex-wrap: nowrap; } }
-  .radio-input-section::-moz-viewport-scroll {
-    display: none; }
-  .radio-input-section::-webkit-scrollbar {
-    display: none; }
+      flex-direction: column; } }
