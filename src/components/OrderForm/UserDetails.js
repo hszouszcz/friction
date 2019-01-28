@@ -5,6 +5,7 @@ import {Route} from 'react-router-dom';
 import '../../scss/order-form.css';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
+import CustomSelect from '../shared/select/select';
 
 
 const required = (value) => {
@@ -45,6 +46,7 @@ class UserDetails extends Component {
         sendBack: null,
         agreement: false,
         invoice: false,
+        shipping: '',
         invoiceDetails: {
           name: '',
           nip: '',
@@ -86,8 +88,6 @@ class UserDetails extends Component {
     this.setState({
     ...validation
     })
-    console.log(validation);
-    console.log(Object.values(validation).every(value => value));
     return Object.values(validation).every(value => value)
   }
 
@@ -96,11 +96,11 @@ class UserDetails extends Component {
       invoiceNameValid: !validator.isEmpty(this.state.invoiceDetails.name, { ignore_whitespace: true }),
       invoiceNipValid: validator.isNumeric(this.state.invoiceDetails.nip),
       invoiceStreetValid: !validator.isEmpty(this.state.invoiceDetails.street, { ignore_whitespace: true }),
-      streetNumberValid: !validator.isEmpty(this.state.invoiceDetails.streetNumber, { ignore_whitespace: true }),
+      invoicestreetNumberValid: !validator.isEmpty(this.state.invoiceDetails.streetNumber, { ignore_whitespace: true }),
       invoiceCityValid: !validator.isEmpty(this.state.invoiceDetails.city, { ignore_whitespace: true }),
       invoicePostalCodeValid: validator.isPostalCode(this.state.invoiceDetails.postalCode, 'any')
     }
-    this.setState( ...validation);
+    this.setState({ ...validation});
     return Object.values(validation).every(value => value)
   }
 
@@ -168,8 +168,8 @@ class UserDetails extends Component {
     />
  }
 
- errorStyles = () => (
-   { borderColor: this.state.nameValid ? null : 'rgba(255, 0, 0, 0.3)', boxShadow: this.state.nameValid ? null : '0px 0px 1px 1px rgba(255, 0, 0, 0.3)' }
+ errorStyles = field => (
+   { borderColor: field ? null : 'rgba(255, 0, 0, 0.3)', boxShadow: field ? null : '0px 0px 1px 1px rgba(255, 0, 0, 0.3)' }
  )
 
   saveToLocalStorage = () => {
@@ -192,7 +192,7 @@ class UserDetails extends Component {
                 name="name"
                 value={this.state.name}
                 onChange={(e) => this.setState({name: e.target.value})}
-                style={this.errorStyles()}
+                style={this.errorStyles(this.state.nameValid)}
             />
             </div>
             <div className="col-md-6">
@@ -203,7 +203,7 @@ class UserDetails extends Component {
                 name="surname"
                 value={this.state.surname}
                 onChange={(e) => this.setState({surname: e.target.value})}
-
+                style={this.errorStyles(this.state.surnameValid)}
               />
             </div>
             <div className="col-12 col-md-6">
@@ -213,7 +213,7 @@ class UserDetails extends Component {
                 id="email"
                 value={this.state.email}
                 onChange={(e) => this.setState({email: e.target.value})}
-                validations={[email, required]}
+                style={this.errorStyles(this.state.emailValid)}
               />
             </div>
             <div className="col-12 col-md-6">
@@ -224,6 +224,7 @@ class UserDetails extends Component {
                 name="phone"
                 value={this.state.phone}
                 onChange={(e) => this.setState({phone: e.target.value})}
+                style={this.errorStyles(this.state.phoneValid)}
 
               />
             </div>
@@ -242,6 +243,7 @@ class UserDetails extends Component {
                 name="street"
                 value={this.state.street}
                 onChange={(e) => this.setState({street: e.target.value})}
+                style={this.errorStyles(this.state.streetValid)}
 
               />
             </div>
@@ -253,7 +255,7 @@ class UserDetails extends Component {
                 name="street-number"
                 value={this.state.streetNumber}
                 onChange={(e) => this.setState({streetNumber: e.target.value})}
-
+                style={this.errorStyles(this.state.streetNumberValid)}
               />
             </div>
             <div className="col-md-6">
@@ -264,7 +266,7 @@ class UserDetails extends Component {
                 name="city"
                 value={this.state.city}
                 onChange={(e) => this.setState({city: e.target.value})}
-
+                style={this.errorStyles(this.state.cityValid)}
               />
             </div>
             <div className="col-md-8 agreement">
@@ -289,7 +291,7 @@ class UserDetails extends Component {
                   name="companyName"
                   value={this.state.invoiceDetails.name}
                   onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, name: e.target.value}})}
-                  validations={[invoiceRequired]}
+                  style={this.errorStyles(this.state.invoiceNameValid)}
                 />
               </div>
               <div className="col-md-6">
@@ -300,7 +302,7 @@ class UserDetails extends Component {
                   name="nip"
                   value={this.state.invoiceDetails.nip}
                   onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, nip: e.target.value}})}
-                  validations={[invoiceRequired]}
+                  style={this.errorStyles(this.state.invoiceNipValid)}
                 />
               </div>
               <div className="col-12 col-md-6">
@@ -311,7 +313,7 @@ class UserDetails extends Component {
                   name="companyStreet"
                   value={this.state.invoiceDetails.street}
                   onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, street: e.target.value}})}
-                  validations={[invoiceRequired]}
+                  style={this.errorStyles(this.state.invoiceStreetValid)}
                 />
               </div>
               <div className="col-12 col-md-6">
@@ -322,7 +324,7 @@ class UserDetails extends Component {
                   name="companyStreetNumber"
                   value={this.state.invoiceDetails.streetNumber}
                   onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, streetNumber: e.target.value}})}
-                  validations={[invoiceRequired]}
+                  style={this.errorStyles(this.state.invoiceStreetNumberValid)}
                 />
               </div>
               <div className="col-12 col-md-3">
@@ -333,7 +335,7 @@ class UserDetails extends Component {
                   name="postalCode"
                   value={this.state.invoiceDetails.postalCode}
                   onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, postalCode: e.target.value}})}
-                  validations={[invoiceRequired]}
+                  style={this.errorStyles(this.state.invoicePostalCodeValid)}
                 />
               </div>
               <div className="col-12 col-md-9">
@@ -344,7 +346,7 @@ class UserDetails extends Component {
                   name="companyCity"
                   value={this.state.invoiceDetails.city}
                   onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, city: e.target.value}})}
-                  validations={[invoiceRequired]}
+                  style={this.errorStyles(this.state.invoiceCityValid)}
                 />
               </div>
             </div>
@@ -354,12 +356,7 @@ class UserDetails extends Component {
         <div className="col-md-8 offset-md-2 ">
           <div className="order-section">
             <span className="section-title">Jak mamy odesłać Twoje buty?</span>
-            <select name='shipping' value='' validations={[required]}>
-              <option value=''>Choose shipping</option>
-              <option value='1'>Bocian</option>
-              <option value='2'>Rakieta</option>
-              <option value='3'>New York</option>
-            </select>
+            <CustomSelect />
           </div>
           <div className="col-12 agreement">
             <div className="order-section">
@@ -378,6 +375,9 @@ class UserDetails extends Component {
                   theme="black"
                   onClick={() => {
                     this.validateUser();
+                    if (this.state.invoice) {
+                      this.validateInvoiceData();
+                    }
                     //this.saveToLocalStorage();
                     //history.push({pathname: '/summary'});
                   }}
