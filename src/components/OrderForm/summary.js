@@ -124,8 +124,8 @@ class Summary extends Component {
                     text="ZAMAWIAM"
                     theme="black"
                     onClick={() => {
-                      this.saveToLocalStorage();
-                      history.push({pathname: '/summary'});
+                     this.removeCartAndAddress()
+                      history.push({pathname: '/'});
                     }}
                     forward
                   />

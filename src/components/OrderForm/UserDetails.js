@@ -1,9 +1,10 @@
 import validator from 'validator';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Customselect from '../shared/select/select';
-import {Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import '../../scss/order-form.css';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
+import DisabledNavButton from '../shared/buttons/navigation-buttons/DisabledNavButton';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 import CustomSelect from '../shared/select/select';
 
@@ -31,8 +32,8 @@ const email = (value) => {
 class UserDetails extends Component {
   constructor(props) {
     super(props);
-    if(localStorage.getItem('address')) {
-      this.state ={...this.resetValidation(),  ...JSON.parse(localStorage.getItem('address'))}
+    if (localStorage.getItem('address')) {
+      this.state = { ...this.resetValidation(), formValid: true, ...JSON.parse(localStorage.getItem('address')) }
     } else {
       this.state = {
         name: '',
@@ -44,9 +45,10 @@ class UserDetails extends Component {
         postalCode: '',
         city: '',
         sendBack: null,
-        agreement: false,
         invoice: false,
         shipping: '',
+        agreement: false,
+        formValid: true,
         invoiceDetails: {
           name: '',
           nip: '',
@@ -85,10 +87,10 @@ class UserDetails extends Component {
       streetNumberValid: !validator.isEmpty(this.state.streetNumber, { ignore_whitespace: true }),
       cityValid: !validator.isEmpty(this.state.city, { ignore_whitespace: true }),
       postalCodeValid: validator.isPostalCode(this.state.postalCode, 'any'),
-      shippingValid: !validator.isEmpty(this.state.shipping, { ignore_whitespace: true }),
+      shippingValid: !validator.isEmpty(this.state.shipping.label, { ignore_whitespace: true }),
     }
     this.setState({
-    ...validation
+      ...validation
     })
     return Object.values(validation).every(value => value)
   }
@@ -102,8 +104,25 @@ class UserDetails extends Component {
       invoiceCityValid: !validator.isEmpty(this.state.invoiceDetails.city, { ignore_whitespace: true }),
       invoicePostalCodeValid: validator.isPostalCode(this.state.invoiceDetails.postalCode, 'any')
     }
-    this.setState({ ...validation});
+    this.setState({ ...validation });
     return Object.values(validation).every(value => value)
+  }
+
+  validateForm = (history) => {
+    if (this.state.agreement) {
+      if (this.validateUser()
+        && (this.state.invoice ? this.validateInvoiceData() : true)) {
+        this.setState({
+          formValid: true
+        })
+        this.saveToLocalStorage();
+        history.push({ pathname: '/summary' });
+      } else {
+        this.setState({
+          formValid: false
+        })
+      }
+    }
   }
 
   resetValidation = () => ({
@@ -149,18 +168,18 @@ class UserDetails extends Component {
         city: this.state.invoiceDetails.city,
         postalCode: this.state.invoiceDetails.postalCode
       } : {
-        name: '',
-        nip: '',
-        street: '',
-        streetNumber: '',
-        city: '',
-        postalCode: ''
-      }
+          name: '',
+          nip: '',
+          street: '',
+          streetNumber: '',
+          city: '',
+          postalCode: ''
+        }
     };
   };
 
   goNext = () => {
-   return <ForwardButton
+    return <ForwardButton
       text="Dalej"
       theme="black"
       onClick={() => {
@@ -170,11 +189,11 @@ class UserDetails extends Component {
       }}
       forward
     />
- }
+  }
 
- errorStyles = field => (
-   { borderColor: field ? null : 'rgba(255, 0, 0, 0.3)', boxShadow: field ? null : '0px 0px 1px 1px rgba(255, 0, 0, 0.3)' }
- )
+  errorStyles = field => (
+    { borderColor: field ? null : 'rgba(255, 0, 0, 0.3)', boxShadow: field ? null : '0px 0px 1px 1px rgba(255, 0, 0, 0.3)' }
+  )
 
   saveToLocalStorage = () => {
     localStorage.setItem('address', JSON.stringify(this.getUserDetails()));
@@ -185,7 +204,7 @@ class UserDetails extends Component {
 
       <div className="row">
         <div className="col-md-8 offset-md-2">
-          <div className="order-form-title" style={{paddingTop: '30px'}}>
+          <div className="order-form-title" style={{ paddingTop: '30px' }}>
             Twoje dane
           </div><div className="order-section row no-gutters">
             <div className="col-md-6">
@@ -195,9 +214,9 @@ class UserDetails extends Component {
                 id="name"
                 name="name"
                 value={this.state.name}
-                onChange={(e) => this.setState({name: e.target.value})}
+                onChange={(e) => this.setState({ name: e.target.value })}
                 style={this.errorStyles(this.state.nameValid)}
-            />
+              />
             </div>
             <div className="col-md-6">
               <label htmlFor="surname">Nazwisko</label>
@@ -206,7 +225,7 @@ class UserDetails extends Component {
                 id="surname"
                 name="surname"
                 value={this.state.surname}
-                onChange={(e) => this.setState({surname: e.target.value})}
+                onChange={(e) => this.setState({ surname: e.target.value })}
                 style={this.errorStyles(this.state.surnameValid)}
               />
             </div>
@@ -216,7 +235,7 @@ class UserDetails extends Component {
                 type="email"
                 id="email"
                 value={this.state.email}
-                onChange={(e) => this.setState({email: e.target.value})}
+                onChange={(e) => this.setState({ email: e.target.value })}
                 style={this.errorStyles(this.state.emailValid)}
               />
             </div>
@@ -227,7 +246,7 @@ class UserDetails extends Component {
                 id="phone"
                 name="phone"
                 value={this.state.phone}
-                onChange={(e) => this.setState({phone: e.target.value})}
+                onChange={(e) => this.setState({ phone: e.target.value })}
                 style={this.errorStyles(this.state.phoneValid)}
 
               />
@@ -246,7 +265,7 @@ class UserDetails extends Component {
                 id="street"
                 name="street"
                 value={this.state.street}
-                onChange={(e) => this.setState({street: e.target.value})}
+                onChange={(e) => this.setState({ street: e.target.value })}
                 style={this.errorStyles(this.state.streetValid)}
 
               />
@@ -258,8 +277,19 @@ class UserDetails extends Component {
                 id="street-number"
                 name="street-number"
                 value={this.state.streetNumber}
-                onChange={(e) => this.setState({streetNumber: e.target.value})}
+                onChange={(e) => this.setState({ streetNumber: e.target.value })}
                 style={this.errorStyles(this.state.streetNumberValid)}
+              />
+            </div>
+            <div className="col-md-6">
+              <label htmlFor="postalCode">Kod Pocztowy</label>
+              <input
+                type="text"
+                id="postalCode"
+                name="postalCode"
+                value={this.state.postalCode}
+                onChange={(e) => this.setState({ postalCode: e.target.value })}
+                style={this.errorStyles(this.state.postalCodeValid)}
               />
             </div>
             <div className="col-md-6">
@@ -269,91 +299,91 @@ class UserDetails extends Component {
                 id="city"
                 name="city"
                 value={this.state.city}
-                onChange={(e) => this.setState({city: e.target.value})}
+                onChange={(e) => this.setState({ city: e.target.value })}
                 style={this.errorStyles(this.state.cityValid)}
               />
             </div>
             <div className="col-md-8 agreement">
-              <div className="order-section" style={{paddingBottom: '0px', paddingLeft: '15px'}}>
+              <div className="order-section" style={{ paddingBottom: '0px', paddingLeft: '15px' }}>
                 <input
                   type="checkbox"
                   id="invoice"
-                  style={{marginBottom: '0px'}}
+                  style={{ marginBottom: '0px' }}
                   value={this.state.invoice} onChange={() =>
-                  this.setState({invoice: !this.state.invoice})
-                }/>
+                    this.setState({ invoice: !this.state.invoice })
+                  } />
                 <label htmlFor="invoice">Prosze o przeslanie faktury VAT</label>
               </div>
             </div>
             {this.state.invoice &&
-            <div className="order-section row invoice">
-              <div className="col-md-6">
-                <label htmlFor="name">Nazwa Firmy</label>
-                <input
-                  type="text"
-                  id="companyName"
-                  name="companyName"
-                  value={this.state.invoiceDetails.name}
-                  onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, name: e.target.value}})}
-                  style={this.errorStyles(this.state.invoiceNameValid)}
-                />
+              <div className="order-section row invoice">
+                <div className="col-md-6">
+                  <label htmlFor="name">Nazwa Firmy</label>
+                  <input
+                    type="text"
+                    id="companyName"
+                    name="companyName"
+                    value={this.state.invoiceDetails.name}
+                    onChange={(e) => this.setState({ invoiceDetails: { ...this.state.invoiceDetails, name: e.target.value } })}
+                    style={this.errorStyles(this.state.invoiceNameValid)}
+                  />
+                </div>
+                <div className="col-md-6">
+                  <label htmlFor="surname">NIP</label>
+                  <input
+                    type="text"
+                    id="nip"
+                    name="nip"
+                    value={this.state.invoiceDetails.nip}
+                    onChange={(e) => this.setState({ invoiceDetails: { ...this.state.invoiceDetails, nip: e.target.value } })}
+                    style={this.errorStyles(this.state.invoiceNipValid)}
+                  />
+                </div>
+                <div className="col-12 col-md-6">
+                  <label htmlFor="email">Ulica</label>
+                  <input
+                    type="text"
+                    id="companyStreet"
+                    name="companyStreet"
+                    value={this.state.invoiceDetails.street}
+                    onChange={(e) => this.setState({ invoiceDetails: { ...this.state.invoiceDetails, street: e.target.value } })}
+                    style={this.errorStyles(this.state.invoiceStreetValid)}
+                  />
+                </div>
+                <div className="col-12 col-md-6">
+                  <label htmlFor="email">Numer Ulicy/lokalu</label>
+                  <input
+                    type="text"
+                    id="companyStreetNumber"
+                    name="companyStreetNumber"
+                    value={this.state.invoiceDetails.streetNumber}
+                    onChange={(e) => this.setState({ invoiceDetails: { ...this.state.invoiceDetails, streetNumber: e.target.value } })}
+                    style={this.errorStyles(this.state.invoiceStreetNumberValid)}
+                  />
+                </div>
+                <div className="col-12 col-md-3">
+                  <label htmlFor="email">Kod Pocztowy</label>
+                  <input
+                    type="text"
+                    id="companyPostalCode"
+                    name="postalCode"
+                    value={this.state.invoiceDetails.postalCode}
+                    onChange={(e) => this.setState({ invoiceDetails: { ...this.state.invoiceDetails, postalCode: e.target.value } })}
+                    style={this.errorStyles(this.state.invoicePostalCodeValid)}
+                  />
+                </div>
+                <div className="col-12 col-md-9">
+                  <label htmlFor="email">Miasto</label>
+                  <input
+                    type="text"
+                    id="companyCity"
+                    name="companyCity"
+                    value={this.state.invoiceDetails.city}
+                    onChange={(e) => this.setState({ invoiceDetails: { ...this.state.invoiceDetails, city: e.target.value } })}
+                    style={this.errorStyles(this.state.invoiceCityValid)}
+                  />
+                </div>
               </div>
-              <div className="col-md-6">
-                <label htmlFor="surname">NIP</label>
-                <input
-                  type="text"
-                  id="nip"
-                  name="nip"
-                  value={this.state.invoiceDetails.nip}
-                  onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, nip: e.target.value}})}
-                  style={this.errorStyles(this.state.invoiceNipValid)}
-                />
-              </div>
-              <div className="col-12 col-md-6">
-                <label htmlFor="email">Ulica</label>
-                <input
-                  type="text"
-                  id="companyStreet"
-                  name="companyStreet"
-                  value={this.state.invoiceDetails.street}
-                  onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, street: e.target.value}})}
-                  style={this.errorStyles(this.state.invoiceStreetValid)}
-                />
-              </div>
-              <div className="col-12 col-md-6">
-                <label htmlFor="email">Numer Ulicy/lokalu</label>
-                <input
-                  type="text"
-                  id="companyStreetNumber"
-                  name="companyStreetNumber"
-                  value={this.state.invoiceDetails.streetNumber}
-                  onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, streetNumber: e.target.value}})}
-                  style={this.errorStyles(this.state.invoiceStreetNumberValid)}
-                />
-              </div>
-              <div className="col-12 col-md-3">
-                <label htmlFor="email">Kod Pocztowy</label>
-                <input
-                  type="text"
-                  id="companyPostalCode"
-                  name="postalCode"
-                  value={this.state.invoiceDetails.postalCode}
-                  onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, postalCode: e.target.value}})}
-                  style={this.errorStyles(this.state.invoicePostalCodeValid)}
-                />
-              </div>
-              <div className="col-12 col-md-9">
-                <label htmlFor="email">Miasto</label>
-                <input
-                  type="text"
-                  id="companyCity"
-                  name="companyCity"
-                  value={this.state.invoiceDetails.city}
-                  onChange={(e) => this.setState({invoiceDetails: {...this.state.invoiceDetails, city: e.target.value}})}
-                  style={this.errorStyles(this.state.invoiceCityValid)}
-                />
-              </div>
-            </div>
             }
           </div>
         </div>
@@ -365,47 +395,50 @@ class UserDetails extends Component {
               model={this.state.shipping}
               placeholder={"wybierz sposób dostawy"}
               options={[
-                "Odbiór osobisty",
-                "Kurier"
+                { label: "Odbiór osobisty" },
+                { label: "Kurier" }
               ]}
+              callback={(option) => this.setState({ shipping: option })}
             />
           </div>
           <div className="col-12 agreement">
             <div className="order-section">
-              <input type="checkbox" id="agreement"/>
+              <input
+                type="checkbox"
+                id="agreement"
+                checked={this.state.agreement}
+                value={this.state.agreement}
+                onChange={() => this.setState({ agreement: !this.state.agreement })}
+              />
               <label htmlFor="agreement">Wyrażam zgodę na przetważanie i przetrzymywanie moich danych osobowych
                 niezbędnych do realizacji zamówienia przez Friction s.c. zgodnie z ustawą o ochronie danych osobowych z
                 dnia 29.08.1997r. (Dz. U. Nr 133, poz. 883). Dane te będą wykorzystywane w celu ewidencji sprzedaży i
                 kontaktu z nabywcą wyłącznie przez Friction s.c.</label>
             </div>
+            {this.state.formValid ? null : <p>Sprawdź czy wypelniono wszystkie potrzebne pola!</p>}
           </div>
           <div className="orderFormFooter col-md-12">
             <ButtonsRow>
-              <Route render={({history}) => (
-                <ForwardButton
+              <Route render={({ history }) => (
+                <DisabledNavButton
                   text="Dalej"
                   theme="black"
                   onClick={() => {
-                    this.validateUser();
-                    if (this.state.invoice) {
-                      this.validateInvoiceData();
-                    }
-                    //this.saveToLocalStorage();
-                    //history.push({pathname: '/summary'});
+                    this.validateForm(history)
                   }}
                   forward
+                  disabled={!this.state.agreement}
                 />
-              )}/>
-              <Route render={({history}) => (
+              )} />
+              <Route render={({ history }) => (
                 <ForwardButton
                   text="Wtecz"
                   theme="white"
                   onClick={() => {
-                    this.validateUser()
-                    history.push({pathname: '/cart'});
+                    history.push({ pathname: '/cart' });
                   }}
                 />
-              )}/>
+              )} />
             </ButtonsRow>
           </div>
         </div>
