@@ -112,6 +112,7 @@ class OrderForm extends Component {
                 }}
                 placeholder={"Wybierz rodzaj gumy"}
                 options={this.getRubberNames()}
+                isValid={true}
               />
             </div>
             <div className="order-section">
@@ -155,6 +156,7 @@ class OrderForm extends Component {
                 options={this.props.history.location.state
                 && this.props.history.location.state.orderToEdit ? additionalOptions[this.state.orderType]
                   : additionalOptions[this.props.history.location.state.orderType]}
+                isValid={true}
               />
             </div>
             <div className="order-section">

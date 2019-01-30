@@ -70,6 +70,7 @@ class UserDetails extends Component {
         invoiceStreetNumberValid: true,
         invoiceCityValid: true,
         invoicePostalCodeValid: true,
+        shippingValid: true
       };
     }
   }
@@ -83,7 +84,8 @@ class UserDetails extends Component {
       streetValid: !validator.isEmpty(this.state.street, { ignore_whitespace: true }),
       streetNumberValid: !validator.isEmpty(this.state.streetNumber, { ignore_whitespace: true }),
       cityValid: !validator.isEmpty(this.state.city, { ignore_whitespace: true }),
-      postalCodeValid: validator.isPostalCode(this.state.postalCode, 'any')
+      postalCodeValid: validator.isPostalCode(this.state.postalCode, 'any'),
+      shippingValid: !validator.isEmpty(this.state.shipping, { ignore_whitespace: true }),
     }
     this.setState({
     ...validation
@@ -120,6 +122,7 @@ class UserDetails extends Component {
     invoiceStreetNumberValid: true,
     invoiceCityValid: true,
     invoicePostalCodeValid: true,
+    shippingValid: true
   })
 
 
@@ -137,6 +140,7 @@ class UserDetails extends Component {
       city: this.state.city,
       sendBack: this.state.sendBack,
       invoice: this.state.invoice,
+      shipping: this.state.shipping,
       invoiceDetails: this.state.invoice ? {
         name: this.state.invoiceDetails.name,
         nip: this.state.invoiceDetails.nip,
@@ -356,7 +360,15 @@ class UserDetails extends Component {
         <div className="col-md-8 offset-md-2 ">
           <div className="order-section">
             <span className="section-title">Jak mamy odesłać Twoje buty?</span>
-            <CustomSelect />
+            <CustomSelect
+              isValid={this.state.shippingValid}
+              model={this.state.shipping}
+              placeholder={"wybierz sposób dostawy"}
+              options={[
+                "Odbiór osobisty",
+                "Kurier"
+              ]}
+            />
           </div>
           <div className="col-12 agreement">
             <div className="order-section">
