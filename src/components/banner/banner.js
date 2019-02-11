@@ -7,7 +7,9 @@ import PropTypes from 'prop-types';
 const Banner = (props) => {
   return (
     <div className="banner">
-      <img src={banner} className="screen-img"/>
+      <div className="col-lg-8 offset-lg-2">
+        <img src={banner} className="screen-img" />
+    </div>
     </div>
   );
 };
