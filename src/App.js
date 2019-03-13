@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
-import './assets/fonts/roboto/fonts.css';
 import "./css/bootstrap.min.css";
 import './App.scss';
 import './assets/fonts/font-awesome/css/font-awesome.min.css';
