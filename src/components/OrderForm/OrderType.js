@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { Route } from 'react-router-dom'
 import OrderTypeRadioButton from '../shared/inputs/order-type-radio-input';
 import '../../scss/buttons.css';
@@ -23,18 +23,18 @@ class OrderType extends Component {
           <span className="caption-title">Wybierz rodzaj usługi</span>
           <div className="order-section">
             <OrderTypeRadioButton label="Naprawa butów wspinaczkowych" value={0} model={this.state.orderType}
-                                  callback={() => this.setState({orderType: 0})}/>
+              callback={() => this.setState({ orderType: 0 })} />
             <OrderTypeRadioButton label="Naprawa butów trekkingowych" value={1} model={this.state.orderType}
-                                  callback={() => this.setState({orderType: 1})}/>
+              callback={() => this.setState({ orderType: 1 })} />
             <OrderTypeRadioButton label="Trzecia opcja" value={2} model={this.state.orderType}
-                                  callback={() => this.setState({orderType: 2})}/>
+              callback={() => this.setState({ orderType: 2 })} />
           </div>
-          <Route render={({history}) => (
+          <Route render={({ history }) => (
             <ButtonsRow>
               <DisabledNavButton
                 text="Dalej"
                 theme="black"
-                onClick={() => {this.state.agreementSelected ? history.push({pathname: '/order-details', state: {orderType: this.state.orderType}}) : null}}
+                onClick={() => { this.state.agreementSelected ? history.push({ pathname: '/order-details', state: { orderType: this.state.orderType } }) : null }}
                 forward
                 disabled={!this.state.agreementSelected}
               />
@@ -42,11 +42,15 @@ class OrderType extends Component {
           )} />
           <div className="col-12 agreement">
             <div className="order-section">
-              <input type="checkbox" id="agreement" checked={this.state.agreementSelected}
-                     value={this.state.agreementSelected} onChange={(e) => {
-                return this.setState({agreementSelected: !this.state.agreementSelected});
-              }}/>
-              <label htmlFor="agreement">Owiadczam, że zapoznalem/am sie z Poradnikiem dotyczacym skladania
+              <div className="checkbox-container">
+                <input type="checkbox" id="agreement" checked={this.state.agreementSelected}
+                  value={this.state.agreementSelected} onChange={(e) => {
+                    return this.setState({ agreementSelected: !this.state.agreementSelected });
+                  }} />
+                <span class="checkmark"></span>
+              </div>
+
+              <label htmlFor="agreement">Oswiadczam, że zapoznalem/am sie z Poradnikiem dotyczacym skladania
                 zamowien</label>
             </div>
           </div>

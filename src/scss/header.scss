@@ -27,6 +27,9 @@
     background-color: $onyx;
     color: $text-color !important;
     padding: 13px 30px;
+    &:hover {
+      text-decoration: underline !important;
+    }
   }
 
   .nav-item {
@@ -37,6 +40,7 @@
       border: none;
       padding-right: 0;
     }
+
     a {
       line-height: 1;
       color: $onyx;
@@ -45,7 +49,6 @@
     .basket {
       color: $orange;
     }
-
   }
 
   @media (max-width: 767.98px) {

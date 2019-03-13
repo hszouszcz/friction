@@ -19,6 +19,8 @@
     background-color: #05080c;
     color: #fff !important;
     padding: 13px 30px; }
+    .header .dropdown-item:hover {
+      text-decoration: underline !important; }
   .header .nav-item {
     border-left: 1px solid #dadfe5;
     padding-left: 10px;
