@@ -1,8 +1,7 @@
 import React from 'react';
 import logo from '../../assets/img/logo.jpg';
 
-import "../../scss/header.css";
-import OrderForm from '../OrderForm/OrderForm';
+import "../../scss/header.scss";
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 

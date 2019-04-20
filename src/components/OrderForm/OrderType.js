@@ -6,6 +6,7 @@ import OrderTypeRadioButton from '../shared/inputs/order-type-radio-input';
 import '../../scss/buttons.css';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import DisabledNavButton from '../shared/buttons/navigation-buttons/DisabledNavButton';
+import CheckBox from './../Checkbox/checkbox';
 
 class OrderType extends Component {
   constructor(props) {
@@ -42,7 +43,11 @@ class OrderType extends Component {
           )} />
           <div className="col-12 agreement">
             <div className="order-section">
-              <div className="checkbox-container">
+              <CheckBox
+                onClick={(e) => { return this.setState({ agreementSelected: !this.state.agreementSelected }); }}
+                value={this.state.agreementSelected}
+              />
+              {/* <div className="checkbox-container">
                 <input type="checkbox" id="agreement" checked={this.state.agreementSelected}
                   value={this.state.agreementSelected} onChange={(e) => {
                     return this.setState({ agreementSelected: !this.state.agreementSelected });
@@ -52,6 +57,7 @@ class OrderType extends Component {
 
               <label htmlFor="agreement">Oswiadczam, że zapoznalem/am sie z Poradnikiem dotyczacym skladania
                 zamowien</label>
+            </div> */}
             </div>
           </div>
         </div>
