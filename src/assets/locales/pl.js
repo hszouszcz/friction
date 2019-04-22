@@ -82,7 +82,7 @@ począwszy od legendarnych korkerów poprzez nie mniej legendarne Ninja i Lasery
         warstwą naklejaną na gorąco z użyciem najnowszych materiałów i technologii. Proces ten przywraca oryginalne
         właściwości buta. W sytuacji kiedy but uległ większemu zużyciu na czubku konieczna może się okazać również
         wymiana rantów. Po takiej pełnej naprawie buty otrzymują zarówno nowe ranty jak i podeszwę.`,
-        caption4: `Najszybciej zużyciu ulega podeszwa oraz ranty w okolicy czubka buta. Dlatego też dobrze jest regularnie sprawdzać
+        caption4_part1: `Najszybciej zużyciu ulega podeszwa oraz ranty w okolicy czubka buta. Dlatego też dobrze jest regularnie sprawdzać
         grubość podeszwy na samym czubku. Najlepsze efekty uzyskuje się jeśli nie doszło do całkowitego zużycia podeszwy
         na czubku, oraz jeśli nie zostały uszkodzone ranty. W praktyce oznacza to, że jeśli grubość podeszwy na czubku
         wynosi ok. 20-30% grubości pierwotnej, to jest to najlepszy moment na dokonanie naprawy.
@@ -90,8 +90,9 @@ począwszy od legendarnych korkerów poprzez nie mniej legendarne Ninja i Lasery
         Zaokrąglony czubek nie pracuje poprawnie na małych stopniach,
         gorsze jest też czucie skały i łatwiej o uszkodzenia rantu lub przecięcia szwów wewnętrznych.
         Inaczej mówiąc, jeśli zaczynamy odczuwać dyskomfort, to jest to sygnał aby bliżej przyjrzeć się butom i nie
-        zwlekać z naprawą. <span style={{fontWeight: 'bold'}}>Warto pamiętać: Nie przecieraj rantów!</span>
-        W porę wykonana wymiana samej podeszwy gwarantuje najlepsze zachowanie pierwotnych parametrów buta.`,
+        zwlekać z naprawą.`,
+        caption4_part2_bold: ` Warto pamiętać: Nie przecieraj rantów! `,
+        caption4_part3: `W porę wykonana wymiana samej podeszwy gwarantuje najlepsze zachowanie pierwotnych parametrów buta.`,
         caption5: `1. Cieńsza guma (4 mm) sprawia, że but będzie miał lepsze czucie i będzie bardziej precyzyjny. Równocześnie
         cieńsza podeszwa ulega szybszemu zużyciu i daje bardziej 'miękkiego' buta.
         2. Zalety grubszej gumy (5 mm) to większa sztywność buta po podklejeniu oraz większa trwałość przy nieco
@@ -127,9 +128,66 @@ począwszy od legendarnych korkerów poprzez nie mniej legendarne Ninja i Lasery
         pierwotnych cech buta i pogorszeniem precyzji. Wynika to z utraty fasonu buta, będącej skutkiem naturalnego
         zużycia oraz wszelkich operacji wykonywanych na bucie podczas napraw. Dodatkowo, w przypadku butów wykonanych ze
         skóry naturalnej, następuje naturalne 'rozbicie się' buta z czasem i powiększenie jego rozmiaru o 1/4 do 1/2
-        numeru.`
+        numeru.`,
 
     },
+    main: {
+        header: {
+            pricing: 'Cennik',
+            cart: 'Koszyk',
+            terms: 'Regulamin',
+            gallery: 'Fotogaleria',
+            paymentData: 'Dane do przelewu',
+            order: 'Zamów',
+            contact: 'Kontakt',
+            language: 'English',
+            langShort: 'EN'
+        },
+        guide: {
+            title: 'Kied konieczna jest naprawa?',
+            text_part1: `Najlepsze efekty uzyskuje się jeśli nie doszło do całkowitego zużycia podeszwy
+        na czubku, oraz jeśli nie zostały uszkodzone ranty. W praktyce oznacza to, że jeśli grubość podeszwy na czubku
+        wynosi ok. 20-30% grubości pierwotnej, to jest to najlepszy moment na dokonanie naprawy.
+          Inaczej mówiąc, jeśli zaczynamy odczuwać dyskomfort, to jest to sygnał aby bliżej przyjrzeć się butom i nie
+        zwlekać z naprawą.`,
+            text_bold: ` Warto pamiętać: Nie przecieraj rantów! `,
+            text_part3: `W porę wykonana wymiana samej podeszwy gwarantuje najlepsze zachowanie pierwotnych parametrów buta.`
+        },
+        order: {
+            step1: 'Złóż zamówienie',
+            text1: `Give a little credit to our public schools.
+                 For one beautiful night I knew what it
+                  was like to be a grandmother.
+                  Subjugated, yet honored. Why did you
+                  bring us here? Well, thanks to tahe
+                   Internet, I'm now bored with sex.`,
+            step2: 'Wyślij buty',
+            text2: `Give a little credit to our public schools.
+                 For one beautiful night I knew what it
+                  was like to be a grandmother.
+                  Subjugated, yet honored. Why did you
+                  bring us here? Well, thanks to tahe
+                   Internet, I'm now bored with sex.`,
+            step3: 'Poczekaj na email zwrotny',
+            text3: `Give a little credit to our public schools.
+                 For one beautiful night I knew what it
+                  was like to be a grandmother.
+                  Subjugated, yet honored. Why did you
+                  bring us here? Well, thanks to tahe
+                   Internet, I'm now bored with sex.`,
+            step4: 'Poczekaj na paczkę z butami"',
+            text4: `Give a little credit to our public schools.
+                 For one beautiful night I knew what it
+                  was like to be a grandmother.
+                  Subjugated, yet honored. Why did you
+                  bring us here? Well, thanks to tahe
+                   Internet, I'm now bored with sex.`,
+        }
+    },
+    common: {
+        guide: 'Poradnik',
+        seeMore: 'Zobacz więcej',
+    }
 };
 
 export default pl;

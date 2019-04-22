@@ -2,27 +2,24 @@ import React from 'react';
 import '../../scss/custom-radio-button.css';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
-import {Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import strings from './../../assets/locales/index';
 
 const Repair = () => {
   return (
     <div className="repair col-lg-6">
-      <div className="section-title">Poradnik</div>
-      <div className="caption-title">Kied konieczna jest naprawa?</div>
+      <div className="section-title">{strings.common.guide}</div>
+      <div className="caption-title">{strings.main.guide.title}</div>
       <div className="common-text">
-        <p> Najlepsze efekty uzyskuje się jeśli nie doszło do całkowitego zużycia podeszwy na czubku, oraz jeśli nie
-          zostały uszkodzone ranty.  W praktyce oznacza to, że jeśli grubość podeszwy na czubku wynosi ok. 20-30%
-          grubości pierwotnej,
-          to jest to najlepszy moment na dokonanie naprawy. Inaczej mówiąc, jeśli zaczynamy odczuwać dyskomfort,
-          to jest to sygnał aby bliżej przyjrzeć się butom i nie zwlekać z naprawą.</p>
-         <p><span>Nie przecieraj rantów! </span>
-        W porę wykonana wymiana samej podeszwy gwarantuje najlepsze zachowanie pierwotnych parametrów buta.</p>
+        <p>{strings.main.guide.text_part1}</p>
+        <p><span>{strings.main.guide.text_bold}</span></p>
+        <p>{strings.main.guide.text_part3}</p>
       </div>
       <ButtonsRow style="d-none">
         <div></div>
-        <Route  render={({history}) => (
+        <Route render={({ history }) => (
           <ForwardButton
-            text="Zobacz więcej"
+            text={strings.common.seeMore}
             theme="black"
             onClick={() => { history.push('/guide') }}
             forward
@@ -30,7 +27,7 @@ const Repair = () => {
         )} />
       </ButtonsRow>
     </div>
-);
+  );
 };
 
 export default Repair;

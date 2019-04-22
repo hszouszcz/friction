@@ -42,7 +42,9 @@ const GuideView = (props) => {
         {strings.guide.link4}
       </div>
       <div className="common-text anchor-text-padding">
-        {strings.guide.caption4}
+        {strings.guide.caption4_part1}
+         <span><b>{strings.guide.caption4_part2_bold}</b></span>
+         { strings.guide.caption4_part3}
       </div>
       <div className="anchor-title" id="edge-thickness-to-pick">
         {strings.guide.link5}

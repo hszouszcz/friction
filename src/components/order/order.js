@@ -5,6 +5,7 @@ import '../../scss/common-styles.css';
 import { Route } from 'react-router-dom'
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
+import strings from './../../assets/locales/index';
 
 class Order extends Component  {
 
@@ -12,7 +13,7 @@ class Order extends Component  {
     <Route render={({history}) => (
       <ButtonsRow>
         <ForwardButton
-          text="Zobacz więcej"
+          text={strings.common.seeMore}
           theme="black"
           onClick={() => { history.push('/order') }}
           forward
@@ -27,43 +28,23 @@ class Order extends Component  {
         <div className="row">
           <OrderStep
             icon="fa fa-shopping-basket"
-            title="Złóż zamówienie"
-            text="Give a little credit to our public schools.
-                 For one beautiful night I knew what it
-                  was like to be a grandmother.
-                  Subjugated, yet honored. Why did you
-                  bring us here? Well, thanks to the
-                   Internet, I'm now bored with sex."
+            title={strings.main.order.step1}
+            text={strings.main.order.text1}
           />
           <OrderStep
             icon="fa fa-truck"
-            title="Wyślij buty"
-            text="Give a little credit to our public schools.
-                 For one beautiful night I knew what it
-                  was like to be a grandmother.
-                  Subjugated, yet honored. Why did you
-                  bring us here? Well, thanks to the
-                   Internet, I'm now bored with sex."
+            title={strings.main.order.step2}
+            text={strings.main.order.text2}
           />
           <OrderStep
             icon="fa fa-reply"
-            title="Poczekaj na email zwrotny"
-            text="Give a little credit to our public schools.
-                 For one beautiful night I knew what it
-                  was like to be a grandmother.
-                  Subjugated, yet honored. Why did you
-                  bring us here? Well, thanks to the
-                   Internet, I'm now bored with sex."
+            title={strings.main.order.step3}
+            text={strings.main.order.text3}
           />
           <OrderStep
             icon="fa fa-gift"
-            title="Poczekaj na paczkę z butami"
-            text="Give a little credit to our public schools.
-                 For one beautiful night I knew what it
-                  was like to be a grandmother.
-                  Subjugated, yet honored. Why did you
-                  bring us here? Well, thanks to the
-                   Internet, I'm now bored with sex."
+            title={strings.main.order.step4}
+            text={strings.main.order.text4}
           />
         </div>
         {this.button()}
