@@ -24,5 +24,4 @@ const CustomSelect = (props) => (
 
 );
 
-
 export default CustomSelect;

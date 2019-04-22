@@ -7,6 +7,7 @@ import '../../scss/buttons.css';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import DisabledNavButton from '../shared/buttons/navigation-buttons/DisabledNavButton';
 import CheckBox from './../Checkbox/checkbox';
+import strings from '../../assets/locales';
 
 class OrderType extends Component {
   constructor(props) {
@@ -44,20 +45,11 @@ class OrderType extends Component {
           <div className="col-12 agreement">
             <div className="order-section">
               <CheckBox
+                id="rodo"
                 onClick={(e) => { return this.setState({ agreementSelected: !this.state.agreementSelected }); }}
                 value={this.state.agreementSelected}
+                label={strings.rodoAgreement}
               />
-              {/* <div className="checkbox-container">
-                <input type="checkbox" id="agreement" checked={this.state.agreementSelected}
-                  value={this.state.agreementSelected} onChange={(e) => {
-                    return this.setState({ agreementSelected: !this.state.agreementSelected });
-                  }} />
-                <span class="checkmark"></span>
-              </div>
-
-              <label htmlFor="agreement">Oswiadczam, że zapoznalem/am sie z Poradnikiem dotyczacym skladania
-                zamowien</label>
-            </div> */}
             </div>
           </div>
         </div>

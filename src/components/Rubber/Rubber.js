@@ -9,7 +9,7 @@ const Rubber = () => {
   return (
     <div className="rubber">
       <img src={fiveTen} alt="" className="clipped"/>
-        <div className="col-lg-12 col-md-10">
+        <div className="col-lg-12 col-md-8 offset-md-2 offset-lg-0">
           <div className="row">
           <Image />
           <RubberContent/>

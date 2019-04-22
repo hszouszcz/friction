@@ -89,8 +89,14 @@
 .friction-custom-select {
   border: 1px solid #eeeeee;
   border-radius: 0;
-  padding: 20px 30px 0 30px;
-  height: 72px; }
+  padding: 20px 20px 0 20px;
+  height: 72px;
+  font-size: 12px;
+  font-family: "Roboto-Regular"; }
+  .friction-custom-select .Select-value-label {
+    color: #6f7983 !important; }
+  .friction-custom-select .Select-arrow {
+    border-color: #6f7983 transparent transparent; }
   @media (max-width: 767.97px) {
     .friction-custom-select {
       height: 44px;
@@ -113,7 +119,8 @@
       border: none; }
 
 .friction-custom-select-option {
-  color: #6f7983; }
+  font-size: 12px;
+  font-family: "Roboto-Regular"; }
 
 .order-type-radio-button {
   display: block;

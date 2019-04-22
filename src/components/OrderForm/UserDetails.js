@@ -7,6 +7,8 @@ import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import DisabledNavButton from '../shared/buttons/navigation-buttons/DisabledNavButton';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 import CustomSelect from '../shared/select/select';
+import CheckBox from './../Checkbox/checkbox';
+import strings from './../../assets/locales/index';
 
 
 const required = (value) => {
@@ -202,8 +204,8 @@ class UserDetails extends Component {
   render() {
     return (<div className="container order-form">
 
-      <div className="row">
-        <div className="col-md-8 offset-md-2">
+      <div >
+        <div className="col-md-7 offset-md-2">
           <div className="order-form-title" style={{ paddingTop: '30px' }}>
             Twoje dane
           </div><div className="order-section row no-gutters">
@@ -305,14 +307,13 @@ class UserDetails extends Component {
             </div>
             <div className="col-md-8 agreement">
               <div className="order-section" style={{ paddingBottom: '0px', paddingLeft: '15px' }}>
-                <input
-                  type="checkbox"
+                <CheckBox
                   id="invoice"
-                  style={{ marginBottom: '0px' }}
-                  value={this.state.invoice} onChange={() =>
-                    this.setState({ invoice: !this.state.invoice })
-                  } />
-                <label htmlFor="invoice">Prosze o przeslanie faktury VAT</label>
+                  value={this.state.invoice}
+                  onClick={() => this.setState({ invoice: !this.state.invoice })}
+                  label={strings.invoiceRequest}
+                />
+
               </div>
             </div>
             {this.state.invoice &&
@@ -403,17 +404,12 @@ class UserDetails extends Component {
           </div>
           <div className="col-12 agreement">
             <div className="order-section">
-              <input
-                type="checkbox"
-                id="agreement"
-                checked={this.state.agreement}
+              <CheckBox
+                id="rodo"
                 value={this.state.agreement}
-                onChange={() => this.setState({ agreement: !this.state.agreement })}
+                onClick={() => this.setState({ agreement: !this.state.agreement })}
+                label={strings.rodoAgreement}
               />
-              <label htmlFor="agreement">Wyrażam zgodę na przetważanie i przetrzymywanie moich danych osobowych
-                niezbędnych do realizacji zamówienia przez Friction s.c. zgodnie z ustawą o ochronie danych osobowych z
-                dnia 29.08.1997r. (Dz. U. Nr 133, poz. 883). Dane te będą wykorzystywane w celu ewidencji sprzedaży i
-                kontaktu z nabywcą wyłącznie przez Friction s.c.</label>
             </div>
             {this.state.formValid ? null : <p>Sprawdź czy wypelniono wszystkie potrzebne pola!</p>}
           </div>

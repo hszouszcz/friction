@@ -4,7 +4,7 @@ import '../../scss/docs.css';
 
 const Terms = (props) => {
   return (
-    <div className="terms docs col-md-6 offset-md-1">
+    <div className="terms docs col-md-6 offset-md-2">
       <div className="breadcrumbs">Najważniejsze informacje dotyczące zamówień</div>
       <div className="title">Regulamin zamówień</div>
       <div className="links">

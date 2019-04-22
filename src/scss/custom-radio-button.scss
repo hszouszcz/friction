@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import "variables.scss";
 
 /* Customize the label (the radio-container) */
 .radio-container {
@@ -36,8 +36,8 @@
 
 .checked {
   @media (max-width: 767.97px) {
-  background-color: $orange !important;
-  color: white!important;
+    background-color: $orange !important;
+    color: white !important;
   }
 }
 
@@ -67,8 +67,8 @@
 }
 
 /* On mouse-over, add a grey background color */
-.radio-container:hover  {
-  border-color: rgba(255,127,24, 0.3);
+.radio-container:hover {
+  border-color: rgba(255, 127, 24, 0.3);
 }
 /* When the checkbox is checked, add a blue background */
 .radio-container input:checked ~ .checkmark {
@@ -103,16 +103,25 @@
 .friction-custom-select {
   border: 1px solid $border-color;
   border-radius: 0;
-  padding: 20px 30px 0 30px;
+  padding: 20px 20px 0 20px;
   height: 72px;
+  font-size: 12px;
+  font-family: "Roboto-Regular";
 
+  .Select-value-label {
+    color: $gray!important;
+  }
+
+  .Select-arrow {
+    border-color: $gray transparent transparent;
+  }
 
   @media (max-width: 767.97px) {
     height: 44px;
-    padding:  5px 10px;
+    padding: 5px 10px;
   }
   &:hover {
-    border-color: rgba(255,127,24, 0.3);
+    border-color: rgba(255, 127, 24, 0.3);
   }
   .Select-control {
     border: none !important;
@@ -120,15 +129,15 @@
     &:active {
       border: none !important;
       box-shadow: none !important;
-  }
+    }
     &:focus {
       border: none !important;
       box-shadow: none !important;
-  }
+    }
     &:hover {
       border: none !important;
       box-shadow: none !important;
-  }
+    }
     .Select-input {
       input {
         border: none;
@@ -138,7 +147,9 @@
 }
 
 .friction-custom-select-option {
-  color: $gray;
+
+  font-size: 12px;
+  font-family: "Roboto-Regular";
 }
 
 .order-type-radio-button {
@@ -158,8 +169,8 @@
 }
 
 /* On mouse-over, add a grey background color */
-.order-type-radio-button:hover  {
-  border-color:  rgba(255,127,24, 0.3);
+.order-type-radio-button:hover {
+  border-color: rgba(255, 127, 24, 0.3);
 }
 
 /* When the checkbox is checked, add a blue background */

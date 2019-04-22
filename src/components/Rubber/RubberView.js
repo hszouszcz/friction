@@ -6,7 +6,7 @@ import RubberThickness from './RubberThickness';
 
 const RubberView = (props) => {
   return (
-    <div className="RubberView docs col-md-6 offset-md-1">
+    <div className="RubberView docs col-md-6 offset-md-2">
       <div className="breadcrumbs">Poradnik - Gumy wspinaczkowe</div>
       <div className="title">Czym różnią się dostępne rodzaje gum na podeszwę?</div>
       <div className="links">
