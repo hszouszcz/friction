@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../assets/img/logo-white.png';
 import './../../scss/footer.css';
 import "../../scss/header.css";
+import strings from './../../assets/locales/index';
 
 const Footer = () => (
     <footer>
@@ -10,22 +11,22 @@ const Footer = () => (
           <a className="navbar-brand" href="/"><img className="logo" src={logo} alt={"logo"} /></a>
           </div>
             <div className="col-sm-4 col-lg-3  section">
-            <div className="title">Adres</div>
-            <div>Friction</div>
-            <div>ul. Cieszyńska 9/137</div>
-            <div>30-015 Kraków</div>
+            <div className="title">{strings.adress}</div>
+            <div>{strings.friction}</div>
+            <div>{strings.street}</div>
+            <div>{strings.postCodeAndCIty}</div>
          </div>
          <div className="col-sm-4 col-lg-3 section">
-         <div className="title">Email i telefon</div>
-            <div>+48 790 540 570</div>
-            <div>+48 535 18 18 01</div>
-            <div>friction@friction.pl</div>
+         <div className="title">{strings.emailAndPhone}</div>
+            <div>{strings.phone1}</div>
+            <div>{strings.phone2}</div>
+            <div>{strings.email}</div>
          </div>
          <div className="col-sm-4 col-lg-3 section">
-            <div className="title">Godziny otwarcia</div>
-            <div>pn. i sr. 8 - 18</div>
-            <div>wt. czw. pt 8 - 16</div>
-            <div>fb</div>
+            <div className="title">{strings.openHours}</div>
+            <div>{strings.unevenHours}</div>
+            <div>{strings.evenHours}</div>
+            {/* <div>fb</div> */}
          </div></div>
     </footer>
 );

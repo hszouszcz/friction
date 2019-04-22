@@ -3,6 +3,7 @@ import '../../scss/about.css';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import {Route} from 'react-router-dom';
+import strings from './../../assets/locales/index';
 
 const AboutContent = (props) => {
   return (
@@ -18,7 +19,7 @@ const AboutContent = (props) => {
               <Route render={({history}) => (
                 <ForwardButton
                   onClick={() => { history.push('/about') }}
-                  text="Zobacz więcej"
+                  text={strings.seeMore}
                   theme="black"
                   forward
                 />
