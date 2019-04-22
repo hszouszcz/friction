@@ -1,58 +1,54 @@
 import React from 'react';
 import '../../scss/docs.css';
+import strings from './../../assets/locales/index';
 
 const OrderRules = (props) => {
   return (
-    <div className="order-rules docs col-md-6 offset-md-1">
-      <div className="breadcrumbs">Poradnik - Obsługa zamówienia</div>
-      <div className="title">Jak złożyć zamówienie</div>
+    <div className="guide-view docs col-md-6 offset-md-2">
+      <div className="breadcrumbs">{strings.orderRules.breadcrumbs}</div>
+      <div className="title">{strings.orderRules.title}</div>
       <div className="anchor-title">
-        Krok pierwszy: Złożenie zamównienia
+        {strings.orderRules.step1}
       </div>
       <div className="common-text anchor-text-padding">
-        - dodaj do koszyka i opisz każdą wysyłaną do naprawy parę butów
-        - wprowadź swoje dane oraz adres do wysyłki
-        - wybierz sposób płatności i rodzaj przesyłki zwrotnej
-        - potwierdź zamówienie
+        <div>{strings.orderRules.text1[0]}</div>
+        <div>{strings.orderRules.text1[1]}</div>
+        <div>{strings.orderRules.text1[2]}</div>
+        <div>{strings.orderRules.text1[3]}</div>
       </div>
       <div className="anchor-title">
-        Krok drugi: Wysłanie butów
+        {strings.orderRules.step2}
       </div>
       <div className="common-text anchor-text-padding">
-        - poczekaj na e-mailowe potwierdzenie z numerem zamówienia
-        - wyczyść i przygotuj buty do wysyłki
-        - dołącz do paczki numer zamówienia
+        <div>{strings.orderRules.text2[0]}</div>
+        <div>{strings.orderRules.text2[1]}</div>
+        <div>{strings.orderRules.text2[2]}</div>
       </div>
       <div className="anchor-title">
-        Krok trzeci: Płatność i realizacja
+        {strings.orderRules.step3}
       </div>
       <div className="common-text anchor-text-padding">
-        - poczekaj aż paczka dotrze do nas
-        - po zweryfikowaniu zakresu naprawy przyjmujemy zlecenie do realizacji
-        - wysyłamy e-maila z potwierdzeniem ostatecznej wyceny
-        - dla płatnosci przelewem przesyłamy też prośbę o wykonanie zapłaty
-        - platności pobraniowe oraz gotówkowe są regulowane przy odbiorze paczki
+        <div>{strings.orderRules.text3[0]}</div>
+        <div>{strings.orderRules.text3[1]}</div>
+        <div>{strings.orderRules.text3[2]}</div>
+        <div>{strings.orderRules.text3[3]}</div>
+        <div>{strings.orderRules.text3[4]}</div>
       </div>
       <div className="anchor-title">
-        Krok czwarty: Paczka zwrotna
+        {strings.orderRules.step4}
       </div>
       <div className="common-text anchor-text-padding">
-        - po wykonaniu naprawy przygotowujemy paczkę zwrotną
-        - zamawiamy kuriera lub przesyłkę pocztowa
-        - po nadaniu paczki wysyłamy e-mailem potwierdzenie wysyłki
-        Pozostałe szczegóły związane ze składaniem zamówień przedstawione są na podstronie  Regulamin.
+        <div>{strings.orderRules.text4[0]}</div>
+        <div>{strings.orderRules.text4[1]}</div>
+        <div>{strings.orderRules.text4[2]}</div>
+        <div>{strings.orderRules.text4[3]}</div>
 
       </div>
       <div className="anchor-title">
-        Ile zajmuje naprawa butów?
+        {strings.orderRules.howLong}
       </div>
       <div className="common-text anchor-text-padding">
-        Większość napraw butów wspinaczkowych wykonujemy w czasie 5-7 dni roboczych od momentu otrzymania przesyłki.
-        Część napraw gotowa jest wcześniej, dotyczy to butów, które zostały przysłane we właściwym stanie i nie wymagały
-        żadnych dodatkowych zabiegów. Natomiast niektóre naprawy zajmują nieco więcej czasu, zazwyczaj spowodowane jest to
-        większymi uszkodzeniami, które wymagają dodatkowych prac.
-
-        Naprawy butów poejściowych i górskich zależą od zakresu uszkodzeń, typowa wymiana podeszwy i/lub rantów trwa 7-10 dni roboczych.
+        {strings.orderRules.howLongText}
       </div>
     </div>
   );

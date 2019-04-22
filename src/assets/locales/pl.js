@@ -129,7 +129,44 @@ począwszy od legendarnych korkerów poprzez nie mniej legendarne Ninja i Lasery
         zużycia oraz wszelkich operacji wykonywanych na bucie podczas napraw. Dodatkowo, w przypadku butów wykonanych ze
         skóry naturalnej, następuje naturalne 'rozbicie się' buta z czasem i powiększenie jego rozmiaru o 1/4 do 1/2
         numeru.`,
+    },
+    orderRules: {
+        breadcrumbs: 'Poradnik - Obsługa zamówienia',
+        title: 'Jak złożyć zamówienie',
+        step1: ' Krok pierwszy: Złożenie zamównienia',
+        text1: [
+            '- dodaj do koszyka i opisz każdą wysyłaną do naprawy parę butów',
+            '- wprowadź swoje dane oraz adres do wysyłki',
+            '- wybierz sposób płatności i rodzaj przesyłki zwrotnej',
+            '- potwierdź zamówienie'],
+        step2: ' Krok drugi: Wysłanie butów',
+        text2: [
+            '- poczekaj na e-mailowe potwierdzenie z numerem zamówienia',
+            '- wyczyść i przygotuj buty do wysyłki',
+            '- dołącz do paczki numer zamówienia'
+        ],
+        step3: ' Krok trzeci: Płatność i realizacja',
+        text3: [
+            '- poczekaj aż paczka dotrze do nas',
+            '- po zweryfikowaniu zakresu naprawy przyjmujemy zlecenie do realizacji',
+            '- wysyłamy e-maila z potwierdzeniem ostatecznej wyceny',
+            '- dla płatnosci przelewem przesyłamy też prośbę o wykonanie zapłaty',
+            '- platności pobraniowe oraz gotówkowe są regulowane przy odbiorze paczki'
+        ],
+        step4: 'Krok czwarty: Paczka zwrotna',
+        text4: [
+        '- po wykonaniu naprawy przygotowujemy paczkę zwrotną',
+        '- zamawiamy kuriera lub przesyłkę pocztowa',
+        '- po nadaniu paczki wysyłamy e-mailem potwierdzenie wysyłki',
+        'Pozostałe szczegóły związane ze składaniem zamówień przedstawione są na podstronie  Regulamin.'
+        ],
+        howLong: ' Ile zajmuje naprawa butów?',
+        howLongText: ` Większość napraw butów wspinaczkowych wykonujemy w czasie 5-7 dni roboczych od momentu otrzymania przesyłki.
+        Część napraw gotowa jest wcześniej, dotyczy to butów, które zostały przysłane we właściwym stanie i nie wymagały
+        żadnych dodatkowych zabiegów. Natomiast niektóre naprawy zajmują nieco więcej czasu, zazwyczaj spowodowane jest to
+        większymi uszkodzeniami, które wymagają dodatkowych prac.
 
+        Naprawy butów poejściowych i górskich zależą od zakresu uszkodzeń, typowa wymiana podeszwy i/lub rantów trwa 7-10 dni roboczych.`
     },
     main: {
         header: {
