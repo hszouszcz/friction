@@ -25,6 +25,9 @@ class Order extends Component  {
   render() {
     return (
       <div className="order col-md-8 offset-md-2">
+      <div className="caption-title" style={{textAlign: 'center'}}>
+      Składanie zamówienia
+      </div>
         <div className="row">
           <OrderStep
             icon="fa fa-shopping-basket"
