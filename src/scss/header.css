@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
+*:not(i) {
+  font-family: 'Roboto', sans-serif !important; }
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  background: white; }
+  .header .logo {
+    width: 100px; }
+  .header .btn-outline-light {
+    outline: none;
+    background-color: white; }
+  .header .dropdown-menu {
+    background-color: #05080c; }
+  .header .dropdown-item {
+    background-color: #05080c;
+    color: #fff !important;
+    padding: 13px 30px; }
+    .header .dropdown-item:hover {
+      text-decoration: underline !important; }
+  .header .nav-item {
+    border-left: 1px solid #dadfe5;
+    padding-left: 10px;
+    padding-right: 10px; }
+    .header .nav-item:first-child {
+      border: none;
+      padding-right: 0; }
+    .header .nav-item a {
+      line-height: 1;
+      color: #05080c;
+      font-size: 0.9rem; }
+    .header .nav-item .basket {
+      color: #ff7f18; }
+  @media (max-width: 767.98px) {
+    .header .nav-item:not(:first-child) {
+      display: none; } }

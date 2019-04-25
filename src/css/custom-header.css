@@ -1,0 +1,55 @@
+ /**
+ HEADER STYLES
+  */
+
+.navbar {
+    background-color: white;
+}
+
+.dropdown-menu {
+    background-color: black;
+}
+.dropdown-menu a {
+   color: white;
+}
+
+.menu-items-nav {
+    align-self: flex-start;
+}
+.nav .nav-item {
+    border-right: 1px solid black;
+}
+ .nav .nav-item:first-child {
+   padding-top: 5px;
+}
+.nav .nav-item:last-child {
+    border: none;
+}
+
+.dropdown-item{
+    padding: 10px 15px;
+}
+
+.dropdown-item:hover{
+    text-decoration: underline;
+    background-color: black;
+    color: white;
+}
+
+@media (max-width: 767.98px) {
+    .nav  > .nav-item:not(:first-child){
+        display: none;
+    }
+    .nav .nav-item:first-child {
+        border: none;
+    }
+
+    .navbar-brand > img {
+        max-width: 100px;
+        height: auto;
+    }
+}
+
+#custom .dropdown .btn-outline-light:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled).active, .show > .btn-outline-light.dropdown-toggle {
+    border: none;
+}

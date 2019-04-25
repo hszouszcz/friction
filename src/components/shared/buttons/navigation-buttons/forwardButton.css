@@ -1,0 +1,25 @@
+.forward-button {
+  padding: 15px 25px;
+  font-size: 0.7em;
+  user-select: none;
+  min-width: 120px; }
+  .forward-button:hover {
+    text-decoration: underline;
+    cursor: pointer; }
+  .forward-button:focus {
+    outline: none; }
+  @media (max-width: 380.97px) {
+    .forward-button {
+      padding: 10px; } }
+
+.black {
+  background-color: #05080c;
+  color: white; }
+
+.disabled-bg {
+  background-color: gray;
+  color: white; }
+
+.white {
+  background-color: white;
+  color: #05080c; }

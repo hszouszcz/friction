@@ -1,0 +1,78 @@
+@import 'variables.scss';
+
+button {
+  border: none;
+  font-size: $text16;
+  padding: 15px 30px;
+
+  span {
+    padding-right: 10px;
+  }
+   i{
+     line-height: 10px;
+   }
+}
+
+.mobile {
+  @media (max-width: 768px) {
+      display: block;
+  }
+  display: none;
+}
+
+ .dark {
+  background-color: $onyx;
+  color: white;
+}
+.light {
+  background-color: white;
+  color: $onyx;
+}
+
+ .right {
+   position: absolute;
+   margin: 10px 20px;
+   right: 0;
+   padding-right: 20px;
+}
+ .left {
+ align-self: left;
+}
+
+.title {
+  font-size: $text16;
+  color: $light-gray;
+  margin-bottom: 20px;
+}
+.text {
+  font-size: $text18;
+  color: white;
+
+}
+.caption-title {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  font-weight: 300;
+
+  @media (max-width: 425px) {
+    font-size: 1em;
+  }
+}
+
+.truncated {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.common-text {
+  line-height: $line-height;
+  font-size: 0.8em;
+}
+
+.section-title {
+  font-size: 0.7em;
+  color: #dadfe5;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,272 @@
+.subtitle {
+    font-size: 24px;
+    line-height: 32px;
+    padding-top: 20px ;
+    padding-bottom: 10px;
+}
+
+@media (min-width: 767.98px)  {
+    .subtitle {
+        font-size: 36px;
+        line-height: 48px;
+        margin-top: 30px ;
+        padding-bottom: 30px;
+    }
+}
+
+.custom-section {
+    position: relative;
+    padding: 0;
+}
+
+.custom-section-vertical-padding {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.bg-top-image {
+padding: 0;
+}
+
+.rubber-img-container .col6-img {
+    display: none;
+}
+
+.bg-top-image .mobile-img {
+    width: 100%;
+    height: auto;
+}
+
+.bg-top-image .screen-img {
+    display: none;
+}
+
+.bullet {
+    width: 30px;
+    height: 5px;
+    background-color: #dadfe5;
+    margin:10px auto 20px auto;
+
+}
+
+.custom-section .bullets {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.custom-section .bullets div span {
+    display: inline-block;
+}
+.custom-section .bullets div span:first-child {
+    margin: auto;
+    font-size: 36px;
+    color: white;
+    line-height: 20px;
+}
+.custom-section .bullets div span:last-child {
+    font-size: 14px;
+    color: #f9f9f9;
+}
+
+.custom-section .about {
+    position: relative;
+}
+
+    .about {
+        padding-bottom: 20px;
+    }
+
+ .about .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+
+.custom-section .about .desc {
+
+    padding-bottom: 20px;
+}
+.custom-section .about .desc .first-part {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 9;
+    -webkit-box-orient: vertical;
+    margin-bottom: 20px;
+}
+
+.custom-section .about .desc .second-part {
+    display: none;
+}
+
+.custom-section .about .show-more {
+    display: block;
+}
+
+.guide .desc {
+    margin-bottom: 20px;
+}
+
+.common-section {
+    padding-top: 20px;
+}
+
+.about .images {
+    display: none;
+}
+
+.about p {
+    display: block;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.rubbers {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.orders {
+    text-align: center;}
+
+.orders i {
+    font-size: 30px;
+
+}
+
+.orders .desc {
+    text-align: left;
+}
+
+footer {
+    background-color: black;
+    padding: 30px 0;
+
+}
+
+@media (min-width: 767.98px) {
+    .custom-section {
+        margin-top: 100px;
+    }
+
+    .bg-image {
+        background:  url("../assets/img/bg-top.jpg");
+    }
+    .bg-top-image .mobile-img {
+        display: none;
+    }
+    .bg-top-image .screen-img {
+        position: absolute;
+        top: -95px;
+        left: -15%;
+        width: 90%;
+        display: block;
+    }
+    .custom-section .bullets {
+        padding-top: 20%;
+    }
+    .about {
+        font-size: 12px;
+    }
+
+
+    .very-special-button {
+        height: 100%;
+        color: white;
+        font-weight: lighter;
+        margin: 5px 0;
+        border-radius: 0;
+    }
+    .high-button-container {
+        padding-left: 3%;
+    }
+
+    .rubber-img-container .col6-img {
+        display: block;
+        width:100%;
+        padding: 0px 5px;
+    }
+
+    .rubbers .text-limit {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical
+    }
+
+    .orders {
+        text-align: left;
+    }
+}
+@media (min-width: 992px) {
+
+    .custom-section .bullets{
+        text-align: left;
+        padding: 0 15px;
+    }
+
+    .bullet {
+        margin:10px 0 20px;
+
+    }
+
+    .bullets .col-md-4 {
+        padding-right: 20px;
+    }
+
+    .bg-top-image .mobile-img {
+        display: none;
+    }
+    .bg-top-image .screen-img {
+        position: absolute;
+        top: -90px;
+        left: -16%;
+        width: 80%;
+        display: block;
+    }
+    .custom-section .bullets {
+        padding-top: 18%;
+    }
+    .about {
+        font-size: 12px;
+    }
+
+    .custom-section .about .show-more {
+        display: none;
+    }
+
+    .custom-section .about .desc .second-part {
+        display: block;
+    }
+    .custom-section .about .desc {
+        display: flex;
+    }
+
+    .common-section .small-img {
+        width:100%;
+        height: 100%;
+        padding: 5px 0 5px 5px;
+    }
+    .common-section .big-img {
+        width:100%;
+        height: 100%;
+    }
+
+    .very-special-button {
+        height: 100%;
+        color: white;
+        font-weight: lighter;
+        margin: 5px 0;
+        border-radius: 0;
+    }
+
+    .about .images {
+        display: block;
+    }
+
+}
+
+@media (min-width: 1025px) {
+
+    .high-button-container {
+        padding-left: 7%;
+    }
+}

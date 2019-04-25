@@ -1,0 +1,44 @@
+.about {
+  background: #05080c;
+  position: relative; }
+  .about .screen-img {
+    display: none; }
+    @media (min-width: 976.97px) {
+      .about .screen-img {
+        position: absolute;
+        top: -20%;
+        left: 0;
+        padding-left: 10px;
+        width: 90%;
+        display: block;
+        padding-bottom: 30px; } }
+  .about .mobile-img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    padding-bottom: 10px; }
+    @media (min-width: 976.97px) {
+      .about .mobile-img {
+        display: none; } }
+  .about .bullets {
+    display: none; }
+    @media (min-width: 767.97px) {
+      .about .bullets {
+        display: flex;
+        padding-bottom: 50px;
+        font-size: 2em; } }
+  .about .content {
+    padding-bottom: 30px; }
+    .about .content .title {
+      font-size: 16px;
+      color: #dadfe5;
+      margin-bottom: 20px; }
+    .about .content .text {
+      font-size: 18px;
+      color: white; }
+    @media (max-width: 992px) {
+      .about .content {
+        padding-top: 30px;
+        padding-bottom: 30px; }
+        .about .content .second-col {
+          display: none; } }

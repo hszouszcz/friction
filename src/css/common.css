@@ -1,0 +1,90 @@
+
+.custom-button {
+    border-radius: 0;
+    color: black;
+    background-color: white;
+    border-color: white;
+    font-size: 10px;
+    /*position: absolute;*/
+}
+
+.right {
+    margin-right: 15px;
+    float: right;
+}
+
+.light-button {
+    color: black;
+    background-color: white;
+    border-color: white;
+}
+
+.black-button {
+    color: white;
+    background-color: black;
+    border-color: black;
+}
+
+.light-button:hover {
+    text-decoration: underline;
+}
+
+
+.main-text-size {
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.clear-margins {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.white-text {
+    color: white;
+}
+
+.black-text {
+    color:black;
+}
+
+.black-bg {
+    background-color: black;
+}
+
+.white-bg {
+    background-color: white;
+}
+.screen-only {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .mobile-only {
+        display: none;
+    }
+
+    .screen-only {
+        display: block;
+    }
+}
+
+.has-button {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 0.7em;
+    color: #dadfe5;
+    margin-bottom: 20px;
+}
+
+.common-text {
+    line-height: 1.8;
+    font-size: 0.8em;
+}
+
+.caption-title {
+    line-height: 1.8;
+    font-size: 2em;
+}

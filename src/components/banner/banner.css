@@ -1,0 +1,20 @@
+.banner {
+  background-image: -webkit-linear-gradient(90deg, #000 50%, #fff 50%);
+  padding: 60px 5px;
+  box-shadow: 0 0 0 -8px #000; }
+  @media (max-width: 767.97px) {
+    .banner {
+      padding: 40px 1px 20px 1px; } }
+  @media (max-width: 425px) {
+    .banner {
+      padding-top: 30px;
+      padding-bottom: 0; } }
+  .banner img {
+    width: 100%;
+    height: auto; }
+    @media (max-width: 767.97px) {
+      .banner img {
+        width: 100%; } }
+  .banner .no-paddings {
+    padding-left: 0 !important;
+    padding-right: 0 !important; }

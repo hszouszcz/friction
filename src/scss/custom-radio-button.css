@@ -1,0 +1,157 @@
+/* Customize the label (the radio-container) */
+.radio-container {
+  display: block;
+  position: relative;
+  margin: 15px 15px 15px 0;
+  padding: 0 30px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 72px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 270px;
+  height: 72px;
+  border: 1px solid #eeeeee; }
+  @media (max-width: 767.97px) {
+    .radio-container {
+      width: 100%;
+      height: 44px;
+      line-height: 44px;
+      font-size: 14px;
+      text-align: center;
+      padding: 0; } }
+  @media (min-width: 767.97px) and (max-width: 1023px) {
+    .radio-container {
+      width: 250px;
+      height: 67px;
+      line-height: 67px;
+      font-size: 16px;
+      padding: 0 30px; } }
+
+@media (max-width: 767.97px) {
+  .checked {
+    background-color: #ff7f18 !important;
+    color: white !important; } }
+
+@media (max-width: 767.97px) {
+  .radio-container:first-child {
+    margin-left: 0; } }
+
+/* Hide the browser's default checkbox */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer; }
+
+/* Create a custom checkbox */
+.checkmark {
+  height: 25px;
+  width: 25px;
+  color: #dadfe5;
+  position: absolute;
+  right: 15px; }
+  @media (max-width: 767.97px) {
+    .checkmark {
+      display: none; } }
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover {
+  border-color: rgba(255, 127, 24, 0.3); }
+
+/* When the checkbox is checked, add a blue background */
+.radio-container input:checked ~ .checkmark {
+  color: #15d78c; }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
+/* Show the checkmark when checked */
+.radio-container input:checked ~ .checkmark:after {
+  display: block; }
+
+/* Style the checkmark/indicator */
+.radio-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.friction-custom-select {
+  border: 1px solid #eeeeee;
+  border-radius: 0;
+  padding: 20px 20px 0 20px;
+  height: 72px;
+  font-size: 12px;
+  font-family: "Roboto-Regular"; }
+  .friction-custom-select .Select-value-label {
+    color: #6f7983 !important; }
+  .friction-custom-select .Select-arrow {
+    border-color: #6f7983 transparent transparent; }
+  @media (max-width: 767.97px) {
+    .friction-custom-select {
+      height: 44px;
+      padding: 5px 10px; } }
+  .friction-custom-select:hover {
+    border-color: rgba(255, 127, 24, 0.3); }
+  .friction-custom-select .Select-control {
+    border: none !important;
+    box-shadow: none !important; }
+    .friction-custom-select .Select-control:active {
+      border: none !important;
+      box-shadow: none !important; }
+    .friction-custom-select .Select-control:focus {
+      border: none !important;
+      box-shadow: none !important; }
+    .friction-custom-select .Select-control:hover {
+      border: none !important;
+      box-shadow: none !important; }
+    .friction-custom-select .Select-control .Select-input input {
+      border: none; }
+
+.friction-custom-select-option {
+  font-size: 12px;
+  font-family: "Roboto-Regular"; }
+
+.order-type-radio-button {
+  display: block;
+  position: relative;
+  margin: 15px 15px 15px 0;
+  padding: 0 30px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 72px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 72px;
+  border: 1px solid #eeeeee; }
+
+/* On mouse-over, add a grey background color */
+.order-type-radio-button:hover {
+  border-color: rgba(255, 127, 24, 0.3); }
+
+/* When the checkbox is checked, add a blue background */
+.order-type-radio-button input:checked ~ .checkmark {
+  color: #15d78c; }
+
+/* Show the checkmark when checked */
+.order-type-radio-button input:checked ~ .checkmark:after {
+  display: block; }
+
+/* Hide the browser's default checkbox */
+.order-type-radio-button input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 0; }

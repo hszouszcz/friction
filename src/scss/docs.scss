@@ -1,0 +1,36 @@
+@import 'variables.scss';
+
+.docs {
+  .breadcrumbs {
+    font-size: $text12;
+    color: $gray;
+  }
+  .title {
+    color: $onyx;
+    font-size: $text24;
+  }
+  .links {
+    font-size: $text14;
+    padding-bottom: 30px;
+    a {
+      @media (max-width: 767.97px) {
+        padding: 5px 0;
+      }
+      color: $orange;
+      display: block;
+      cursor: pointer;
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+  .anchor-title {
+    font-size: $text18;
+    color: $gray;
+    padding-bottom: 10px;
+    padding-top: 30px;
+  }
+  .anchor-text-padding {
+    padding-bottom: 30px;
+  }
+}

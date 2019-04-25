@@ -1,0 +1,29 @@
+.docs .breadcrumbs {
+  font-size: 12px;
+  color: #6f7983; }
+
+.docs .title {
+  color: #05080c;
+  font-size: 24px; }
+
+.docs .links {
+  font-size: 14px;
+  padding-bottom: 30px; }
+  .docs .links a {
+    color: #ff7f18;
+    display: block;
+    cursor: pointer; }
+    @media (max-width: 767.97px) {
+      .docs .links a {
+        padding: 5px 0; } }
+    .docs .links a:focus {
+      text-decoration: underline; }
+
+.docs .anchor-title {
+  font-size: 18px;
+  color: #6f7983;
+  padding-bottom: 10px;
+  padding-top: 30px; }
+
+.docs .anchor-text-padding {
+  padding-bottom: 30px; }

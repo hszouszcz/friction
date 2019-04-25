@@ -1,0 +1,66 @@
+@import 'variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400') ;
+*:not(i) {
+  font-family: 'Roboto', sans-serif !important;
+}
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  background: white;
+
+  .logo {
+    width: 100px;
+  }
+
+  .btn-outline-light {
+    outline: none;
+    background-color: white;
+  }
+
+  .dropdown-menu {
+    background-color: $onyx;
+  }
+
+  .dropdown-item {
+    background-color: $onyx;
+    color: $text-color !important;
+    padding: 13px 30px;
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+
+  .nav-item {
+    border-left: 1px solid $light-gray;
+    padding-left: 10px;
+    padding-right: 10px;
+    &:first-child {
+      border: none;
+      padding-right: 0;
+    }
+
+    a {
+      line-height: 1;
+      color: $onyx;
+      font-size: 0.9rem;
+    }
+    .basket {
+      color: $orange;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .nav-item:not(:first-child) {
+      display: none;
+    }
+  }
+
+  // @media (min-width:767px) and ( max-width: 992px) {
+  //   .logo {
+  //     width: 150px;
+  //   }
+  // }
+
+}

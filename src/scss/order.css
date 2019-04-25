@@ -1,0 +1,11 @@
+.order {
+  padding-top: 30px; }
+  .order .order-step {
+    padding-bottom: 30px; }
+    .order .order-step .icon {
+      text-align: center;
+      margin: auto;
+      font-size: 32px;
+      color: #05080c; }
+    .order .order-step .title {
+      color: #6f7983; }

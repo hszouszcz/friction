@@ -1,0 +1,64 @@
+@import 'variables.scss';
+
+.cart-item {
+  padding-top: 30px;
+  font-family: 'Roboto';
+  font-size: 0.8rem;
+  color: $onyx;
+  border-bottom: 1px solid $light-gray;
+  &:first-child {
+    border-top: 1px solid $light-gray;
+  }
+  &:last-child {
+    margin-bottom: 30px;
+  }
+
+  .order-type {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+  }
+  .order-prop {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-left: 0px;
+  }
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    user-select: none;
+    button {
+      background-color: transparent;
+      align-self: flex-end;
+      padding: 30px 0 30px 0;
+      color: $dim-gray;
+      font-size: 0.7rem;
+      display: flex;
+      flex-direction: row;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        color: $onyx;
+      }
+      &:focus {
+        outline: none;
+      }
+      i {
+        padding-left: 5px;
+      }
+    }
+  }
+}
+
+.desc-box {
+  display: flex;
+  flex-direction: row;
+  span {
+    padding-right: 5px;
+  }
+  textarea {
+    border: none;
+
+  }
+}
