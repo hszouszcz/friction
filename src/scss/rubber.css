@@ -6,15 +6,18 @@
     .rubber .rubber-image img {
       width: 100%;
       padding: 0 5px;
-      max-height: 400px;
       object-fit: cover; }
     @media (max-width: 992px) {
       .rubber .rubber-image {
         display: none; } }
   .rubber .rubber-content {
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center; }
+    @media (min-width: 1025px) {
+      .rubber .rubber-content {
+        padding-left: 62px; } }
   @media (max-width: 992px) {
     .rubber {
       padding-top: 30px; } }

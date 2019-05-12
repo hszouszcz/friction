@@ -5,7 +5,7 @@ import AboutContent from './aboutContent';
 import strings from '../../assets/locales/index'
 const About = () => (
   <div className="about">
-    <div className="col-md-8 offset-md-2">
+    <div className="col-md-7 offset-md-2">
       <div className="row bullets">
         <Bullets/>
       </div>

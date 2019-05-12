@@ -17,7 +17,7 @@ const Header = (props) => (
                   aria-haspopup="true" aria-expanded="false">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <div className="dropdown-menu dropdown-menu-right common-text" aria-labelledby="dropdownMenuButton">
             <a className="dropdown-item" href="#">{strings.main.header.pricing}</a>
               <Link className="dropdown-item" to="/cart">{strings.main.header.cart} ({props.itemsInCart})</Link>
               <Link className="dropdown-item" to="/guide">{strings.common.guide}</Link>
@@ -31,13 +31,13 @@ const Header = (props) => (
         </div>
       </li>
       <li className="nav-item">
-        <a className="nav-link black-text" href="#">{strings.main.header.langShort}</a>
+        <a className="nav-link black-text common-text" href="#">{strings.main.header.langShort}</a>
       </li>
       <li className="nav-item">
-          <Link className="nav-link" to="/order">{strings.main.header.order}</Link>
+          <Link className="nav-link common-text" to="/order">{strings.main.header.order}</Link>
       </li>
       <li className="nav-item">
-        <a className="nav-link basket" href="/cart">{`${props.itemsInCart} `}<i className="fa fa-shopping-basket" aria-hidden="true"></i></a>
+        <a className="nav-link basket common-text" href="/cart">{`${props.itemsInCart} `}<i className="fa fa-shopping-basket" aria-hidden="true"></i></a>
       </li>
     </ul>
   </nav>

@@ -4,8 +4,8 @@ import strings from '../../assets/locales';
 
 const HeadTitle = () => {
   return (
-    <div className="col-md-8 offset-md-2 head-title no-gutters head-title">
-        <div className="col-md-8 col-lg-8 col-xl-6">{strings.headTitle}</div>
+    <div className="col-md-7 offset-md-2 head-title no-gutters head-title">
+        <div className="col-md-8 col-lg-8 col-xl-7">{strings.headTitle}</div>
     </div>
   );
 };

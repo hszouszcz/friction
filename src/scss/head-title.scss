@@ -1,8 +1,12 @@
+@import 'variables.scss';
+
 .head-title {
   div {
-    padding-top: 50px;
-    font-size: 32px;
+    padding-top: 35px;
+    line-height: 48px;
+    font-size: 36px;
     font-weight: 300;
+    color: $almost-black;
     @media (max-width: 424.97px) {
       padding-top: 30px;
       font-size: 20px;

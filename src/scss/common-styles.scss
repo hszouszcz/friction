@@ -50,12 +50,12 @@ button {
 
 }
 .caption-title {
-  font-size: 1.4em;
+  font-size: $text36;
   margin-bottom: 20px;
   font-weight: 300;
 
-  @media (max-width: 425px) {
-    font-size: 1em;
+  @media (max-width: 1024px) {
+    font-size: 0.8em;
   }
 }
 
@@ -68,11 +68,17 @@ button {
 
 .common-text {
   line-height: $line-height;
-  font-size: 0.8em;
+  font-size: $text18!important;
+   @media (max-width: 1024px) {
+    font-size: 0.8em!important;
+  }
 }
 
 .section-title {
-  font-size: 0.7em;
+  font-size: $text16;
   color: #dadfe5;
   margin-bottom: 20px;
+   @media (max-width: 1024px) {
+    font-size: 0.8em;
+  }
 }

@@ -14,12 +14,14 @@
   width: 270px;
   height: 72px;
   border: 1px solid #eeeeee; }
+  @media (max-width: 1024px) {
+    .radio-container {
+      font-size: 0.8em !important; } }
   @media (max-width: 767.97px) {
     .radio-container {
       width: 100%;
       height: 44px;
       line-height: 44px;
-      font-size: 14px;
       text-align: center;
       padding: 0; } }
   @media (min-width: 767.97px) and (max-width: 1023px) {
@@ -27,7 +29,6 @@
       width: 250px;
       height: 67px;
       line-height: 67px;
-      font-size: 16px;
       padding: 0 30px; } }
 
 @media (max-width: 767.97px) {
@@ -91,8 +92,11 @@
   border-radius: 0;
   padding: 20px 20px 0 20px;
   height: 72px;
-  font-size: 12px;
+  font-size: 18px;
   font-family: "Roboto-Regular"; }
+  @media (max-width: 1024px) {
+    .friction-custom-select {
+      font-size: 0.8em !important; } }
   .friction-custom-select .Select-value-label {
     color: #6f7983 !important; }
   .friction-custom-select .Select-arrow {
@@ -119,8 +123,11 @@
       border: none; }
 
 .friction-custom-select-option {
-  font-size: 12px;
+  font-size: 18px;
   font-family: "Roboto-Regular"; }
+  @media (max-width: 1024px) {
+    .friction-custom-select-option {
+      font-size: 0.8em !important; } }
 
 .order-type-radio-button {
   display: block;
@@ -136,6 +143,9 @@
   user-select: none;
   height: 72px;
   border: 1px solid #eeeeee; }
+  @media (max-width: 1024px) {
+    .order-type-radio-button {
+      font-size: 0.8em !important; } }
 
 /* On mouse-over, add a grey background color */
 .order-type-radio-button:hover {

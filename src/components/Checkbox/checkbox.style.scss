@@ -1,4 +1,4 @@
-@import '../../scss/variables.scss';
+@import "../../scss/variables.scss";
 
 .agreement-checkbox {
   position: relative;
@@ -13,6 +13,10 @@
     opacity: 0;
     position: absolute;
     top: 0;
+    @media (min-width: 1025px) {
+      height: 30px;
+      width: 30px;
+    }
 
     & + label {
       &:hover {
@@ -22,6 +26,9 @@
       margin-left: 25px;
       text-align: left;
       user-select: none;
+        @media (min-width: 1025px) {
+        margin-left: 40px;
+        }
       &:before {
         border: 1px solid $border-color;
         content: "";
@@ -30,6 +37,10 @@
         position: absolute;
         top: 0;
         left: 0;
+        @media (min-width: 1025px) {
+          height: 30px;
+          width: 30px;
+        }
       }
       &:after {
         content: "";
@@ -45,6 +56,12 @@
         transform: rotate(45deg);
         transition: opacity 0.2s ease-in-out;
         opacity: 0;
+        @media (min-width: 1025px) {
+          height: 12px;
+          width: 10px;
+          left: 10px;
+          top: 6px;
+        }
       }
     }
   }
