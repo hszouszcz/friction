@@ -59,3 +59,18 @@
             top: 6px; } }
   .agreement-checkbox input[type="checkbox"]:checked + label:after {
     opacity: 1; }
+
+@-webkit-keyframes blinker {
+  0% {
+    background-color: white; }
+  50% {
+    background-color: rgba(0, 0, 0, 0.1); }
+  90% {
+    background-color: white; } }
+
+.blink {
+  text-decoration: blink;
+  -webkit-animation-name: blinker;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate; }

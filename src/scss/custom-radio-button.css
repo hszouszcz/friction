@@ -32,11 +32,6 @@
       padding: 0 30px; } }
 
 @media (max-width: 767.97px) {
-  .checked {
-    background-color: #ff7f18 !important;
-    color: white !important; } }
-
-@media (max-width: 767.97px) {
   .radio-container:first-child {
     margin-left: 0; } }
 
@@ -53,9 +48,6 @@
   color: #dadfe5;
   position: absolute;
   right: 15px; }
-  @media (max-width: 767.97px) {
-    .checkmark {
-      display: none; } }
 
 /* On mouse-over, add a grey background color */
 .radio-container:hover {

@@ -15,7 +15,14 @@ class OrderType extends Component {
     this.state = {
       orderType: 0,
       agreementSelected: false,
+      blink: false
     };
+  }
+
+  blink = () => {
+    this.setState({
+      blink: true
+    }, () => setTimeout(() => this.setState({blink: false}), 800))
   }
 
   render() {
@@ -36,20 +43,22 @@ class OrderType extends Component {
               <DisabledNavButton
                 text="Dalej"
                 theme="black"
-                onClick={() => { this.state.agreementSelected ? history.push({ pathname: '/order-details', state: { orderType: this.state.orderType } }) : null }}
+                onClick={() => { this.state.agreementSelected ? history.push({ pathname: '/order-details', state: { orderType: this.state.orderType } }) : this.blink() }}
                 forward
                 disabled={!this.state.agreementSelected}
               />
             </ButtonsRow>
           )} />
-          <div className="col-12 agreement">
+          <div className="col-12">
             <div className="order-section">
+              <div className={`${this.state.blink ? 'blink' : ''}`}>
               <CheckBox
                 id="rodo"
                 onClick={(e) => { return this.setState({ agreementSelected: !this.state.agreementSelected }); }}
                 value={this.state.agreementSelected}
                 label={strings.rodoAgreement}
               />
+              </div>
             </div>
           </div>
         </div>
