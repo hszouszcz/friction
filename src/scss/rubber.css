@@ -48,8 +48,9 @@
 .rubber-type {
   color: #6f7983;
   border-bottom: 1px solid #dadfe5;
-  border-top: 1px solid #dadfe5;
   padding: 15px 0; }
+  .rubber-type:first-child {
+    border-top: 1px solid #dadfe5; }
   .rubber-type .rubber-name {
     font-size: 14px; }
   .rubber-type .rubber-params {

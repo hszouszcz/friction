@@ -64,6 +64,7 @@ const RubberView = (props) => {
         mikrorzeźbie (mikrokrawądki, ząbki, kryształki, itp.), przy jednoczesnym zapewnieniu dobrego tarcia.
       </div>
       <RubberType
+        index={1}
         name="Vibram XS Grip2"
         description="Rewelacyjna, miękka guma tarciowa, jedna z najlepszych gum firmy Vibram. W opinii wielu wspinaczy oferuje najlepszą skuteczność wspinania w precyzyjnym tarciowym terenie. Szczególnie polecana do dużych przewieszeń i boulderingu."
         thickness={50}

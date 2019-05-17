@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const RubberType = (props) => {
   return (
-    <div className="rubber-type">
+    <div className="rubber-type" style={{ borderTop: props.index === 1 ? '1px solid  #dadfe5' : null }}>
       <di className="row">
         <div className="col-3 rubber-name ">
           {props.name}
