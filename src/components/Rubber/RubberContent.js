@@ -18,8 +18,7 @@ const RubberContent = () => {
       }}>
         Gumy stosowane na podeszwy obuwia wspinaczkowego ewoluowały od prawie 30 lat.
          Tak długi okres pracy różnych ośrodków badawczo-wdrożeniowych przyczynił się do obecnej bardzo szerokiej oferty.
-          W Polsce od wielu lat największą renomą i popularnością cieszyły się gumy produkowane przez firmę Stealth, którymi były fabrycznie podklejane buty 5.10.
-           Od kilku lat równym uznaniem wspinacze zaczęli darzyć najnowsze produkty firmy Vibram.
+          W Polsce od wielu lat największą renomą i popularnością cieszyły się gumy produkowane przez firmę Stealth, którymi były fabrycznie podklejane buty 5.10
       </div>
       <ButtonsRow>
         <div></div>
