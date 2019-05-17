@@ -25,7 +25,8 @@ class OrderForm extends Component {
         edgeReplacement: itemToEdit.orderProps[1] !== null ? itemToEdit.orderProps[1].value : 2,
         edgeThickness: itemToEdit.orderProps[1] !== null ? itemToEdit.orderProps[1].thicknessValue : null,
         additionalOptions: itemToEdit.additionalOptions,
-        description: itemToEdit.description
+        description: itemToEdit.description,
+
       };
     } else {
       this.state = {

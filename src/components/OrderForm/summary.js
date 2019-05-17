@@ -24,7 +24,8 @@ class Summary extends Component {
       if(item.additionalOptions !== null)
         value += item.additionalOptions.price
     });
-    return value;
+
+    return value + this.state.address.shipping.value;
   };
 
   removeCartAndAddress = () => {
@@ -106,7 +107,8 @@ class Summary extends Component {
                 <span>{`${this.sumUp()} PLN`}</span>
               </div>
               <div className="order-prop">
-                {`Cena za przesyłkę:  ???`}
+                {`Cena za przesyłkę: `}
+                <span>{`${this.state.address.shipping.value} PLN`}</span>
               </div>
               <div className="order-prop">
                 Łącznie do zapłaty:

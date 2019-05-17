@@ -48,7 +48,10 @@ class UserDetails extends Component {
         city: '',
         sendBack: null,
         invoice: false,
-        shipping: '',
+        shipping: {
+          label: '',
+          value: 0
+        },
         agreement: false,
         formValid: true,
         invoiceDetails: {
@@ -74,7 +77,8 @@ class UserDetails extends Component {
         invoiceStreetNumberValid: true,
         invoiceCityValid: true,
         invoicePostalCodeValid: true,
-        shippingValid: true
+        shippingValid: true,
+        blink: false,
       };
     }
   }
@@ -89,7 +93,7 @@ class UserDetails extends Component {
       streetNumberValid: !validator.isEmpty(this.state.streetNumber, { ignore_whitespace: true }),
       cityValid: !validator.isEmpty(this.state.city, { ignore_whitespace: true }),
       postalCodeValid: validator.isPostalCode(this.state.postalCode, 'any'),
-      shippingValid: !validator.isEmpty(this.state.shipping.label, { ignore_whitespace: true }),
+      shippingValid: !validator.isEmpty(this.state.shipping.label , { ignore_whitespace: true }),
     }
     this.setState({
       ...validation
@@ -124,6 +128,8 @@ class UserDetails extends Component {
           formValid: false
         })
       }
+    } else {
+      this.blink()
     }
   }
 
@@ -179,6 +185,12 @@ class UserDetails extends Component {
         }
     };
   };
+
+  blink = () => {
+    this.setState({
+      blink: true
+    }, () => setTimeout(() => this.setState({blink: false}), 800))
+  }
 
   goNext = () => {
     return <ForwardButton
@@ -396,20 +408,22 @@ class UserDetails extends Component {
               model={this.state.shipping}
               placeholder={"wybierz sposób dostawy"}
               options={[
-                { label: "Odbiór osobisty" },
-                { label: "Kurier" }
+                { label: "Odbiór osobisty", value: 0 },
+                { label: "Kurier", value: 20 }
               ]}
               callback={(option) => this.setState({ shipping: option })}
             />
           </div>
           <div className="col-12 agreement">
             <div className="order-section">
+              <div className={`${this.state.blink ? 'blink' : ''}`}>
               <CheckBox
                 id="rodo"
                 value={this.state.agreement}
                 onClick={() => this.setState({ agreement: !this.state.agreement })}
                 label={strings.rodoAgreement}
               />
+              </div>
             </div>
             {this.state.formValid ? null : <p>Sprawdź czy wypelniono wszystkie potrzebne pola!</p>}
           </div>

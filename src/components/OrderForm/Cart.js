@@ -37,6 +37,22 @@ class Cart extends Component {
   };
 
   render() {
+
+    if(!this.state.cart || this.state.cart.length === 0) {
+      return (
+        <div style={{paddingTop: 100, paddingBottom: 30, textAlign: 'center', minHeight: 500}}>
+          <div style={{paddingBottom: 30}}>Koszyk jest pusty!</div>
+          <Route render={({ history }) => (
+              <ForwardButton
+                text="Złóż zamówienie"
+                theme="black"
+                onClick={() => { history.push({pathname: '/order'}) }}
+                forward
+              />
+          )} />
+        </div>)
+    }
+
     return (
       this.state.cart &&
       <div className="cart container order-form">
