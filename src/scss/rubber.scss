@@ -59,8 +59,11 @@
 .rubber-type {
   color: $gray;
   border-bottom: 1px solid $light-gray;
-  border-top: 1px solid $light-gray;
+  //border-top: 1px solid $light-gray;
   padding: 15px 0;
+  &:first-child {
+    border-top: 1px solid $light-gray;
+  }
 
   .rubber-name {
     font-size: $text14;

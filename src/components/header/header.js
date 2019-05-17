@@ -18,15 +18,15 @@ const Header = (props) => (
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="dropdown-menu dropdown-menu-right common-text" aria-labelledby="dropdownMenuButton">
-            <a className="dropdown-item" href="#">{strings.main.header.pricing}</a>
+            {/*<a className="dropdown-item" href="#">{strings.main.header.pricing}</a>*/}
               <Link className="dropdown-item" to="/cart">{strings.main.header.cart} ({props.itemsInCart})</Link>
               <Link className="dropdown-item" to="/guide">{strings.common.guide}</Link>
               <a className="dropdown-item" href="/terms">{strings.main.header.terms}</a>
-              <a className="dropdown-item" href="/gallery">{strings.main.header.gallery}</a>
-              <a className="dropdown-item" href="#">{strings.main.header.paymentData}</a>
+              {/*<a className="dropdown-item" href="/gallery">{strings.main.header.gallery}</a>*/}
+              {/*<a className="dropdown-item" href="#">{strings.main.header.paymentData}</a>*/}
               <Link className="dropdown-item" to="/order">{strings.main.header.order}</Link>
-              <a className="dropdown-item" href="#">{strings.main.header.contact}</a>
-              <a className="dropdown-item" href="#">{strings.main.header.language}</a>
+              {/*<a className="dropdown-item" href="#">{strings.main.header.contact}</a>*/}
+              {/*<a className="dropdown-item" href="#">{strings.main.header.language}</a>*/}
           </div>
         </div>
       </li>
