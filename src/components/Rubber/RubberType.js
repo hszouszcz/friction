@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import strings from './../../assets/locales/index';
 
 const RubberType = (props) => {
   return (
@@ -14,7 +15,7 @@ const RubberType = (props) => {
           </div>
           <div className="rubber-params row">
             <div className="thickness col-md-4">
-              <div className="bar-title">Twardość</div>
+              <div className="bar-title">{strings.rubber.hardness}</div>
               <div className="bar">
                 <div style={{width: `${props.thickness}%`, backgroundColor: '#3c91f7'}}>
                 </div>
@@ -22,7 +23,7 @@ const RubberType = (props) => {
                 </div>
               </div>
             </div><div className="friction col-md-4">
-              <div className="bar-title">Tarcie</div>
+              <div className="bar-title">{strings.rubber.friction}</div>
               <div className="bar">
                 <div style={{width: `${props.friction}%`, backgroundColor: '#eeca23'}}>
                 </div>
@@ -31,7 +32,7 @@ const RubberType = (props) => {
               </div>
             </div>
             <div className="edge col-md-4">
-              <div className="bar-title">Krawądki</div>
+              <div className="bar-title">{strings.rubber.edges}</div>
               <div className="bar">
                 <div style={{width: `${props.edge}%`, backgroundColor: '#ee5823'}}>
                 </div>

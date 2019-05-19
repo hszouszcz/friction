@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import CartItem from './CartItem';
 import '../../scss/cart-item.css';
 import Route from 'react-router-dom/es/Route';
 import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
+import strings from '../../assets/locales';
 
 class Summary extends Component {
   constructor(props) {
@@ -18,10 +19,10 @@ class Summary extends Component {
     let value = 0;
     this.state.cart.forEach((item) => {
       item.orderProps.forEach(prop => {
-        if(prop !== null)
+        if (prop !== null)
           value = value + prop.price;
       });
-      if(item.additionalOptions !== null)
+      if (item.additionalOptions !== null)
         value += item.additionalOptions.price
     });
 
@@ -39,8 +40,8 @@ class Summary extends Component {
       <div className="cart container order-form">
         <div className="row">
           <div className="col-md-6 offset-md-3">
-            <div className="cart-header order-form-title">Podsumowanie</div>
-            <div className="props-type">Pozycje w zamówieniu:</div>
+            <div className="cart-header order-form-title">{strings.orderSummary.summary}</div>
+            <div className="props-type">{strings.orderSummary.fieldsInOrder}</div>
             {this.state.cart.map((item, index) =>
               <CartItem
                 key={index.toString()}
@@ -50,9 +51,9 @@ class Summary extends Component {
               />
             )}
             <div className="cart-item">
-              <div style={{borderBottom: 'none'}}>
-                <div className="props-type" style={{color: '#6f7983', paddingTop: 0, paddingBottom: 20}}>Dane
-                  odbiorcy:
+              <div style={{ borderBottom: 'none' }}>
+                <div className="props-type" style={{ color: '#6f7983', paddingTop: 0, paddingBottom: 20 }}>
+                  {strings.orderSummary.userData}
                 </div>
                 <div className="order-prop">
                   {`${this.state.address.name} ${this.state.address.surname}`}
@@ -73,65 +74,65 @@ class Summary extends Component {
               </div>
               {this.state.address.invoice &&
 
-              <div>
-                <div className="props-type" style={{color: '#6f7983', paddingTop: 0, paddingBottom: 20}}>Dane do
-                  faktury:
+                <div>
+                  <div className="props-type" style={{ color: '#6f7983', paddingTop: 0, paddingBottom: 20 }}>
+                    {strings.orderSummary.invoiceData}
+                  </div>
+                  <div>{`NIP: ${this.state.address.invoiceDetails.nip}`}</div>
+                  <div className="order-prop">
+                    {`${this.state.address.invoiceDetails.name}`}
+                  </div>
+                  <div className="order-prop">
+                    {`${this.state.address.invoiceDetails.street} ${this.state.address.invoiceDetails.streetNumber}`}
+                  </div>
+                  <div className="order-prop">
+                    {`${this.state.address.invoiceDetails.postalCode} ${this.state.address.invoiceDetails.city}`}
+                  </div>
                 </div>
-                <div>{`NIP: ${this.state.address.invoiceDetails.nip}`}</div>
-                <div className="order-prop">
-                  {`${this.state.address.invoiceDetails.name}`}
-                </div>
-                <div className="order-prop">
-                  {`${this.state.address.invoiceDetails.street} ${this.state.address.invoiceDetails.streetNumber}`}
-                </div>
-                <div className="order-prop">
-                  {`${this.state.address.invoiceDetails.postalCode} ${this.state.address.invoiceDetails.city}`}
-                </div>
-              </div>
               }
               <div className="buttons">
-                <Route render={({history}) => (
+                <Route render={({ history }) => (
                   <button
                     onClick={() => {
-                      history.push({pathname: '/user-details'});
+                      history.push({ pathname: '/user-details' });
                     }}
                   >
-                    <span>Edytuj<i className="fa fa-pencil-square-o" aria-hidden="true"/></span>
+                    <span>{strings.orderSummary.edit}<i className="fa fa-pencil-square-o" aria-hidden="true" /></span>
                   </button>
-                )}/>
+                )} />
               </div>
             </div>
-            <div className="cart-item summary-price" style={{borderBottom: 'none'}}>
+            <div className="cart-item summary-price" style={{ borderBottom: 'none' }}>
               <div className="order-prop">
-                {`Cena napraw:`}
-                <span>{`${this.sumUp()} PLN`}</span>
+                {strings.orderSummary.fixesCost}
+                <span>{`${this.sumUp()} ${strings.orderSummary.currency}`}</span>
               </div>
               <div className="order-prop">
-                {`Cena za przesyłkę: `}
-                <span>{`${this.state.address.shipping.value} PLN`}</span>
+                {strings.orderSummary.shippingCost}
+                <span>{`${this.state.address.shipping.value} ${strings.orderSummary.currency}`}</span>
               </div>
               <div className="order-prop">
-                Łącznie do zapłaty:
-                <span>{this.sumUp()} PLN</span>
+               {strings.orderSummary.totalSum}
+                <span>{`${this.sumUp()} ${strings.orderSummary.currency}`}</span>
               </div>
               <div className="order-prop">
-                W tym VAT(23%)
-                <span>{`${this.sumUp()*0.23} PLN`}</span>
+                {strings.orderSummary.taxes}
+                <span>{`${this.sumUp() * 0.23} ${strings.orderSummary.currency}`}</span>
               </div>
             </div>
             <div className="orderFormFooter">
               <ButtonsRow>
-                <Route render={({history}) => (
+                <Route render={({ history }) => (
                   <ForwardButton
-                    text="ZAMAWIAM"
+                    text={strings.orderSummary.orderAcceptance}
                     theme="black"
                     onClick={() => {
-                     this.removeCartAndAddress()
-                      history.push({pathname: '/'});
+                      this.removeCartAndAddress()
+                      history.push({ pathname: '/' });
                     }}
                     forward
                   />
-                )}/>
+                )} />
               </ButtonsRow>
             </div>
           </div>

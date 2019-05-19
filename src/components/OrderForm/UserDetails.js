@@ -219,10 +219,10 @@ class UserDetails extends Component {
       <div >
         <div className="col-md-7 offset-md-2">
           <div className="order-form-title" style={{ paddingTop: '30px' }}>
-            Twoje dane
+           {strings.userData.yourData}
           </div><div className="order-section row no-gutters">
             <div className="col-md-6">
-              <label htmlFor="name">Imię</label>
+              <label htmlFor="name">  {strings.userData.name}</label>
               <input
                 type="text"
                 id="name"
@@ -233,7 +233,7 @@ class UserDetails extends Component {
               />
             </div>
             <div className="col-md-6">
-              <label htmlFor="surname">Nazwisko</label>
+              <label htmlFor="surname">  {strings.userData.secondName}</label>
               <input
                 type="text"
                 id="surname"
@@ -244,7 +244,7 @@ class UserDetails extends Component {
               />
             </div>
             <div className="col-12 col-md-6">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{strings.userData.email}</label>
               <input
                 type="email"
                 id="email"
@@ -254,7 +254,7 @@ class UserDetails extends Component {
               />
             </div>
             <div className="col-12 col-md-6">
-              <label htmlFor="phone">Numer telefonu</label>
+              <label htmlFor="phone">  {strings.userData.phoneNumber}</label>
               <input
                 type="phone"
                 id="phone"
@@ -269,11 +269,11 @@ class UserDetails extends Component {
         </div>
         <div className="col-md-8 offset-md-2 ">
           <div className="order-form-title">
-            Adres
+            {strings.userData.address}
           </div>
           <div className="order-section row no-gutters">
             <div className="col-md-6">
-              <label htmlFor="street">Ulica</label>
+              <label htmlFor="street">{strings.userData.street}</label>
               <input
                 type="text"
                 id="street"
@@ -285,7 +285,7 @@ class UserDetails extends Component {
               />
             </div>
             <div className="col-md-6">
-              <label htmlFor="street-number">Numer ulicy/lokalu</label>
+              <label htmlFor="street-number">{strings.userData.streetNumber}</label>
               <input
                 type="text"
                 id="street-number"
@@ -296,7 +296,7 @@ class UserDetails extends Component {
               />
             </div>
             <div className="col-md-6">
-              <label htmlFor="postalCode">Kod Pocztowy</label>
+              <label htmlFor="postalCode">{strings.userData.postCode}</label>
               <input
                 type="text"
                 id="postalCode"
@@ -307,7 +307,7 @@ class UserDetails extends Component {
               />
             </div>
             <div className="col-md-6">
-              <label htmlFor="city">Miasto</label>
+              <label htmlFor="city">  {strings.userData.city}</label>
               <input
                 type="text"
                 id="city"
@@ -331,7 +331,7 @@ class UserDetails extends Component {
             {this.state.invoice &&
               <div className="order-section row invoice">
                 <div className="col-md-6">
-                  <label htmlFor="name">Nazwa Firmy</label>
+                <label htmlFor="name">{strings.userData.invoice.name}</label>
                   <input
                     type="text"
                     id="companyName"
@@ -342,7 +342,7 @@ class UserDetails extends Component {
                   />
                 </div>
                 <div className="col-md-6">
-                  <label htmlFor="surname">NIP</label>
+                <label htmlFor="surname">{strings.userData.invoice.number}</label>
                   <input
                     type="text"
                     id="nip"
@@ -353,7 +353,7 @@ class UserDetails extends Component {
                   />
                 </div>
                 <div className="col-12 col-md-6">
-                  <label htmlFor="email">Ulica</label>
+                <label htmlFor="email">{strings.userData.invoice.street}</label>
                   <input
                     type="text"
                     id="companyStreet"
@@ -364,7 +364,7 @@ class UserDetails extends Component {
                   />
                 </div>
                 <div className="col-12 col-md-6">
-                  <label htmlFor="email">Numer Ulicy/lokalu</label>
+                <label htmlFor="email">{strings.userData.invoice.streetNumber}</label>
                   <input
                     type="text"
                     id="companyStreetNumber"
@@ -375,7 +375,7 @@ class UserDetails extends Component {
                   />
                 </div>
                 <div className="col-12 col-md-3">
-                  <label htmlFor="email">Kod Pocztowy</label>
+                <label htmlFor="email">{strings.userData.invoice.postCode}</label>
                   <input
                     type="text"
                     id="companyPostalCode"
@@ -386,7 +386,7 @@ class UserDetails extends Component {
                   />
                 </div>
                 <div className="col-12 col-md-9">
-                  <label htmlFor="email">Miasto</label>
+                <label htmlFor="email">{strings.userData.invoice.city}</label>
                   <input
                     type="text"
                     id="companyCity"
@@ -402,14 +402,14 @@ class UserDetails extends Component {
         </div>
         <div className="col-md-8 offset-md-2 ">
           <div className="order-section">
-            <span className="section-title">Jak mamy odesłać Twoje buty?</span>
+            <span className="section-title">{strings.userData.howToShip}</span>
             <CustomSelect
               isValid={this.state.shippingValid}
               model={this.state.shipping}
-              placeholder={"wybierz sposób dostawy"}
+              placeholder={strings.userData.shippingPlaceholder}
               options={[
-                { label: "Odbiór osobisty", value: 0 },
-                { label: "Kurier", value: 20 }
+                { label: `${strings.userData.shippingOption1}`, value: 0 },
+                { label: `${strings.userData.shippingOption2}`, value: 20 }
               ]}
               callback={(option) => this.setState({ shipping: option })}
             />
@@ -425,13 +425,13 @@ class UserDetails extends Component {
               />
               </div>
             </div>
-            {this.state.formValid ? null : <p>Sprawdź czy wypelniono wszystkie potrzebne pola!</p>}
+            {this.state.formValid ? null : <p>{strings.userData.warning}</p>}
           </div>
           <div className="orderFormFooter col-md-12">
             <ButtonsRow>
               <Route render={({ history }) => (
                 <DisabledNavButton
-                  text="Dalej"
+                  text={strings.userData.forward}
                   theme="black"
                   onClick={() => {
                     this.validateForm(history)
@@ -442,7 +442,7 @@ class UserDetails extends Component {
               )} />
               <Route render={({ history }) => (
                 <ForwardButton
-                  text="Wtecz"
+                  text={strings.userData.back}
                   theme="white"
                   onClick={() => {
                     history.push({ pathname: '/cart' });

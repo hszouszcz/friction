@@ -11,6 +11,7 @@ import { additionalOptions } from '../../constants/additionalOptions';
 import { updateCart } from '../../redux/actions';
 import Order from '../order/order';
 import { connect } from 'react-redux';
+import strings from './../../assets/locales/index';
 
 class OrderForm extends Component {
   constructor(props) {
@@ -102,61 +103,60 @@ class OrderForm extends Component {
       <div className="container order-form">
         <div >
           <div className=" col-sm-10 col-md-10 col-lg-8 offset-md-2">
-            <span className="order-form-title">Szczegóły naprawy</span>
+            <span className="order-form-title">{strings.orderForm.orderDetails}</span>
             <div className="order-section">
-              <span className="section-title">Wymiana podeszwy - rodzaj gumy(*typowe gumy)</span>
+              <span className="section-title">{strings.orderForm.sectionRubberReplacement}</span>
               <div className="col-md-10" style={{ padding: 0 }}>
                 <CustomSelect
                   model={this.state.rubber}
                   callback={(option) => {
-                    console.log(option);
                     this.setState({ rubber: option });
                   }}
-                  placeholder={"Wybierz rodzaj gumy"}
+                  placeholder={strings.orderForm.rubberPlaceholder}
                   options={this.getRubberNames()}
                   isValid={true}
                 />
               </div>
             </div>
             <div className="order-section">
-              <span className="section-title">Wymiana rantów</span>
+              <span className="section-title">{strings.orderForm.sectionEdgeReplacement}</span>
               <RadioInputSection>
                 <RadioInput
-                  label={`Tak - ${rubberPricing.filter(item => item.value === this.state.rubber.value)[0].edgeReplacement.value}`}
+                  label={`${strings.orderForm.edgeOption1} - ${rubberPricing.filter(item => item.value === this.state.rubber.value)[0].edgeReplacement.value}`}
                   value={0}
                   model={this.state.edgeReplacement}
                   callback={() => this.setState({ edgeReplacement: 0 })}
                 />
                 <RadioInput
-                  label="Nie"
+                  label={strings.orderForm.edgeOption2}
                   value={1}
                   model={this.state.edgeReplacement}
                   callback={() => this.setState({ edgeReplacement: 1 })} />
                 <RadioInput
-                  label="Wedle uznania"
+                  label={strings.orderForm.edgeOption3}
                   value={2}
                   model={this.state.edgeReplacement}
                   callback={() => this.setState({ edgeReplacement: 2 })} />
               </RadioInputSection>
             </div>
             <div className="order-section">
-              <span className="section-title">Grubość rantów</span>
+              <span className="section-title">{strings.orderForm.edgeThickness}</span>
               <RadioInputSection>
-                <RadioInput label="Standardowa" value={0} model={this.state.edgeThickness}
+                <RadioInput label={strings.orderForm.edgeThicknessOption1} value={0} model={this.state.edgeThickness}
                   callback={() => this.setState({ edgeThickness: 0 })} />
-                <RadioInput label="Pogrubiona" value={1} model={this.state.edgeThickness}
+                <RadioInput label={strings.orderForm.edgeThicknessOption2} value={1} model={this.state.edgeThickness}
                   callback={() => this.setState({ edgeThickness: 1 })} />
-                <RadioInput label="Extra gruba" value={2} model={this.state.edgeThickness}
+                <RadioInput label={strings.orderForm.edgeThicknessOption3} value={2} model={this.state.edgeThickness}
                   callback={() => this.setState({ edgeThickness: 2 })} />
               </RadioInputSection>
             </div>
             <div className="order-section">
-              <span className="section-title">Dodatkowe opcje naprawy</span>
+              <span className="section-title">{strings.orderForm.additionalRepairOptions}</span>
               <div className="col-md-10" style={{ padding: 0 }}>
                 <CustomSelect
                   model={this.state.additionalOptions}
                   callback={(option) => this.setState({ additionalOptions: option })}
-                  placeholder={"Brak"}
+                  placeholder={strings.orderForm.additionalOptionsPlaceholder}
                   options={this.props.history.location.state
                     && this.props.history.location.state.orderToEdit ? additionalOptions[this.state.orderType]
                     : additionalOptions[this.props.history.location.state.orderType]}
@@ -165,14 +165,14 @@ class OrderForm extends Component {
               </div>
             </div>
             <div className="order-section">
-              <div className="section-title">Opis (model buta, rozmiar), inne naprawy z cennika, itp.*</div>
+              <div className="section-title">{strings.orderForm.description}</div>
               <div className="col-md-10" style={{ padding: 0 }}>
                 <textarea value={this.state.description} onChange={(e) => this.setState({ description: e.target.value })} />
               </div>
             </div>
             <div className="note">
-              <p>* Prosimy podać inne wymagane naprawy w polu "Opis" !</p>
-              <p>* Dodając kilka par do koszyka prosimy dokładnie opisać poszczególne buty!</p>
+              <p>{strings.orderForm.warning1}</p>
+              <p>{strings.orderForm.warning2}</p>
             </div>
           </div>
         </div>
@@ -180,7 +180,7 @@ class OrderForm extends Component {
           <Route render={({ history }) => (
             <ButtonsRow>
               <ForwardButton
-                text="Dodaj do koszyka"
+                text={strings.orderForm.addToCart}
                 theme="black"
                 onClick={() => {
                   this.saveToLocalStorage();
@@ -191,7 +191,7 @@ class OrderForm extends Component {
                 forward
               />
               <ForwardButton
-                text="Wtecz"
+                text={strings.orderForm.back}
                 theme="white"
                 onClick={() => history.push('/order')}
               />
