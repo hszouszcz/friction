@@ -155,10 +155,10 @@ począwszy od legendarnych korkerów poprzez nie mniej legendarne Ninja i Lasery
         ],
         step4: 'Krok czwarty: Paczka zwrotna',
         text4: [
-        '- po wykonaniu naprawy przygotowujemy paczkę zwrotną',
-        '- zamawiamy kuriera lub przesyłkę pocztowa',
-        '- po nadaniu paczki wysyłamy e-mailem potwierdzenie wysyłki',
-        'Pozostałe szczegóły związane ze składaniem zamówień przedstawione są na podstronie  Regulamin.'
+            '- po wykonaniu naprawy przygotowujemy paczkę zwrotną',
+            '- zamawiamy kuriera lub przesyłkę pocztowa',
+            '- po nadaniu paczki wysyłamy e-mailem potwierdzenie wysyłki',
+            'Pozostałe szczegóły związane ze składaniem zamówień przedstawione są na podstronie  Regulamin.'
         ],
         howLong: ' Ile zajmuje naprawa butów?',
         howLongText: ` Większość napraw butów wspinaczkowych wykonujemy w czasie 5-7 dni roboczych od momentu otrzymania przesyłki.
@@ -191,6 +191,7 @@ począwszy od legendarnych korkerów poprzez nie mniej legendarne Ninja i Lasery
             text_part3: `W porę wykonana wymiana samej podeszwy gwarantuje najlepsze zachowanie pierwotnych parametrów buta.`
         },
         order: {
+            title: 'Składanie zamówienia',
             step1: 'Złóż zamówienie',
             text1: `Give a little credit to our public schools.
                  For one beautiful night I knew what it
@@ -221,9 +222,267 @@ począwszy od legendarnych korkerów poprzez nie mniej legendarne Ninja i Lasery
                    Internet, I'm now bored with sex.`,
         }
     },
+    cart: {
+        cart: 'Koszyk',
+        emptyCart: 'Koszyk jest pusty!',
+        placeOrder: 'Złóż zamówienie',
+        addAnotherItem: 'Dodaj kolejną naprawę',
+        currency: 'PLN',
+        orderAcceptance: 'Zamawiam',
+        sum: 'Suma'
+    },
     common: {
         guide: 'Poradnik',
         seeMore: 'Zobacz więcej',
+    },
+    orderForm: {
+        orderDetails: 'Szczegóły naprawy',
+        sectionRubberReplacement: 'Wymiana podeszwy - rodzaj gumy(*typowe gumy)',
+        rubberPlaceholder: 'Wybierz rodzaj gumy',
+        sectionEdgeReplacement: 'Wymiana rantów',
+        edgeOption1: 'Tak',
+        edgeOption2: 'Nie',
+        edgeOption3: 'Wedle uznania',
+        edgeThickness: 'Grubość rantów',
+        edgeThicknessOption1: 'Standardowa',
+        edgeThicknessOption2: 'Pogrubiona',
+        edgeThicknessOption3: 'Extra gruba',
+        additionalRepairOptions: 'Dodatkowe opcje naprawy',
+        additionalOptionsPlaceholder: 'Brak',
+        description: 'Opis (model buta, rozmiar), inne naprawy z cennika, itp.*',
+        warning1: '* Prosimy podać inne wymagane naprawy w polu "Opis" !',
+        warning2: '* Dodając kilka par do koszyka prosimy dokładnie opisać poszczególne buty!',
+        addToCart: 'Dodaj do koszyka',
+        back: 'Wstecz',
+        typeOfOrder: 'Wybierz rodzaj usługi',
+        climbing: 'Naprawa butów wspinaczkowych',
+        trekking: 'Naprawa butów trekkingowych',
+        other: 'jakas trzecia opcja',
+        forward: 'Dalej',
+    },
+    orderSummary: {
+        summary: 'Podsumowanie',
+        fieldsInOrder: 'Pozycje w zamówieniu: ',
+        userData: 'Dane odbiorcy:',
+        invoiceData: 'Dane do faktury:',
+        edit: 'Edytuj',
+        currency: 'PLN',
+        fixesCost: 'Cena napraw',
+        shippingCost: 'Cena za przesyłkę',
+        totalSum: 'Łącznie do zapłaty',
+        taxes: 'w tym VAT(23%)',
+        orderAcceptance: 'ZAMAWIAM'
+    },
+    userData: {
+        yourData: 'Twoje dane',
+        name: 'Imię',
+        secondName: 'Nazwisko',
+        email: 'email',
+        phoneNumber: 'Numer telefonu',
+        address: 'Adres',
+        street: 'Ulica',
+        streetNumber: 'Number ulicy/lokalu',
+        postCode: 'Kod Pocztowy',
+        city: 'Miasto',
+        invoice: {
+            number: 'NIP',
+            name: 'Nazwa Firmy',
+            street: 'Ulica',
+            streetNumber: 'Number ulicy/lokalu',
+            postCode: 'Kod Pocztowy',
+            city: 'Miasto',
+        },
+        howToShip: 'Jak mamy odesłać Twoje buty?',
+        shippingOption1: 'Odbiór osobity',
+        shippingOption1: 'Kurier',
+        shippingPlaceholder: 'Wybierz sposób dostawy',
+        warning: 'Sprawdź czy wypelniono wszystkie potrzebne pola!',
+        forward: 'Dalej',
+        back: 'Wstecz'
+    },
+    rubber: {
+        rubbers: 'Gumy',
+        differences: 'Czym różnią się dostępne  rodzaje gum na podeszwę?',
+        main: ` Gumy stosowane na podeszwy obuwia wspinaczkowego ewoluowały od prawie 30 lat.
+         Tak długi okres pracy różnych ośrodków badawczo-wdrożeniowych przyczynił się
+          do obecnej bardzo szerokiej oferty.
+          W Polsce od wielu lat największą renomą i popularnością cieszyły się gumy produkowane przez firmę Stealth,
+           którymi były fabrycznie podklejane buty 5.10`, //Ta linijka MUSI być odpowiednio krótka, wielkość kontenera zależy od zdjęcia, dlatego jeżeli jest za długa psuje układ
+        hardness: 'Twardość',
+        friction: 'Tarcie',
+        edges: 'Krawądki',
+        guide: 'Poradnik - Gumy wspinaczkowe',
+        title: 'Czym różnią się dostępne rodzaje gum na podeszwę?',
+        link1: 'Wybór rodzaju gumy',
+        link2: 'Wybór grubości gumy',
+        link3: 'Grubość rantów standardowa czy zwiększona?',
+        intro: {
+            part1: ` Gumy stosowane na podeszwy obuwia wspinaczkowego ewoluowały od prawie 30 lat. Tak długi okres pracy różnych
+        ośrodków badawczo-wdrożeniowych przyczynił się do obecnej bardzo szerokiej oferty. W Polsce od wielu lat
+        największą renomą i popularnością cieszyły się gumy produkowane przez firmę Stealth, którymi były fabrycznie
+        podklejane buty 5.10. Od kilku lat równym uznaniem wspinacze zaczęli darzyć najnowsze produkty firmy Vibram.
+        Prezentowane zestawienie powstało w oparciu o kilka czynników. W pierwszej kolejności bazuje na naszym
+        doświadczeniu i zawiera nasze wieloletnie obserwacje wsparte konsultacjami ze wspinaczami o różnym poziomie
+        zaawansowania i uprawiających różne dyscypliny wspinaczkowe. Uwględniliśmy też dane katalogowe producentów gum
+        oraz butów wspinaczkowych.
+
+        Analizując prezentowane zestawienie warto uwzględnić:`,
+            part2: ` Gumy stosowane na podeszwy obuwia wspinaczkowego ewoluowały od prawie 30 lat. Tak długi okres pracy różnych
+        ośrodków badawczo-wdrożeniowych przyczynił się do obecnej bardzo szerokiej oferty. W Polsce od wielu lat
+        największą renomą i popularnością cieszyły się gumy produkowane przez firmę Stealth, którymi były fabrycznie
+        podklejane buty 5.10. Od kilku lat równym uznaniem wspinacze zaczęli darzyć najnowsze produkty firmy Vibram.
+        Prezentowane zestawienie powstało w oparciu o kilka czynników. W pierwszej kolejności bazuje na naszym
+        doświadczeniu i zawiera nasze wieloletnie obserwacje wsparte konsultacjami ze wspinaczami o różnym poziomie
+        zaawansowania i uprawiających różne dyscypliny wspinaczkowe. Uwględniliśmy też dane katalogowe producentów gum
+        oraz butów wspinaczkowych.
+
+        Analizując prezentowane zestawienie warto uwzględnić:`,
+            part3: `Własne preferencje - wśród wspinaczy występują zwolennicy gum tarciowych, krawądkowych, czy też
+            określonych producentów.`,
+            part4: `Miejsce aktywności wspinaczkowej, gdzie będziemy wykorzystywać podklejone obuwie - nie każdy rodzaj gumy
+            wszędzie sprawdzi się tak samo dobrze.`,
+            part5: `>Ważną obserwacją, sygnalizowaną przez wielu wspinaczy, jest pogorszenie się kontaktu gumy ze skałą w
+            niższych temperaturach. W takich warunkach często wskazywano wyższą skuteczność gum tarciowych nad
+            krawądkowymi.`,
+        },
+        ad1: {
+            title: 'Wybór rodzaju gumy',
+            desc: `Gumy tarciowe - grupa gum o wysokim współczynniku tarcia, charakteryzujących się bardzo dobrą zdolnością do
+        kontaktu ze skałą. Najczęściej są to gumy miękkie, dobrze wypełniające fakturę skały (mikronierówności) i
+        zapewniające maksymalną powierzchnię kontaktu podeszwy ze stopniem.
+
+        Gumy krawądkowe - gumy charakteryzujące się małą podatnością na odkształcenia związane ze wspinaniem po
+        mikrorzeźbie (mikrokrawądki, ząbki, kryształki, itp.), przy jednoczesnym zapewnieniu dobrego tarcia.`,
+
+        },
+        ad2: {
+            title: 'Wybór grubości gumy',
+            desc: `Kolejną ważną kwestią związaną z podklejeniem obuwia wspinaczkowego jest dobór grubości podeszwy.
+        Podstawowe kryteria wyboru grubości podeszwy przedstawiamy poniżej`
+        },
+        ad3: {
+            title: 'Grubość rantów standardowa czy zwiększona?',
+            intro: `Grubość rantów, podobnie jak grubość podeszwy, ma istotny wpływ na czucie, precyzję oraz twardość butów
+        wspinaczkowych.`,
+            standard: 'Standardowa',
+            standardDesc: ` Grubość typowa dla danego modelu buta, możliwie jak najbardziej zbliżona
+              do grubości stosowanej przez producenta.
+              Daje dobre czucie i jest polecana do wspinaczki wymagającej jak najwięcej precyzji.`,
+            standardHint: ` Jeśli lubisz buty o dobrym, optymalnym czuciu i/lub najpierw ścierasz podeszwę, a potem ranty, grubość
+                Standardowa jest dla Ciebie.`,
+            plus: 'Zwiększona',
+            plusDesc: ` Ranty o zwiększonej grubości charakteryzują się znacznie słabszym czuciem skały.
+                Polecane są wspinaczom, którzy preferują twardsze buty, oferujące większy komfort kosztem słabszego
+                czucia).
+                Niewskazane są natomiast dla bardzo małych rozmiarów stopy (34-35 EUR) gdzie mogą nadmiernie
+                pozbawiać buty precyzji i czucia.`,
+            plusHint1: ' Zwiększona grubość rantów jest dla Ciebie jeśli:',
+            plusHint2: 'najpierw wycierasz dziurę na rantach, a potem na podeszwie',
+            plusHint3: 'poszukujesz bardziej trwałej opcji (np. na panel)',
+            plusHint4: 'preferujesz jak najbardziej twarde i sztywne buty',
+        },
+        rubberTypes: {
+            name1: 'Nazwa gumy',
+            desc1: 'Tutaj dodajce opis gumy, tworzac kolejne klucze analogicznie - dodajecie opis do kolejnych gum'
+        },
+        rubberThickness: {
+            name1: '3.5',
+            desc1: `Cieńsza podeszwa pozwala na większą precyzję i lepsze czucie skały.
+         Daje zarazem nieco bardziej miękkiego buta, co powoduje, że jest to opcja dla wspinaczy,
+          którym bardziej zależy na dobrym czuciu stopni niż sztywności podeszwy. Grubość 3,5 mm jest też
+           dobrym wyborem dla osób o małym rozmiarze stopy (35-36) lub o masie ciała.`,
+            name2: '4mm (standard)',
+            desc2: `Typowy rodzaj grubości, który stosowany jest w większości produkowanych butów w rozmiarach "średnich".
+         Oferuje optymalny wybór między trwałością podeszwy a czuciem skały.`,
+            name3: '5',
+            desc3: `Cieńsza podeszwa pozwala na większą precyzję i lepsze czucie skały.
+         Daje zarazem nieco bardziej miękkiego buta, co powoduje, że jest to opcja dla wspinaczy,
+          którym bardziej zależy na dobrym czuciu stopni niż sztywności podeszwy. Grubość 3,5 mm jest też
+           dobrym wyborem dla osób o małym rozmiarze stopy (35-36) lub o masie ciała.`,
+
+        }
+    },
+    terms: {
+        breadcrumbs: 'Najważniejsze informacje dotyczące zamówień',
+        title: 'Regulamin zamówień',
+        link1: 'Składanie zamówień',
+        link2: 'Ceny',
+        link3: 'Przygotowanie butów do naprawy',
+        link4: 'Realizacja zamówień',
+        link5: 'Czas reazlizacji naprawy',
+        link6: 'Tryb ekspresowy',
+        link7: 'Faktury VAT',
+        link8: 'Dostawa',
+        link9: 'Formy płatnośći',
+        link10: 'Nieodebranie zamówienia w terminie',
+        link11: 'Gwarancja',
+        ownership: `  Właścicielem portalu friction.pl jest firma Friction s.c. z siedzibą pod adresem ul. Szuwarowa 6/113, 30-384
+        Kraków, posługująca się numerem NIP 676-242-62-03. Niniejszy regulamin określa zasady i warunki świadczenia
+        usług naprawy obuwia wspinaczkowego i trekkingowego przez firmę Friction.`,
+        desc1: `Zamówienia składa się drogą elektroniczną poprzez wypełnienie internetowego formularza Zamówienia. Poszczególne
+        pary butów powinny być dodane jako osobne pozycje w koszyku. Po wprowadzeniu danych kontaktowych, na podany w
+        zamówieniu adres e-mail wysyłane jest potwierdzenie zamówienia. Numer zamówienia otrzymany w potwierdzeniu
+        należy załączyć do przesyłanej do nas (we własnym zakresie) paczki. Paczki prosimy adresować używając danych z
+        podstrony Kontakt Prosimy też wstrzymać się z wykonywaniem przelewu do momentu odebrania przez nas przesyłki.
+        W razie jakichkolwiek problemów z przesyłką najszybszym sposobem ich wyjaśnienia jest kontakt telefoniczny,
+        dlatego prosimy o podanie numeru telefonu w formularzu zamówienia.`,
+        desc2: `  Podane ceny usług są cenami brutto, tj. zawierają podatek VAT.`,
+        desc3: ` - Wysyłane do naprawy buty powinny być czyste.
+        - Po wyczyszczeniu buty należy dokładnie wysuszyć, unikając intensywnych źródeł ciepła.
+        - Bezwzględnie nie należy prać butów ze skóry naturalnej TUŻ PRZED wysłaniem do naprawy.
+        - Skórzane buty po wypraniu należy założyć na 1-2 treningi aby mogły odzyskać dopasowanie do stopy.
+        - Prosimy też nie wyciągać sznurówek.
+
+        Pranie butów oraz szybkie suszenie butów wspinaczkowych powoduje kurczenie się skóry, w skutek czego buty mogą
+        nieco się odkształcać. Jest to naturalny proces, buty po praniu przez pewien okres są nieco ciaśniejsze i muszą
+        ponownie dopasować się do stopy. Natomiast, jeśli tuż po praniu dokonamy wymiany rantów i podeszwy buty mogą z
+        tego powodu stać się ciaśniejsze i utracić nieco fason.`,
+        desc4: `  W momencie odebrania przesyłki sprawdzamy, czy zamówione usługi zgadzają się ze stanem faktycznym. Jeśli
+        konieczna jest korekta (np. dodatkowa wymiana rantów) dokonujemy aktualizacji wyceny zamówienia.
+        Odebranie paczki potwierdzamy emailem, przesyłając ewentualną zmianę wyceny. Dla zamówień z płatnością przelewem
+        bankowym prosimy w tym momencie o wykonanie przelewu z podaniem numeru zamówienia. Potwierdzone zamówienie
+        przechodzi do realizacji. Po ukończeniu naprawy przygotowujemy i wysyłamy paczkę zwrotną. Wysyłamy również
+        emaila informującego o nadaniu przesyłki.`,
+        desc5: `W przypadku większości zamówień czas realizacji waha się w granicach 5-10 dni roboczych dla butów wspinaczkowych
+        i 7-14 dni roboczych dla butów trekkingowych. Maksymalny czas realizacji zamówienia to 14 dni roboczych. W
+        szczególnych przypadkach (np. duże zamówienia grupowe, zdarzenia losowe) termin realizacji może ulec
+        nieznacznemu wydłużeniu.
+        W uzasadnionych przypadkach rezerwujemy sobie prawo do odmowy realizacji zamówienia.  Dotyczy to skrajnych
+        przypadków uszkodzeń konstrukcji buta, które uniemożliwiają ich naprawę.`,
+        desc6: ` Naprawy w trybie ekspresowym wykonywnae są w czasie do 4 dni roboczych. Tryb ekspresowy wiąże się z dopłatą 30%
+        i wymaga uprzedniego potwierdzenia telefonicznego.`,
+        desc7: `  Na życzenie klienta wystawiamy fakturę VAT. W celu otrzymania faktury należy zaznaczyć odpowiednią opcję w
+        trakcie składania zamówienia oraz podać dane do faktury.`,
+        desc8: `Kosztami przesyłki zwrotnej obciążany jest zamawiający. Dla przesyłek krajowych dostępne są następujące sposoby
+        dostawy: przesyłka kurierska, przesyłka pocztowa, odbiór osobisty w Krakowie w oddziale przy ul. Romanowicza
+        4/543.
+        Termin otrzymania przesyłki po wykonaniu naprawy = czas realizacji naprawy + przewidywany czas dostawy. Czas
+        dostawy: przesyłka kurierska: 1 dzień roboczy, paczka pocztowa: 1-2 dni robocze. Koszt przesyłki zagranicznej
+        według taryfy wybranego dostawcy.
+
+        Dla zamówień 6 par lub więcej krajową przesyłkę zwrotną wysyłamy na nasz koszt.
+
+        W momencie odbierania przesyłki prosimy o dokładne sprawdzenie paczki i upewnienie się, że dotarła ona w
+        nienaruszonym stanie. Dochodzenie ewentualnych roszczeń wobec firmy transportowej za szkody wynikłe ze zniszeń,
+        lub uszkodzeń przesyłki bądź towarów są często niemożliwe, lub bardzo trudne po odebraniu niesprawdzonej
+        przesyłki.
+
+        Obowiązkiem odbiorcy jest sprawdzenie stanu odbieranej paczki.`,
+        desc9: `  Akceptowane formy płatności to: przelew na konto bankowe (przesyłki niepobraniowe), płatność w momencie odbioru
+        paczki (przesyłka pobraniowa) oraz gotówka (odbiór osobisty). Dla przelewów bankowych (dane do przelewu w
+        zakładce Kontakt) prosimy o podanie numeru zamówienia w tytule przelewu. Pozwola to na przyspieszenie obsługi
+        płatności i wysyłki.`,
+        desc10: `  Zamawiający naprawę akceptuje, że w przypadku nieodebrania naprawionego obuwia w wyznaczonym terminie firma
+        Friction s.c. będąca wykonawcą naprawy nie jest zobowiązana do przechowywania danego zamówienia.
+        Zamawiający poprzez nieodebranie wyrobu w terminie do trzech miesięcy od dokonania naprawy wyraża zgodę na
+        utylizacje zamówienia przez Friction s.c.
+        Nieodebranie naprawionego obuwia nie zwalnia Zamawiającego od obowiązku uiszczenia opłaty w kwocie ceny naprawy.`,
+        desc11: ` Do każdej przesyłki dołączany jest paragon lub faktura VAT, będące podstawą gwarancji. Gwarancja obejmuje
+        wykonane usługi w ramach naprawy obuwia wspinaczkowego i trekkingowego w zakresie wymiany podeszwy oraz rantów.
+        Nie objęte gwarancją pozostają natomiast wszelkie uszkodzenia lub zużycia (rantów, podeszwy) powstałe w wyniku
+        normalnego użytkowania obuwia lub też będące wynikiem uszkodzeń mechanicznych lub innych powstałych z winy
+        klienta.`,
+        lastUpdate: 'Kraków, 2014-01-18, ostatnia aktualizacja 2017-04-04'
     }
 };
 

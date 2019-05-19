@@ -36,18 +36,24 @@
       padding-bottom: 50px;
       font-size: 2em;
     }
+    @media(min-width: 1025px) {
+      padding-bottom: 115px;
+    }
   }
 
   .content {
     padding-bottom: 30px;
     .title {
-      font-size: $text16;
       color: $light-gray;
       margin-bottom: 20px;
+
     }
     .text {
-      font-size: $text18;
       color: white;
+      line-height: 36px;
+         @media (max-width: 1024px) {
+          line-height: 24px;
+        }
     }
 
     @media (max-width: 992px) {

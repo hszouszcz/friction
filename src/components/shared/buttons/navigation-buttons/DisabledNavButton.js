@@ -16,7 +16,7 @@ const DisabledNavButton = (props) => {
         className={`forward-button ${setBgColor(props.theme, props.disabled)}`}
         onClick={() => props.onClick()}
       >
-        <span>{props.text}</span>
+        <span className="common-text">{props.text}</span>
         <i className="fa fa-long-arrow-right"/>
       </button>
       :
@@ -26,7 +26,7 @@ const DisabledNavButton = (props) => {
         onClick={() => props.onClick()}
       >
         <i className="fa fa-long-arrow-left" style={{paddingRight: '10px'}}/>
-        <span>{props.text}</span>
+        <span className="common-text">{props.text}</span>
       </button>
 
   );

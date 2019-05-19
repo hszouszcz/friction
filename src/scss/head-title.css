@@ -1,7 +1,9 @@
 .head-title div {
-  padding-top: 50px;
-  font-size: 32px;
-  font-weight: 300; }
+  padding-top: 35px;
+  line-height: 48px;
+  font-size: 36px;
+  font-weight: 300;
+  color: #05080c; }
   @media (max-width: 424.97px) {
     .head-title div {
       padding-top: 30px;

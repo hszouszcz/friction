@@ -7,6 +7,7 @@ import ButtonsRow from '../shared/buttons/buttons-row/ButtonsRow';
 import ForwardButton from '../shared/buttons/navigation-buttons/forwardButton';
 import {connect} from 'react-redux';
 import {updateCart} from '../../redux/actions';
+import strings from './../../assets/locales/index';
 
 class Cart extends Component {
   constructor(props) {
@@ -37,12 +38,28 @@ class Cart extends Component {
   };
 
   render() {
+
+    if(!this.state.cart || this.state.cart.length === 0) {
+      return (
+        <div style={{paddingTop: 100, paddingBottom: 30, textAlign: 'center', minHeight: 500}}>
+          <div style={{paddingBottom: 30}}>{strings.cart.emptyCart}</div>
+          <Route render={({ history }) => (
+              <ForwardButton
+                text={strings.cart.placeOrder}
+                theme="black"
+                onClick={() => { history.push({pathname: '/order'}) }}
+                forward
+              />
+          )} />
+        </div>)
+    }
+
     return (
       this.state.cart &&
       <div className="cart container order-form">
         <div className="row">
           <div className="col-md-6 offset-md-3">
-            <div className="cart-header order-form-title">Koszyk</div>
+            <div className="cart-header order-form-title">{strings.cart.cart}</div>
             {this.state.cart.map((item, index) =>
               <CartItem
                 key={index.toString()}
@@ -51,12 +68,12 @@ class Cart extends Component {
                 deleteFunc={this.deleteFromCart}
               />
             )}
-            <div className="sum-up">Suma: <span className="value">{`${this.sumUp()} PLN`}</span></div>
+            <div className="sum-up">{`${strings.cart.sum}: `}<span className="value">{`${this.sumUp()} ${strings.cart.currency}`}</span></div>
             <div className="cart-footer">
               <Route render={({history}) => (
                 <ButtonsRow>
                  {this.state.cart.length > 0 && <ForwardButton
-                    text="Zamawiam"
+                    text={strings.cart.orderAcceptance}
                     theme="black"
                     onClick={() => { history.push({pathname: '/user-details', state: {value: this.sumUp()}}) }}
                     forward
@@ -65,7 +82,7 @@ class Cart extends Component {
                     className="add-more-button"
                     onClick={() => history.push('/order')}
                   >
-                    <span>Dodaj kolejną naprawę</span>
+                    <span>{strings.cart.addAnotherItem}</span>
                     <i className="fa fa-plus" aria-hidden="true"></i>
                   </button>
                 </ButtonsRow>

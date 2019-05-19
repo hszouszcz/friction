@@ -4,4 +4,5 @@
   flex-wrap: wrap; }
   @media (max-width: 767.97px) {
     .radio-input-section {
-      flex-direction: column; } }
+      flex-direction: column;
+      padding-right: 0; } }

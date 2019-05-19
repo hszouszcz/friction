@@ -8,11 +8,11 @@ import strings from './../../assets/locales/index';
 const AboutContent = (props) => {
   return (
     <div className="content">
-      <div className="section-title">
+      <div className="section-title title section-title">
         {props.title}
       </div>
       <div className="text row">
-        <div className="col-md-12 col-lg-6 first-col common-text">
+        <div className="col-md-12 col-lg-6 first-col text common-text">
           {props.firstColumn}
           <div className="d-sm-block d-md-none">
             <ButtonsRow>
@@ -27,7 +27,7 @@ const AboutContent = (props) => {
           </ButtonsRow>
           </div>
         </div>
-        <div className="col-lg-6 second-col common-text">
+        <div className="col-lg-6 second-col text common-text">
           {props.secondColumn}
         </div>
       </div>

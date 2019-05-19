@@ -8,7 +8,7 @@ const ForwardButton = (props) => {
         className={`forward-button ${props.theme === 'black' ? 'black' : 'white'}`}
         onClick={() => props.onClick()}
       >
-        <span>{props.text}</span>
+        <span className="common-text">{props.text}</span>
         <i className="fa fa-long-arrow-right"/>
       </button>
       :
@@ -17,7 +17,7 @@ const ForwardButton = (props) => {
         onClick={() => props.onClick()}
       >
         <i className="fa fa-long-arrow-left" style={{paddingRight: '10px'}}/>
-        <span>{props.text}</span>
+        <span className="common-text">{props.text}</span>
       </button>
 
   );

@@ -9,19 +9,28 @@
     padding-bottom: 30px; }
     .order-form .order-section .section-title {
       color: #6f7983;
-      font-size: 0.8em;
+      font-size: 18px !important;
       padding-bottom: 15px; }
+      @media (max-width: 1024px) {
+        .order-form .order-section .section-title {
+          font-size: 0.8em !important; } }
     .order-form .order-section label {
       color: #6f7983;
-      font-size: 0.8em;
+      font-size: 18px !important;
       margin-bottom: 15px;
       display: block; }
+      @media (max-width: 1024px) {
+        .order-form .order-section label {
+          font-size: 0.8em !important; } }
     .order-form .order-section input {
       padding: 10px;
-      font-size: 14px;
+      font-size: 18px !important;
       border: 1px solid #eeeeee;
       color: #6f7983;
       margin-bottom: 30px; }
+      @media (max-width: 1024px) {
+        .order-form .order-section input {
+          font-size: 0.8em !important; } }
       .order-form .order-section input:focus {
         outline: none;
         border: 2px solid #eeeeee; }
@@ -39,7 +48,7 @@
     border: 1px solid #eeeeee;
     padding: 30px;
     width: 100%;
-    max-width: 555px;
+    max-width: 592px;
     resize: none;
     color: #6f7983;
     font-size: 16px; }

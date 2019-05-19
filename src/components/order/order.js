@@ -26,7 +26,7 @@ class Order extends Component  {
     return (
       <div className="order col-md-8 offset-md-2">
       <div className="caption-title" style={{textAlign: 'center'}}>
-      Składanie zamówienia
+     {strings.main.order.title}
       </div>
         <div className="row">
           <OrderStep
