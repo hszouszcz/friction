@@ -43,6 +43,9 @@
       border: none;
       padding-right: 0;
     }
+    &:hover {
+      cursor: pointer;
+    }
 
     a {
       line-height: 1;

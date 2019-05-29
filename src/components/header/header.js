@@ -31,7 +31,13 @@ const Header = (props) => (
         </div>
       </li>
       <li className="nav-item">
-        <a className="nav-link black-text common-text" href="#">{strings.main.header.langShort}</a>
+        <a
+         className="nav-link black-text common-text"
+         style={{}}
+          onClick={() =>{props.setLanguage()}}
+          >
+          {strings.main.header.langShort}
+          </a>
       </li>
       <li className="nav-item">
           <Link className="nav-link common-text" to="/order">{strings.main.header.order}</Link>
