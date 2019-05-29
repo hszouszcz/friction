@@ -32,10 +32,22 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      language: 'pl',
       itemsInCart: 0,
     };
 
     strings.setLanguage('pl');
+  }
+
+  setLanguage = () => {
+    let lang;
+    if (this.state.language === 'pl') {
+      lang = 'en';
+    } else {
+      lang = 'pl';
+    }
+    strings.setLanguage(lang);
+     this.setState({language: lang})
   }
 
   render() {
@@ -44,7 +56,7 @@ class App extends Component {
         <Router>
          <ScrollToTop>
            <div className="App" style={{ margin: 'auto'}}>
-            <Header/>
+              <Header setLanguage={this.setLanguage}/>
             <Route exact={true} path="/" component={HomePage}/>
             <Route path="/order" component={OrderType}/>
             <Route path="/order-details" component={OrderForm}/>

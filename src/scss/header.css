@@ -31,6 +31,8 @@
     .header .nav-item:first-child {
       border: none;
       padding-right: 0; }
+    .header .nav-item:hover {
+      cursor: pointer; }
     .header .nav-item a {
       line-height: 1;
       color: #05080c;
